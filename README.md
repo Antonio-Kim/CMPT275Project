@@ -1,4 +1,4 @@
-# CMPT275Project NeuroKinetics
+# CMPT275Project-NeuroKinetics
 
 Group 12 (Team Randy)
 
