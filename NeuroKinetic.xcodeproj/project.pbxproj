@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83F22F062362280500AA0D94 /* HandwritingStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */; };
 		BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */; };
 		BE1B1A5C235BF97100E6ED19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A5B235BF97100E6ED19 /* ViewController.swift */; };
 		BE1B1A5F235BF97100E6ED19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1B1A5D235BF97100E6ED19 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStatisticsViewController.swift; sourceTree = "<group>"; };
 		BE1B1A56235BF97100E6ED19 /* NeuroKinetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroKinetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE1B1A5B235BF97100E6ED19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */,
 				BE1B1A5B235BF97100E6ED19 /* ViewController.swift */,
 				BE1B1A5D235BF97100E6ED19 /* Main.storyboard */,
+				83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */,
 				BE7C725223610C5E005EBFF5 /* MetronomeGame.swift */,
 				BE7C72502360FA06005EBFF5 /* GameMenu.swift */,
 				BE351717235D4C4E00C13527 /* metronomeStatistics.swift */,
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F22F062362280500AA0D94 /* HandwritingStatisticsViewController.swift in Sources */,
 				BE7C725323610C5E005EBFF5 /* MetronomeGame.swift in Sources */,
 				BE1B1A5C235BF97100E6ED19 /* ViewController.swift in Sources */,
 				BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */,
