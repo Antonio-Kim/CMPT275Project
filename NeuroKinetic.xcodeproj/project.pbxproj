@@ -16,6 +16,7 @@
 		BE1B1A6F235BF97200E6ED19 /* NeuroKineticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A6E235BF97200E6ED19 /* NeuroKineticTests.swift */; };
 		BE351714235D375B00C13527 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351713235D375B00C13527 /* StartViewController.swift */; };
 		BE351718235D4C4E00C13527 /* metronomeStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351717235D4C4E00C13527 /* metronomeStatistics.swift */; };
+		BE4575332365371A00BADD25 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4575322365371A00BADD25 /* CircleView.swift */; };
 		BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C72502360FA06005EBFF5 /* GameMenu.swift */; };
 		BE7C725323610C5E005EBFF5 /* MetronomeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C725223610C5E005EBFF5 /* MetronomeGame.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		BE1B1A70235BF97200E6ED19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE351713235D375B00C13527 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		BE351717235D4C4E00C13527 /* metronomeStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metronomeStatistics.swift; sourceTree = "<group>"; };
+		BE4575322365371A00BADD25 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BE7C72502360FA06005EBFF5 /* GameMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
 		BE7C725223610C5E005EBFF5 /* MetronomeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				BE1B1A5D235BF97100E6ED19 /* Main.storyboard */,
 				83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */,
 				BE7C725223610C5E005EBFF5 /* MetronomeGame.swift */,
+				BE4575322365371A00BADD25 /* CircleView.swift */,
 				BE7C72502360FA06005EBFF5 /* GameMenu.swift */,
 				BE351717235D4C4E00C13527 /* metronomeStatistics.swift */,
 				BE351713235D375B00C13527 /* StartViewController.swift */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4575332365371A00BADD25 /* CircleView.swift in Sources */,
 				83F22F062362280500AA0D94 /* HandwritingStatisticsViewController.swift in Sources */,
 				BE7C725323610C5E005EBFF5 /* MetronomeGame.swift in Sources */,
 				BE1B1A5C235BF97100E6ED19 /* ViewController.swift in Sources */,

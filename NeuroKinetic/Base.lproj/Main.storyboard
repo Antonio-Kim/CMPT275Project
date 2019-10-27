@@ -287,15 +287,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odz-5O-Qhe">
-                                <rect key="frame" x="472" y="353" width="170" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <state key="normal" title="TAP"/>
-                                <connections>
-                                    <action selector="TAP:" destination="uiR-MZ-HIV" eventType="touchUpInside" id="dMK-xS-kLz"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GR-Vu-4dS">
                                 <rect key="frame" x="349" y="200" width="397" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -318,16 +309,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odz-5O-Qhe">
+                                <rect key="frame" x="538.5" y="446" width="289" height="132"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="TAP:" destination="uiR-MZ-HIV" eventType="touchUpInside" id="6Ea-Mj-9gJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mcz-KG-jFA" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="40" id="JAe-hS-zqy"/>
                             <constraint firstItem="AO5-ui-PWJ" firstAttribute="trailing" secondItem="mcz-KG-jFA" secondAttribute="trailing" constant="20" id="KAj-sP-gun"/>
+                            <constraint firstItem="odz-5O-Qhe" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="Xm6-j4-gni"/>
+                            <constraint firstItem="odz-5O-Qhe" firstAttribute="centerY" secondItem="Aed-E0-NbH" secondAttribute="centerY" id="ntV-h4-TCd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AO5-ui-PWJ"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="3GR-Vu-4dS" id="qvW-fX-nhL"/>
+                        <outlet property="tap" destination="odz-5O-Qhe" id="A2i-od-0OK"/>
                         <outlet property="tapAndwait" destination="Vk4-oH-508" id="07F-yd-ZCV"/>
                     </connections>
                 </viewController>
@@ -573,7 +575,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ERi-x1-JKb"/>
-        <segue reference="U1s-Ul-uJJ"/>
+        <segue reference="yzq-G9-nTb"/>
         <segue reference="FzK-bU-J74"/>
         <segue reference="iNj-2p-92K"/>
     </inferredMetricsTieBreakers>
