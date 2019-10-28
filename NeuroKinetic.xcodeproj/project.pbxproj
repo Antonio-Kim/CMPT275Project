@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
 		83F22F062362280500AA0D94 /* HandwritingStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */; };
 		BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */; };
 		BE1B1A5C235BF97100E6ED19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A5B235BF97100E6ED19 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStatisticsViewController.swift; sourceTree = "<group>"; };
 		BE1B1A56235BF97100E6ED19 /* NeuroKinetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroKinetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		41E81C692366F3D1003313B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				41E81C702366F58C003313B8 /* Paragraph.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				BE1B1A5C235BF97100E6ED19 /* ViewController.swift in Sources */,
 				BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */,
 				BE351718235D4C4E00C13527 /* metronomeStatistics.swift in Sources */,
+				41E81C712366F58C003313B8 /* Paragraph.swift in Sources */,
 				BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */,
 				BE351714235D375B00C13527 /* StartViewController.swift in Sources */,
 			);
