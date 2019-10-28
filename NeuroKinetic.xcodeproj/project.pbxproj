@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
+		41E81C732366F605003313B8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C722366F605003313B8 /* Setting.swift */; };
 		83F22F062362280500AA0D94 /* HandwritingStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */; };
 		BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */; };
 		BE1B1A5C235BF97100E6ED19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A5B235BF97100E6ED19 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
+		41E81C722366F605003313B8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStatisticsViewController.swift; sourceTree = "<group>"; };
 		BE1B1A56235BF97100E6ED19 /* NeuroKinetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroKinetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +106,6 @@
 				41E81C6E2366F44F003313B8 /* TypingGame */,
 				41E81C6C2366F43A003313B8 /* Settings */,
 				41E81C6B2366F430003313B8 /* Statistics */,
-				BE1B1A5B235BF97100E6ED19 /* ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -137,6 +138,7 @@
 		41E81C6C2366F43A003313B8 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				41E81C722366F605003313B8 /* Setting.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -152,6 +154,7 @@
 		41E81C6E2366F44F003313B8 /* TypingGame */ = {
 			isa = PBXGroup;
 			children = (
+				BE1B1A5B235BF97100E6ED19 /* ViewController.swift */,
 			);
 			path = TypingGame;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E81C732366F605003313B8 /* Setting.swift in Sources */,
 				BE4575332365371A00BADD25 /* CircleView.swift in Sources */,
 				83F22F062362280500AA0D94 /* HandwritingStatisticsViewController.swift in Sources */,
 				BE7C725323610C5E005EBFF5 /* MetronomeGameVC.swift in Sources */,
