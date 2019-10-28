@@ -18,7 +18,7 @@
 		BE351718235D4C4E00C13527 /* metronomeStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351717235D4C4E00C13527 /* metronomeStatistics.swift */; };
 		BE4575332365371A00BADD25 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4575322365371A00BADD25 /* CircleView.swift */; };
 		BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C72502360FA06005EBFF5 /* GameMenu.swift */; };
-		BE7C725323610C5E005EBFF5 /* MetronomeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C725223610C5E005EBFF5 /* MetronomeGame.swift */; };
+		BE7C725323610C5E005EBFF5 /* MetronomeGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		BE351717235D4C4E00C13527 /* metronomeStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metronomeStatistics.swift; sourceTree = "<group>"; };
 		BE4575322365371A00BADD25 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BE7C72502360FA06005EBFF5 /* GameMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
-		BE7C725223610C5E005EBFF5 /* MetronomeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeGame.swift; sourceTree = "<group>"; };
+		BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeGameVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +68,103 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41E81C652366F38A003313B8 /* NeuroKineticsUITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NeuroKineticsUITests;
+			sourceTree = "<group>";
+		};
+		41E81C662366F3B5003313B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE1B1A60235BF97200E6ED19 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		41E81C672366F3C0003313B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE4575322365371A00BADD25 /* CircleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		41E81C682366F3C8003313B8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BE1B1A5D235BF97100E6ED19 /* Main.storyboard */,
+				BE351713235D375B00C13527 /* StartViewController.swift */,
+				BE7C72502360FA06005EBFF5 /* GameMenu.swift */,
+				41E81C6D2366F440003313B8 /* MetronomeGame */,
+				41E81C6F2366F458003313B8 /* HandwritingPractice */,
+				41E81C6E2366F44F003313B8 /* TypingGame */,
+				41E81C6C2366F43A003313B8 /* Settings */,
+				41E81C6B2366F430003313B8 /* Statistics */,
+				BE1B1A5B235BF97100E6ED19 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		41E81C692366F3D1003313B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		41E81C6A2366F3D9003313B8 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BE1B1A62235BF97200E6ED19 /* LaunchScreen.storyboard */,
+				BE1B1A65235BF97200E6ED19 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		41E81C6B2366F430003313B8 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				BE351717235D4C4E00C13527 /* metronomeStatistics.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		41E81C6C2366F43A003313B8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		41E81C6D2366F440003313B8 /* MetronomeGame */ = {
+			isa = PBXGroup;
+			children = (
+				BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */,
+			);
+			path = MetronomeGame;
+			sourceTree = "<group>";
+		};
+		41E81C6E2366F44F003313B8 /* TypingGame */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TypingGame;
+			sourceTree = "<group>";
+		};
+		41E81C6F2366F458003313B8 /* HandwritingPractice */ = {
+			isa = PBXGroup;
+			children = (
+				83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */,
+			);
+			path = HandwritingPractice;
+			sourceTree = "<group>";
+		};
 		BE1B1A4D235BF97100E6ED19 = {
 			isa = PBXGroup;
 			children = (
+				41E81C652366F38A003313B8 /* NeuroKineticsUITests */,
 				BE1B1A58235BF97100E6ED19 /* NeuroKinetic */,
 				BE1B1A6D235BF97200E6ED19 /* NeuroKineticTests */,
 				BE1B1A57235BF97100E6ED19 /* Products */,
@@ -90,17 +184,11 @@
 			isa = PBXGroup;
 			children = (
 				BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */,
-				BE1B1A5B235BF97100E6ED19 /* ViewController.swift */,
-				BE1B1A5D235BF97100E6ED19 /* Main.storyboard */,
-				83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */,
-				BE7C725223610C5E005EBFF5 /* MetronomeGame.swift */,
-				BE4575322365371A00BADD25 /* CircleView.swift */,
-				BE7C72502360FA06005EBFF5 /* GameMenu.swift */,
-				BE351717235D4C4E00C13527 /* metronomeStatistics.swift */,
-				BE351713235D375B00C13527 /* StartViewController.swift */,
-				BE1B1A60235BF97200E6ED19 /* Assets.xcassets */,
-				BE1B1A62235BF97200E6ED19 /* LaunchScreen.storyboard */,
-				BE1B1A65235BF97200E6ED19 /* Info.plist */,
+				41E81C682366F3C8003313B8 /* ViewController */,
+				41E81C672366F3C0003313B8 /* View */,
+				41E81C692366F3D1003313B8 /* Model */,
+				41E81C662366F3B5003313B8 /* Resources */,
+				41E81C6A2366F3D9003313B8 /* SupportFiles */,
 			);
 			path = NeuroKinetic;
 			sourceTree = "<group>";
@@ -217,7 +305,7 @@
 			files = (
 				BE4575332365371A00BADD25 /* CircleView.swift in Sources */,
 				83F22F062362280500AA0D94 /* HandwritingStatisticsViewController.swift in Sources */,
-				BE7C725323610C5E005EBFF5 /* MetronomeGame.swift in Sources */,
+				BE7C725323610C5E005EBFF5 /* MetronomeGameVC.swift in Sources */,
 				BE1B1A5C235BF97100E6ED19 /* ViewController.swift in Sources */,
 				BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */,
 				BE351718235D4C4E00C13527 /* metronomeStatistics.swift in Sources */,
