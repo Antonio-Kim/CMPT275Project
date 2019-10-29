@@ -10,7 +10,7 @@ import UIKit
 
 class HandwritingPractice: UIViewController {
     
-    let canvas = Canvas()
+    let canvas = CanvasView()
     let undoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Undo", for: .normal)

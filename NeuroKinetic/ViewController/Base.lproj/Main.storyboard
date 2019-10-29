@@ -73,7 +73,7 @@
         <scene sceneID="1ki-Gu-7JI">
             <objects>
                 <viewController id="zRe-Jb-N92" customClass="HandwritingPractice" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="UHX-0i-cD5" customClass="Canvas" customModule="NeuroKinetic" customModuleProvider="target">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="UHX-0i-cD5">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -92,14 +92,61 @@
                                     <segue destination="lDo-HC-Lf8" kind="presentation" id="zMP-Jw-foI"/>
                                 </connections>
                             </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exs-x7-7zN">
+                                <rect key="frame" x="379" y="398" width="609" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.9640061797347933" blue="0.95793287712407238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DPz-li-Enj"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjd-L1-8Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="891"/>
+            <point key="canvasLocation" x="1241.727672035139" y="890.62499999999989"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Uez-Q3-hxY">
+            <objects>
+                <viewController id="7xa-yS-hdQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MI3-gg-94L">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRD-VR-jbk" customClass="SentenceWriteCanvas" customModule="NeuroKinetic" customModuleProvider="target">
+                                <rect key="frame" x="20" y="340" width="1326" height="345"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.93201954715525837" blue="0.851674534022687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCz-lA-Th2">
+                                <rect key="frame" x="32" y="71" width="86" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="&lt; BACK"/>
+                                <connections>
+                                    <segue destination="lDo-HC-Lf8" kind="presentation" id="UHC-0V-Tfe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MB3-TY-hXu">
+                                <rect key="frame" x="625" y="693" width="116" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="DONE"/>
+                                <connections>
+                                    <segue destination="zRe-Jb-N92" kind="presentation" id="suf-qY-ERh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8a7-46-iMh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8xG-NC-R2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241.727672035139" y="1533.984375"/>
         </scene>
         <!--Typing Game-->
         <scene sceneID="vpg-LV-caZ">
@@ -234,7 +281,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                         <state key="normal" title="Handwriting"/>
                                         <connections>
-                                            <segue destination="zRe-Jb-N92" kind="presentation" id="rRI-y3-t23"/>
+                                            <segue destination="7xa-yS-hdQ" kind="presentation" id="B0g-8o-pTa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1Q-LZ-yBa">
@@ -589,8 +636,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GH1-F3-uPf"/>
-        <segue reference="zMP-Jw-foI"/>
+        <segue reference="UHC-0V-Tfe"/>
         <segue reference="MlM-9w-c64"/>
-        <segue reference="Wfs-HK-JXq"/>
+        <segue reference="vnR-XQ-OKg"/>
     </inferredMetricsTieBreakers>
 </document>
