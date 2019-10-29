@@ -1,14 +1,23 @@
 //
-//  HandwritingPracticeVC.swift
+//  Canvas.swift
 //  NeuroKinetic
 //
-//  Created by yyonata on 10/24/19.
+//  Created by Darius Nadem on 10/29/19.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
 import UIKit
 
 class Canvas: UIView{
+    func undo() {
+        _ = lines.popLast()
+        setNeedsDisplay()
+    }
+    func clear() {
+        lines.removeAll()
+        setNeedsDisplay()
+    }
+    fileprivate var lines = [[CGPoint]]()
     override func draw( _ rect: CGRect){
         super.draw(rect)
         guard let context = UIGraphicsGetCurrentContext() else{return}
@@ -30,7 +39,7 @@ class Canvas: UIView{
     }
     
     //var line = [CGPoint]()
-    var lines = [[CGPoint]]()
+ 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         lines.append([CGPoint]())
@@ -45,30 +54,4 @@ class Canvas: UIView{
         //lines.append(point)
         setNeedsDisplay()
     }
-}
-
-class HandwritingPractice: UIViewController {
-    
-    let canvas = Canvas()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.addSubview(canvas)
-        canvas.backgroundColor = .white
-        canvas.frame = view.frame
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

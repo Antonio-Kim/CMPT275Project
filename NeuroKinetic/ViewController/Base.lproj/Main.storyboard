@@ -73,7 +73,7 @@
         <scene sceneID="1ki-Gu-7JI">
             <objects>
                 <viewController id="zRe-Jb-N92" customClass="HandwritingPractice" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UHX-0i-cD5">
+                    <view key="view" contentMode="scaleToFill" id="UHX-0i-cD5" customClass="Canvas" customModule="NeuroKinetic" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -94,7 +94,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Wep-a5-GxQ"/>
+                        <viewLayoutGuide key="safeArea" id="DPz-li-Enj"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjd-L1-8Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -571,6 +571,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nm-E5-AL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-640" y="-1052"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JL9-z3-dcb">
+            <objects>
+                <viewController id="TX1-G0-Knh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZUI-KM-YOd">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Lwb-Nt-1lM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b6n-Wt-xdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZgA-84-b3i">
+            <objects>
+                <viewController id="ztK-GF-Y0E" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tHa-rS-f2w">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Tyc-b3-25o"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yan-FB-3ND" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
