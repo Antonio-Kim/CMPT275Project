@@ -21,6 +21,7 @@
 		BE4575332365371A00BADD25 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4575322365371A00BADD25 /* CircleView.swift */; };
 		BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C72502360FA06005EBFF5 /* GameMenu.swift */; };
 		BE7C725323610C5E005EBFF5 /* MetronomeGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */; };
+		BEF428072367E45100D9F021 /* metroNomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BEF428062367E45100D9F021 /* metroNomeSound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		BE4575322365371A00BADD25 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BE7C72502360FA06005EBFF5 /* GameMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
 		BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeGameVC.swift; sourceTree = "<group>"; };
+		BEF428062367E45100D9F021 /* metroNomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metroNomeSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		41E81C6D2366F440003313B8 /* MetronomeGame */ = {
 			isa = PBXGroup;
 			children = (
+				BEF428062367E45100D9F021 /* metroNomeSound.mp3 */,
 				BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */,
 			);
 			path = MetronomeGame;
@@ -292,6 +295,7 @@
 				BE1B1A64235BF97200E6ED19 /* LaunchScreen.storyboard in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
 				BE1B1A5F235BF97100E6ED19 /* Main.storyboard in Resources */,
+				BEF428072367E45100D9F021 /* metroNomeSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NeuroKinetic/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NeuroKinetic/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,7 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NeuroKinetic/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NeuroKinetic/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
