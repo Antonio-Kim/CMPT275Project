@@ -73,7 +73,7 @@
         <scene sceneID="1ki-Gu-7JI">
             <objects>
                 <viewController id="zRe-Jb-N92" customClass="HandwritingPractice" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UHX-0i-cD5" customClass="Canvas" customModule="NeuroKinetic" customModuleProvider="target">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="UHX-0i-cD5" customClass="Canvas" customModule="NeuroKinetic" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -573,38 +573,24 @@
             <point key="canvasLocation" x="-640" y="-1052"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="JL9-z3-dcb">
+        <scene sceneID="0fo-J8-Zex">
             <objects>
-                <viewController id="TX1-G0-Knh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZUI-KM-YOd">
+                <viewController id="BIa-FQ-VsL" sceneMemberID="viewController">
+                    <view key="view" contentMode="center" id="CWD-LF-lRJ">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Lwb-Nt-1lM"/>
+                        <viewLayoutGuide key="safeArea" id="chd-g0-k7y"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b6n-Wt-xdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ZgA-84-b3i">
-            <objects>
-                <viewController id="ztK-GF-Y0E" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tHa-rS-f2w">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Tyc-b3-25o"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yan-FB-3ND" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKe-bt-g8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ERi-x1-JKb"/>
+        <segue reference="GH1-F3-uPf"/>
         <segue reference="zMP-Jw-foI"/>
         <segue reference="MlM-9w-c64"/>
-        <segue reference="vnR-XQ-OKg"/>
+        <segue reference="Wfs-HK-JXq"/>
     </inferredMetricsTieBreakers>
 </document>
