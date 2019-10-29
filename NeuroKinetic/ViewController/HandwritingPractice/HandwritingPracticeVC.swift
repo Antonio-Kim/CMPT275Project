@@ -1,14 +1,14 @@
 //
-//  metronomeStatistics.swift
+//  HandwritingPracticeVC.swift
 //  NeuroKinetic
 //
-//  Created by nmaeda on 10/20/19.
+//  Created by yyonata on 10/24/19.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
 import UIKit
 
-class metronomeStatistics: UIViewController {
+class HandwritingPractice: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,18 +9,21 @@
 /* Begin PBXBuildFile section */
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
 		41E81C732366F605003313B8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C722366F605003313B8 /* Setting.swift */; };
-		83F22F062362280500AA0D94 /* HandwritingStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */; };
+		83F22F062362280500AA0D94 /* HandwritingPracticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */; };
 		BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */; };
-		BE1B1A5C235BF97100E6ED19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A5B235BF97100E6ED19 /* ViewController.swift */; };
+		BE1B1A5C235BF97100E6ED19 /* TypingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A5B235BF97100E6ED19 /* TypingGame.swift */; };
 		BE1B1A5F235BF97100E6ED19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1B1A5D235BF97100E6ED19 /* Main.storyboard */; };
 		BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1B1A60235BF97200E6ED19 /* Assets.xcassets */; };
 		BE1B1A64235BF97200E6ED19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1B1A62235BF97200E6ED19 /* LaunchScreen.storyboard */; };
 		BE1B1A6F235BF97200E6ED19 /* NeuroKineticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A6E235BF97200E6ED19 /* NeuroKineticTests.swift */; };
 		BE351714235D375B00C13527 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351713235D375B00C13527 /* StartViewController.swift */; };
-		BE351718235D4C4E00C13527 /* metronomeStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351717235D4C4E00C13527 /* metronomeStatistics.swift */; };
+		BE351718235D4C4E00C13527 /* MetronomeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351717235D4C4E00C13527 /* MetronomeStats.swift */; };
 		BE4575332365371A00BADD25 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4575322365371A00BADD25 /* CircleView.swift */; };
 		BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C72502360FA06005EBFF5 /* GameMenu.swift */; };
 		BE7C725323610C5E005EBFF5 /* MetronomeGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */; };
+		BEF428012367D13F00D9F021 /* TypingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428002367D13F00D9F021 /* TypingStats.swift */; };
+		BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428022367D14F00D9F021 /* GeneralStats.swift */; };
+		BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428042367D15D00D9F021 /* HandwritingStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +39,10 @@
 /* Begin PBXFileReference section */
 		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		41E81C722366F605003313B8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStatisticsViewController.swift; sourceTree = "<group>"; };
+		83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingPracticeVC.swift; sourceTree = "<group>"; };
 		BE1B1A56235BF97100E6ED19 /* NeuroKinetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroKinetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE1B1A5B235BF97100E6ED19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE1B1A5B235BF97100E6ED19 /* TypingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingGame.swift; sourceTree = "<group>"; };
 		BE1B1A5E235BF97100E6ED19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE1B1A60235BF97200E6ED19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE1B1A63235BF97200E6ED19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,10 +51,13 @@
 		BE1B1A6E235BF97200E6ED19 /* NeuroKineticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticTests.swift; sourceTree = "<group>"; };
 		BE1B1A70235BF97200E6ED19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE351713235D375B00C13527 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		BE351717235D4C4E00C13527 /* metronomeStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metronomeStatistics.swift; sourceTree = "<group>"; };
+		BE351717235D4C4E00C13527 /* MetronomeStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeStats.swift; sourceTree = "<group>"; };
 		BE4575322365371A00BADD25 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BE7C72502360FA06005EBFF5 /* GameMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
 		BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeGameVC.swift; sourceTree = "<group>"; };
+		BEF428002367D13F00D9F021 /* TypingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingStats.swift; sourceTree = "<group>"; };
+		BEF428022367D14F00D9F021 /* GeneralStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStats.swift; sourceTree = "<group>"; };
+		BEF428042367D15D00D9F021 /* HandwritingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +136,10 @@
 		41E81C6B2366F430003313B8 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				BE351717235D4C4E00C13527 /* metronomeStatistics.swift */,
+				BE351717235D4C4E00C13527 /* MetronomeStats.swift */,
+				BEF428002367D13F00D9F021 /* TypingStats.swift */,
+				BEF428022367D14F00D9F021 /* GeneralStats.swift */,
+				BEF428042367D15D00D9F021 /* HandwritingStats.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -154,7 +163,7 @@
 		41E81C6E2366F44F003313B8 /* TypingGame */ = {
 			isa = PBXGroup;
 			children = (
-				BE1B1A5B235BF97100E6ED19 /* ViewController.swift */,
+				BE1B1A5B235BF97100E6ED19 /* TypingGame.swift */,
 			);
 			path = TypingGame;
 			sourceTree = "<group>";
@@ -162,7 +171,7 @@
 		41E81C6F2366F458003313B8 /* HandwritingPractice */ = {
 			isa = PBXGroup;
 			children = (
-				83F22F052362280500AA0D94 /* HandwritingStatisticsViewController.swift */,
+				83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */,
 			);
 			path = HandwritingPractice;
 			sourceTree = "<group>";
@@ -311,11 +320,14 @@
 			files = (
 				41E81C732366F605003313B8 /* Setting.swift in Sources */,
 				BE4575332365371A00BADD25 /* CircleView.swift in Sources */,
-				83F22F062362280500AA0D94 /* HandwritingStatisticsViewController.swift in Sources */,
+				BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */,
+				BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */,
+				83F22F062362280500AA0D94 /* HandwritingPracticeVC.swift in Sources */,
+				BEF428012367D13F00D9F021 /* TypingStats.swift in Sources */,
 				BE7C725323610C5E005EBFF5 /* MetronomeGameVC.swift in Sources */,
-				BE1B1A5C235BF97100E6ED19 /* ViewController.swift in Sources */,
+				BE1B1A5C235BF97100E6ED19 /* TypingGame.swift in Sources */,
 				BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */,
-				BE351718235D4C4E00C13527 /* metronomeStatistics.swift in Sources */,
+				BE351718235D4C4E00C13527 /* MetronomeStats.swift in Sources */,
 				41E81C712366F58C003313B8 /* Paragraph.swift in Sources */,
 				BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */,
 				BE351714235D375B00C13527 /* StartViewController.swift in Sources */,
@@ -481,7 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NeuroKinetic/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NeuroKinetic/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,7 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NeuroKinetic/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NeuroKinetic/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

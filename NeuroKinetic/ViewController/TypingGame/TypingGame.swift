@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TypingGameViewController.swift
 //  NeuroKinetic
 //
 //  Created by nmaeda on 10/19/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TypingGame: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

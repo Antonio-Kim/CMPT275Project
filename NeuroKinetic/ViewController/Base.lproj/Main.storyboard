@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="134.407027818448" y="133.59375"/>
         </scene>
-        <!--View Controller-->
+        <!--Handwriting Practice-->
         <scene sceneID="1ki-Gu-7JI">
             <objects>
-                <viewController id="zRe-Jb-N92" sceneMemberID="viewController">
+                <viewController id="zRe-Jb-N92" customClass="HandwritingPractice" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UHX-0i-cD5">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="1242" y="891"/>
         </scene>
-        <!--View Controller-->
+        <!--Typing Game-->
         <scene sceneID="vpg-LV-caZ">
             <objects>
-                <viewController id="eDZ-5X-ixT" sceneMemberID="viewController">
+                <viewController id="eDZ-5X-ixT" customClass="TypingGame" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mda-vb-nhx">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="1881" y="891"/>
         </scene>
-        <!--Handwriting Statistics-->
+        <!--Handwriting Stats-->
         <scene sceneID="SkR-sW-Vud">
             <objects>
-                <viewController restorationIdentifier="handwritingStatistics" storyboardIdentifier="handwritingStatistics" id="imK-4k-K42" customClass="handwritingStatistics" sceneMemberID="viewController">
+                <viewController restorationIdentifier="handwritingStatistics" storyboardIdentifier="handwritingStatistics" id="imK-4k-K42" customClass="HandwritingStats" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qkh-aQ-xB3">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -434,10 +434,10 @@
             </objects>
             <point key="canvasLocation" x="552.51798561151077" y="891.36690647482021"/>
         </scene>
-        <!--Handwriting Statistics-->
+        <!--Metronome Stats-->
         <scene sceneID="9VU-ur-fff">
             <objects>
-                <viewController storyboardIdentifier="MetronomeStatistics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z2U-WD-Kfm" customClass="handwritingStatistics" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MetronomeStatistics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z2U-WD-Kfm" customClass="MetronomeStats" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hnt-uK-nSW">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -481,10 +481,10 @@
             </objects>
             <point key="canvasLocation" x="54" y="-1052"/>
         </scene>
-        <!--Handwriting Statistics-->
+        <!--Typing Stats-->
         <scene sceneID="CRE-Ld-BlL">
             <objects>
-                <viewController storyboardIdentifier="TypingStatistics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bs3-ZP-Zne" customClass="handwritingStatistics" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TypingStatistics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bs3-ZP-Zne" customClass="TypingStats" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WdQ-zf-0Gl">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -528,10 +528,10 @@
             </objects>
             <point key="canvasLocation" x="1458.7115666178622" y="-1052.34375"/>
         </scene>
-        <!--Handwriting Statistics-->
+        <!--General Stats-->
         <scene sceneID="LD8-nD-1NM">
             <objects>
-                <viewController storyboardIdentifier="GeneralStatistics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K5p-G4-dym" customClass="handwritingStatistics" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GeneralStatistics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K5p-G4-dym" customClass="GeneralStats" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s0C-mD-AL7">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -574,9 +574,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ERi-x1-JKb"/>
-        <segue reference="yzq-G9-nTb"/>
-        <segue reference="FzK-bU-J74"/>
-        <segue reference="iNj-2p-92K"/>
+        <segue reference="GH1-F3-uPf"/>
+        <segue reference="U1s-Ul-uJJ"/>
+        <segue reference="MlM-9w-c64"/>
+        <segue reference="vnR-XQ-OKg"/>
     </inferredMetricsTieBreakers>
 </document>

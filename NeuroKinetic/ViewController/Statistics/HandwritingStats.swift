@@ -1,14 +1,14 @@
 //
-//  Setting.swift
+//  HandwritingStats.swift
 //  NeuroKinetic
 //
-//  Created by Rico Chao on 2019-10-28.
+//  Created by nmaeda on 10/28/19.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
 import UIKit
 
-class Setting: UIViewController {
+class HandwritingStats: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
