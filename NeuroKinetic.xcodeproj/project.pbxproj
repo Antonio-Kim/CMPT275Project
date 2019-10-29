@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
 		41E81C732366F605003313B8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C722366F605003313B8 /* Setting.swift */; };
+		41E81C752367DA91003313B8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C742367DA91003313B8 /* Word.swift */; };
+		41E81C772367DC2F003313B8 /* ParagraphBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C762367DC2F003313B8 /* ParagraphBank.swift */; };
 		83F22F062362280500AA0D94 /* HandwritingPracticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */; };
 		BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */; };
 		BE1B1A5C235BF97100E6ED19 /* TypingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A5B235BF97100E6ED19 /* TypingGame.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		41E81C722366F605003313B8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		41E81C742367DA91003313B8 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		41E81C762367DC2F003313B8 /* ParagraphBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphBank.swift; sourceTree = "<group>"; };
 		83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingPracticeVC.swift; sourceTree = "<group>"; };
 		BE1B1A56235BF97100E6ED19 /* NeuroKinetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroKinetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				41E81C702366F58C003313B8 /* Paragraph.swift */,
+				41E81C742367DA91003313B8 /* Word.swift */,
+				41E81C762367DC2F003313B8 /* ParagraphBank.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,7 +325,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E81C732366F605003313B8 /* Setting.swift in Sources */,
+				41E81C752367DA91003313B8 /* Word.swift in Sources */,
 				BE4575332365371A00BADD25 /* CircleView.swift in Sources */,
+				41E81C772367DC2F003313B8 /* ParagraphBank.swift in Sources */,
 				BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */,
 				BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */,
 				83F22F062362280500AA0D94 /* HandwritingPracticeVC.swift in Sources */,
