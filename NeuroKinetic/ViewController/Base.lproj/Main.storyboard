@@ -317,18 +317,39 @@
                                     <action selector="TAP:" destination="uiR-MZ-HIV" eventType="touchUpInside" id="6Ea-Mj-9gJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g39-YO-URd">
+                                <rect key="frame" x="200" y="784" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6Zj-L2-jDc"/>
+                                    <constraint firstAttribute="width" constant="50" id="ir1-hz-FLp"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZr-cv-WXq" userLabel="Right">
+                                <rect key="frame" x="1116" y="784" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="6aQ-0T-Lz0"/>
+                                    <constraint firstAttribute="height" constant="50" id="nFA-Ux-QoG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="g39-YO-URd" firstAttribute="leading" secondItem="AO5-ui-PWJ" secondAttribute="leading" constant="200" id="9rz-ak-8LA"/>
+                            <constraint firstItem="KZr-cv-WXq" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="760" id="Dxi-3S-Y7v"/>
                             <constraint firstItem="mcz-KG-jFA" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="40" id="JAe-hS-zqy"/>
                             <constraint firstItem="AO5-ui-PWJ" firstAttribute="trailing" secondItem="mcz-KG-jFA" secondAttribute="trailing" constant="20" id="KAj-sP-gun"/>
+                            <constraint firstItem="AO5-ui-PWJ" firstAttribute="trailing" secondItem="KZr-cv-WXq" secondAttribute="trailing" constant="200" id="L6U-4h-dIg"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="Xm6-j4-gni"/>
+                            <constraint firstItem="g39-YO-URd" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="760" id="aUx-yh-axQ"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="centerY" secondItem="Aed-E0-NbH" secondAttribute="centerY" id="ntV-h4-TCd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AO5-ui-PWJ"/>
                     </view>
                     <connections>
                         <outlet property="label" destination="3GR-Vu-4dS" id="qvW-fX-nhL"/>
+                        <outlet property="left" destination="g39-YO-URd" id="sMN-3P-sU6"/>
+                        <outlet property="right" destination="KZr-cv-WXq" id="xVs-KZ-n9G"/>
                         <outlet property="tap" destination="odz-5O-Qhe" id="A2i-od-0OK"/>
                         <outlet property="tapAndwait" destination="Vk4-oH-508" id="07F-yd-ZCV"/>
                     </connections>
@@ -575,7 +596,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GH1-F3-uPf"/>
-        <segue reference="U1s-Ul-uJJ"/>
+        <segue reference="yzq-G9-nTb"/>
         <segue reference="MlM-9w-c64"/>
         <segue reference="vnR-XQ-OKg"/>
     </inferredMetricsTieBreakers>

@@ -21,6 +21,7 @@
 		BE4575332365371A00BADD25 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4575322365371A00BADD25 /* CircleView.swift */; };
 		BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C72502360FA06005EBFF5 /* GameMenu.swift */; };
 		BE7C725323610C5E005EBFF5 /* MetronomeGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */; };
+		BE9FFDE72368C4C4006704D6 /* metronomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE9FFDE62368C4B5006704D6 /* metronomeSound.mp3 */; };
 		BEF428012367D13F00D9F021 /* TypingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428002367D13F00D9F021 /* TypingStats.swift */; };
 		BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428022367D14F00D9F021 /* GeneralStats.swift */; };
 		BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428042367D15D00D9F021 /* HandwritingStats.swift */; };
@@ -55,6 +56,7 @@
 		BE4575322365371A00BADD25 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BE7C72502360FA06005EBFF5 /* GameMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
 		BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeGameVC.swift; sourceTree = "<group>"; };
+		BE9FFDE62368C4B5006704D6 /* metronomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronomeSound.mp3; sourceTree = "<group>"; };
 		BEF428002367D13F00D9F021 /* TypingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingStats.swift; sourceTree = "<group>"; };
 		BEF428022367D14F00D9F021 /* GeneralStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStats.swift; sourceTree = "<group>"; };
 		BEF428042367D15D00D9F021 /* HandwritingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStats.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		41E81C6A2366F3D9003313B8 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				BE9FFDE62368C4B5006704D6 /* metronomeSound.mp3 */,
 				BE1B1A62235BF97200E6ED19 /* LaunchScreen.storyboard */,
 				BE1B1A65235BF97200E6ED19 /* Info.plist */,
 			);
@@ -301,6 +304,7 @@
 				BE1B1A64235BF97200E6ED19 /* LaunchScreen.storyboard in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
 				BE1B1A5F235BF97100E6ED19 /* Main.storyboard in Resources */,
+				BE9FFDE72368C4C4006704D6 /* metronomeSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
