@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+
 /*
 let timer = Timer.scheduledTimer(TimeInterval: 1, target: self, Selector: #selector(update), userInfo: nil, repeats: true)
 */
@@ -51,16 +52,26 @@ class MetronomeGame: UIViewController {
     var isWait:Bool = false
     
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var tapAndwait: UILabel!
     @IBOutlet weak var tap: UIButton!
+    //TAP buttons
     @IBOutlet weak var left: UIButton!
     @IBOutlet weak var right: UIButton!
+    @IBOutlet weak var soundNote: UIImageView!
+    
     
     
     //MARK: Properties
     override func viewDidLoad() {
         super.viewDidLoad()
         
+                let button = UIButton()
+        button.frame = CGRect(x: 10, y:100, width:100,height:100)
+        
+        self.view.addSubview(button)
+        
+        setupButtonStyle(button: left, color: UIColor.red)
+        setupButtonStyle(button: right, color: UIColor.red)
+ 
         let sound = Bundle.main.path(forResource:"metronomeSound", ofType: "mp3")
         
         do{
@@ -69,23 +80,26 @@ class MetronomeGame: UIViewController {
         catch{
             print(error)
         }
-        left.layer.cornerRadius = 0.5 * left.bounds.size.width
-        left.clipsToBounds = true
-        left.backgroundColor = UIColor.red
-        right.layer.cornerRadius = 0.5 * left.bounds.size.width
-        right.clipsToBounds = true
-        right.backgroundColor = UIColor.red
-        /*
-        view.addSubview(circleView)
-        frameView.tintColor = UIColor.black
-        view.addSubview(frameView)
-        */
+       
+
     }
+    
     
     @IBAction func TAP(_ sender: UIButton) {
         //start
         if(tapCount == 0)
         {
+            
+            UIView.animate(withDuration: 2)
+            {
+                self.soundNote.frame.origin.x = self.right.frame.origin.x
+                
+            }
+            UIView.animate(withDuration: 2)
+            {
+                self.soundNote.frame.origin.x = self.left.frame.origin.x
+                
+            }
             tap.setTitle("TAP!", for: .normal)
             audioPlayer.play()
             //isWait = false
@@ -103,9 +117,6 @@ class MetronomeGame: UIViewController {
         }
         tapCount = tapCount + 1
     }
-
-    
-    
     /*
     // MARK: - Navigation
 

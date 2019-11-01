@@ -25,6 +25,7 @@
 		BEF428012367D13F00D9F021 /* TypingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428002367D13F00D9F021 /* TypingStats.swift */; };
 		BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428022367D14F00D9F021 /* GeneralStats.swift */; };
 		BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428042367D15D00D9F021 /* HandwritingStats.swift */; };
+		BEF88B90236BD24700709EC9 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = BEF88B8F236BD24700709EC9 /* new.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		BEF428002367D13F00D9F021 /* TypingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingStats.swift; sourceTree = "<group>"; };
 		BEF428022367D14F00D9F021 /* GeneralStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStats.swift; sourceTree = "<group>"; };
 		BEF428042367D15D00D9F021 /* HandwritingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStats.swift; sourceTree = "<group>"; };
+		BEF88B8F236BD24700709EC9 /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new.png; path = ../../../../../Downloads/new.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				BE1B1A60235BF97200E6ED19 /* Assets.xcassets */,
+				BEF88B8F236BD24700709EC9 /* new.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF88B90236BD24700709EC9 /* new.png in Resources */,
 				BE1B1A64235BF97200E6ED19 /* LaunchScreen.storyboard in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
 				BE1B1A5F235BF97100E6ED19 /* Main.storyboard in Resources */,
