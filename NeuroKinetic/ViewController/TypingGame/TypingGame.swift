@@ -17,16 +17,17 @@ extension String {
     }
 }
 
-class ViewController: UIViewController {
+class TypingGame: UIViewController {
     
     @IBOutlet weak var instructionsLabel: UILabel!
     
     @IBOutlet weak var paragraphView: UILabel!
     
     @IBOutlet weak var typingTextField: UITextField!
-
-    @IBOutlet weak var nextButton: UIButton!
-
+    
+    @IBOutlet weak var doneButton: UIButton!
+    
+    
     var wordCount: Int = 0
     
     var wordElement: Int = 0
@@ -62,7 +63,7 @@ class ViewController: UIViewController {
         paragraphView.textAlignment = NSTextAlignment.justified
         
         //When user starts typing (might move to the keyboard button
-//        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        //        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
     @IBAction func typingTextFieldEditingChanged(_ sender: UITextField) {
@@ -89,7 +90,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     //Hiding keyboard (might be a problem?)
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
@@ -141,10 +142,11 @@ class ViewController: UIViewController {
             instructionsLabel.text = "NANI?? NO PARAGRAPHS??"
             return
         }
- 
+        
         
     }
     
 }
+
 
 
