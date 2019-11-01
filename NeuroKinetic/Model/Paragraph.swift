@@ -9,36 +9,25 @@
 import Foundation
 
 class Paragraph {
-    
+
     var paragraphWordCount: Int
-    
+
     var paragraph: String
-    
-    var word: Word
-    
+
+    var wordArr: [String]
+
     init() {
         paragraphWordCount = 0
         paragraph = ""
-        word.init()
+        wordArr = []
     }
-    
-    func findWordCount(paragraph: String) -> Int {
+
+    func findWordCount(paragraph: String, index: Int) -> Int {
         
-        while(false) {
-            
-            
-        }
+        wordArr = paragraph.components(separatedBy: " ")
         
-        
+        paragraphWordCount = wordArr.count
         
         return paragraphWordCount
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }

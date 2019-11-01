@@ -10,8 +10,18 @@ import Foundation
 
 class Word {
     
-    var word: String = ""
-    var charCount: Int = 0
+    var word: String
+    var charCount: Int
+    
+    init(word: String) {
+        self.word = word
+        charCount = 0
+    }
+    
+    init() {
+        word = ""
+        charCount = 0
+    }
     
     func getWord() -> String {
         return word
@@ -22,10 +32,12 @@ class Word {
     }
     
     func getCharCount() -> Int {
+        charCount = word.count
         return charCount
     }
     
     func setCharCount(charNum: Int) {
         charCount = charNum
     }
+    
 }
