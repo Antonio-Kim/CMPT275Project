@@ -9,8 +9,6 @@
 import UIKit
 
 class CanvasView: UIView {
-
-
         func undo() {
             _ = lines.popLast()
             setNeedsDisplay()
@@ -18,6 +16,11 @@ class CanvasView: UIView {
         func clear() {
             lines.removeAll()
             setNeedsDisplay()
+        }
+        override func layoutSubviews() {
+            self.clipsToBounds = true
+            self.isMultipleTouchEnabled = false
+            self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "writingGuideline.png"))
         }
         fileprivate var lines = [[CGPoint]]()
         override func draw( _ rect: CGRect){

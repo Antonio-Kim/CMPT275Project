@@ -10,6 +10,7 @@ import UIKit
 
 class HandwritingPractice: UIViewController {
     
+    
     let canvas = CanvasView()
     let undoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -32,14 +33,14 @@ class HandwritingPractice: UIViewController {
     @objc func handleClear() {
         canvas.clear()
     }
-    override func loadView() {
-        self.view = canvas
-    }
+//    override func loadView() {
+//        self.view = canvas
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //view.addSubview(canvas)
-        canvas.backgroundColor = .white
+        canvas.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "writingGuideline.png"))
         setupLayout()
     }
     fileprivate func setupLayout() {
@@ -57,5 +58,15 @@ class HandwritingPractice: UIViewController {
             view.trailingAnchor).isActive = true
     }
 
-
+    @IBOutlet weak var SentenceBank: UILabel!
+    fileprivate func generateSentence(){
+        let number = Int.random(in: 0 ..< 10)
+        //switch number {
+        //case 1:
+        //    SentenceBank.text = "The Toronto Raptors"
+        //}
+    }
+    
+    
+    
 }
