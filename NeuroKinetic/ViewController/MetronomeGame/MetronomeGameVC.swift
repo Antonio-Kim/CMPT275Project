@@ -89,21 +89,22 @@ class MetronomeGame: UIViewController {
         //start
         if(tapCount == 0)
         {
-            
-            UIView.animate(withDuration: 2)
-            {
-                self.soundNote.frame.origin.x = self.right.frame.origin.x
-                
-            }
-            UIView.animate(withDuration: 2)
-            {
-                self.soundNote.frame.origin.x = self.left.frame.origin.x
-                
-            }
-            tap.setTitle("TAP!", for: .normal)
+            //var sec = 0.0
             audioPlayer.play()
-            //isWait = false
+            UIView.animate(withDuration: 2, delay: 0.0, options: .curveLinear, animations: {
+                self.soundNote.frame.origin.x = self.right.frame.origin.x
+            } , completion:{ finished in })
+            UIView.animate(withDuration: 2, delay: 2, options: .curveLinear, animations: {
+                self.soundNote.frame.origin.x = self.left.frame.origin.x
+            } , completion:{ finished in })
+            //tap.setTitle("TAP!", for: .normal)
+            
         }
+        
+    
+            
+            
+            //isWait = false
         //while playing
         else if(!isWait)
         {

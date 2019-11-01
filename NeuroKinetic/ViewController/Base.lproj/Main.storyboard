@@ -600,11 +600,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="new.png" width="399" height="399"/>
+        <image name="new.png" width="980" height="982"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GH1-F3-uPf"/>
-        <segue reference="juw-aA-8ZG"/>
+        <segue reference="yzq-G9-nTb"/>
         <segue reference="MlM-9w-c64"/>
         <segue reference="vnR-XQ-OKg"/>
     </inferredMetricsTieBreakers>

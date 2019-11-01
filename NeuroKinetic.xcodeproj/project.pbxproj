@@ -10,6 +10,7 @@
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
 		41E81C732366F605003313B8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C722366F605003313B8 /* Setting.swift */; };
 		83F22F062362280500AA0D94 /* HandwritingPracticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */; };
+		BE0EBEAA236CB776007329C5 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = BE0EBEA9236CB776007329C5 /* new.png */; };
 		BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */; };
 		BE1B1A5C235BF97100E6ED19 /* TypingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A5B235BF97100E6ED19 /* TypingGame.swift */; };
 		BE1B1A5F235BF97100E6ED19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1B1A5D235BF97100E6ED19 /* Main.storyboard */; };
@@ -25,7 +26,6 @@
 		BEF428012367D13F00D9F021 /* TypingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428002367D13F00D9F021 /* TypingStats.swift */; };
 		BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428022367D14F00D9F021 /* GeneralStats.swift */; };
 		BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428042367D15D00D9F021 /* HandwritingStats.swift */; };
-		BEF88B90236BD24700709EC9 /* new.png in Resources */ = {isa = PBXBuildFile; fileRef = BEF88B8F236BD24700709EC9 /* new.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,7 @@
 		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		41E81C722366F605003313B8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingPracticeVC.swift; sourceTree = "<group>"; };
+		BE0EBEA9236CB776007329C5 /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new.png; sourceTree = "<group>"; };
 		BE1B1A56235BF97100E6ED19 /* NeuroKinetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroKinetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE1B1A5B235BF97100E6ED19 /* TypingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingGame.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		BEF428002367D13F00D9F021 /* TypingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingStats.swift; sourceTree = "<group>"; };
 		BEF428022367D14F00D9F021 /* GeneralStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStats.swift; sourceTree = "<group>"; };
 		BEF428042367D15D00D9F021 /* HandwritingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStats.swift; sourceTree = "<group>"; };
-		BEF88B8F236BD24700709EC9 /* new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new.png; path = ../../../../../Downloads/new.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				BE1B1A60235BF97200E6ED19 /* Assets.xcassets */,
-				BEF88B8F236BD24700709EC9 /* new.png */,
+				BE0EBEA9236CB776007329C5 /* new.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -304,8 +304,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEF88B90236BD24700709EC9 /* new.png in Resources */,
 				BE1B1A64235BF97200E6ED19 /* LaunchScreen.storyboard in Resources */,
+				BE0EBEAA236CB776007329C5 /* new.png in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
 				BE1B1A5F235BF97100E6ED19 /* Main.storyboard in Resources */,
 				BE9FFDE72368C4C4006704D6 /* metronomeSound.mp3 in Resources */,
