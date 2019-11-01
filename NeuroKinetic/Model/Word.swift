@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Word {
+class Word {    //might not need it
     
     var word: String
     var charCount: Int

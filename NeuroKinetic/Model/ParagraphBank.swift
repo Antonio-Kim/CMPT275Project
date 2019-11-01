@@ -79,6 +79,8 @@ class ParagraphBank {
         
         paragraph.paragraph = temp
         
+        paragraph.paragraphWordCount = paragraph.findWordCount(paragraph: paragraph.paragraph)
+        
         paragraphNum = paragraphNumber
         
         return temp

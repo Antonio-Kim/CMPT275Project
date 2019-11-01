@@ -10,14 +10,21 @@ import UIKit
 
 let timeLimit = 600 //10 minutes
 
-class TypingGame: UIViewController {
+//checks if input character is either a-z, A-Z, or 0-9
+extension String {
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+}
+
+class ViewController: UIViewController {
     
     @IBOutlet weak var instructionsLabel: UILabel!
     
-    @IBOutlet weak var paragraphScrollView: UIScrollView!
+    @IBOutlet weak var paragraphView: UILabel!
     
     @IBOutlet weak var typingTextField: UITextField!
-    
+
     @IBOutlet weak var nextButton: UIButton!
 
     var wordCount: Int = 0
@@ -42,20 +49,39 @@ class TypingGame: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        
         chooseParagraph()
+        
+        instructionsLabel.text = "Type the following paragraph"
+        
+        paragraphView.text = paragraphDisplay
+        paragraphView.numberOfLines = 0
+        //paragraphView.size
+        paragraphView.textAlignment = NSTextAlignment.justified
         
         //When user starts typing (might move to the keyboard button
 //        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
-    /**
-            Show the keyboard
-     */
+    @IBAction func typingTextFieldEditingChanged(_ sender: UITextField) {
+        
+        if typingTextField.text == " " {
+            updateParagraph()
+            wordElement += 1
+        }else if typingTextField.text!.isAlphanumeric {
+            typedWord = typingTextField.text!
+        }
+        
+        if(typedWord == paragraphList.paragraph.wordArr[wordElement]) {
+            //turn word to green
+            //print correct
+            
+        }
+    }
+    
+    //Showing keyboard
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -63,21 +89,17 @@ class TypingGame: UIViewController {
             }
         }
     }
-    
-    /**
-            Hide the keyboard
-     */
+
+    //Hiding keyboard (might be a problem?)
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
     
-    
+    //Pick paragraph from list
     func chooseParagraph() {
-        let tempNum: Int = Int.random(in:1...15);
-        
-        paragraphList.paragraphNum = tempNum
+        let tempNum: Int = Int.random(in:0...15);
         
         paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
     }
@@ -85,45 +107,44 @@ class TypingGame: UIViewController {
     //Chekc if correct or wrong and also if it is last word
     func checkWord() {
         
+        if typedWord == paragraphList.paragraph.wordArr[wordElement] {
+            
+            //green colour word
+        }
         
+        
+        
+        if (wordElement+1) == paragraphList.paragraph.wordArr.count {
+            completeParagraph = true;
+        }
         
         
     }
     
+    //update paragraph text view
     func updateParagraph() {
-        guard let t1: String = typingTextField?.text else {
-            //instructionsLabel.
+        //Check to make sure instruction label is not nil
+        guard let _: String = instructionsLabel?.text else {
+            instructionsLabel.text = "NO INSTRUCTIONS??"
             return
         }
         
-        //typedWord = typingTextField.text
-        
-        //Keep looping until paragraph is complete or time exceeds time limi
-        while /*time != timeLimit || */ !completeParagraph {
-            
-//            if /* space is pressed */ {
-//                //check word
-//                //word flag set
-//
-//                //if typedWord == wordArr[wordElement] {
-//                //
-//                //
-//                //}
-//
-//            }
-            
-                
-        
-//        if typedWord == paragraphWord {
-//            //green
-//        }
+        //Check to make sure typing text field is not nil
+        //Might not need it if we are updating/emptying out text field
+        guard let _: String = typingTextField?.text else {
+            instructionsLabel.text = "Please type something"
+            return
         }
+        
+        //Check to make sure paragraph view is not nil
+        guard let _: String = paragraphView?.text else {
+            instructionsLabel.text = "NANI?? NO PARAGRAPHS??"
+            return
+        }
+ 
+        
     }
     
-
-    
-        
-    
-
 }
+
 

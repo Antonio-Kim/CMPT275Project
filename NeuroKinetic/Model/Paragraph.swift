@@ -22,11 +22,16 @@ class Paragraph {
         wordArr = []
     }
 
-    func findWordCount(paragraph: String, index: Int) -> Int {
+    //Returns paragraphWordCount
+    func findWordCount(paragraph: String) -> Int {
         
-        wordArr = paragraph.components(separatedBy: " ")
+        if paragraph == "" {
+            return 0
+        }
         
-        paragraphWordCount = wordArr.count
+        wordArr = paragraph.components(separatedBy: " ")    //Stores words in the array
+        
+        paragraphWordCount = wordArr.count  //Sets word count for paragraph
         
         return paragraphWordCount
     }
