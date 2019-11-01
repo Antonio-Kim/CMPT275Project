@@ -50,6 +50,7 @@ class MetronomeGame: UIViewController {
     var tapCount:Int = 0;
     var str = "0"
     var isWait:Bool = false
+    var didStart: Bool = false
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tap: UIButton!
@@ -59,64 +60,80 @@ class MetronomeGame: UIViewController {
     @IBOutlet weak var soundNote: UIImageView!
     
     
+    //sound note moves to the right tap button
+    func moveRight()
+    {
+        UIView.animate(withDuration: 2,
+                       delay: 0.0,
+                       options: .curveLinear,
+                       animations: {
+                        self.soundNote.frame.origin.x = self.right.frame.origin.x
+                        
+        } ,
+                       completion:{
+                        finished in
+                        self.audioPlayer.play()
+                        self.moveLeft()
+        })
+    }
+    //sound note moves to the left tap button
+    func moveLeft()
+    {
+        UIView.animate(withDuration: 2,
+                       delay: 0.0,
+                       options: .curveLinear,
+                       animations: {
+                        self.soundNote.frame.origin.x = self.left.frame.origin.x
+                        
+        } ,
+                       completion:{
+                        finished in
+                        self.audioPlayer.play()
+                        self.moveRight()
+        })
+    }
+    
+    //start button disappears
+    func startDisappear()
+    {
+        UIView.animate(withDuration: 2,
+                       animations:{self.tap.alpha = 0} )
+        self.tap.removeFromSuperview()
+    }
+    
+    
     
     //MARK: Properties
     override func viewDidLoad() {
         super.viewDidLoad()
         
-                let button = UIButton()
-        button.frame = CGRect(x: 10, y:100, width:100,height:100)
-        
-        self.view.addSubview(button)
-        
+        //let button = UIButton()
+        //button.frame = CGRect(x: 10, y:100, width:100,height:100)
+        //self.view.addSubview(button)
+        //initialize two buttons
         setupButtonStyle(button: left, color: UIColor.red)
         setupButtonStyle(button: right, color: UIColor.red)
- 
-        let sound = Bundle.main.path(forResource:"metronomeSound", ofType: "mp3")
         
+        //initialize sound file
+        let sound = Bundle.main.path(forResource:"metronomeSound(2)", ofType: "mp3")
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
         }
         catch{
             print(error)
         }
-       
-
     }
     
-    
+    //starts the game
     @IBAction func TAP(_ sender: UIButton) {
-        //start
-        if(tapCount == 0)
+        if(!didStart)
         {
-            //var sec = 0.0
-            audioPlayer.play()
-            UIView.animate(withDuration: 2, delay: 0.0, options: .curveLinear, animations: {
-                self.soundNote.frame.origin.x = self.right.frame.origin.x
-            } , completion:{ finished in })
-            UIView.animate(withDuration: 2, delay: 2, options: .curveLinear, animations: {
-                self.soundNote.frame.origin.x = self.left.frame.origin.x
-            } , completion:{ finished in })
-            //tap.setTitle("TAP!", for: .normal)
-            
+            //move right initiates animation chain
+            moveRight()
+            //start button disappears
+            startDisappear()
+            didStart = true
         }
-        
-    
-            
-            
-            //isWait = false
-        //while playing
-        else if(!isWait)
-        {
-            label.text = String(tapCount)
-            //pulse()
-            tap.setTitle("WAIT", for: .normal)
-            let seconds = 0.5
-            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                self.tap.setTitle("TAP!", for: .normal)
-            }
-        }
-        tapCount = tapCount + 1
     }
     /*
     // MARK: - Navigation
