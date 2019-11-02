@@ -10,10 +10,30 @@ import UIKit
 
 let timeLimit = 600 //10 minutes
 
-//checks if input character is either a-z, A-Z, or 0-9
+//extensions for type String
 extension String {
-    var isAlphanumeric: Bool {
-        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    //Checks if input is a-z, A-Z, 0-9
+    var isAlphabet: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z]", options: .regularExpression) == nil
+    }
+    
+    var isNumeric: Bool {
+        return !isEmpty && range(of: "[^0-9]", options: .regularExpression) == nil
+    }
+    
+    //Checks if input is space
+    var isSpace: Bool {
+        return !isEmpty && range(of: "^\\s", options: .regularExpression) == nil
+    }
+    
+    //Checks if input is backspace
+    var isBackSpace: Bool {
+        return !isEmpty && range(of: "^\\b", options: .regularExpression) == nil
+    }
+    
+    //Checks if input is punctuation, tabs, or other things
+    var isOthers: Bool {
+        return !isEmpty && range(of: "^\\t|[^-'.%$#&/]", options: .regularExpression) == nil
     }
 }
 
@@ -26,9 +46,6 @@ class TypingGame: UIViewController {
     @IBOutlet weak var typingTextField: UITextField!
     
     @IBOutlet weak var doneButton: UIButton!
-    
-    
-    var wordCount: Int = 0
     
     var wordElement: Int = 0
     
@@ -61,25 +78,46 @@ class TypingGame: UIViewController {
         paragraphView.numberOfLines = 0
         //paragraphView.size
         paragraphView.textAlignment = NSTextAlignment.justified
-        
-        //When user starts typing (might move to the keyboard button
-        //        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
-    @IBAction func typingTextFieldEditingChanged(_ sender: UITextField) {
+    
+    @IBAction func typingTextFieldEditingChange(_ typingTextField: UITextField) {
         
-        if typingTextField.text == " " {
-            updateParagraph()
-            wordElement += 1
-        }else if typingTextField.text!.isAlphanumeric {
-            typedWord = typingTextField.text!
-        }
+        instructionsLabel.text = "Type the following paragraph"
         
-        if(typedWord == paragraphList.paragraph.wordArr[wordElement]) {
-            //turn word to green
-            //print correct
-            
+        if !completeParagraph {
+            if typingTextField.text!.isAlphabet {
+                typedWord = typingTextField.text!
+                print("😂 😂 😂 😂 😂 😂 😂 😂 😂 😂")
+            }else if typingTextField.text!.isNumeric {
+                print("NUMBER")
+            }else if typingTextField.text!.isSpace {
+                print("😂 SPACE 😂")
+                
+                if typedWord == paragraphList.paragraph.wordArr[wordElement] {
+                    //turn word to green
+                    //save to wordsCorrect
+                    //updateParagraph()
+                    
+                    //prints correct since the typed word is correct
+                    instructionsLabel.text = " 😂 100% CORRECT 😂"
+                    
+                    print(" 😂 CORRECT WORD 😂 ")
+                    
+                    typedWord = ""
+                    wordElement += 1
+                    typingTextField.text = ""
+                }
+            }else if typingTextField.text!.isBackSpace {
+                print("BACKSPACE")
+            }else if typingTextField.text!.isOthers {
+                print("OTHERS")
+            }
         }
+    
+        print(typedWord + " \(wordElement)")
+        
+        😂😂😂😂😂🆗()
     }
     
     //Showing keyboard
@@ -91,7 +129,7 @@ class TypingGame: UIViewController {
         }
     }
     
-    //Hiding keyboard (might be a problem?)
+    //Hiding keyboard
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
@@ -101,28 +139,18 @@ class TypingGame: UIViewController {
     //Pick paragraph from list
     func chooseParagraph() {
         let tempNum: Int = Int.random(in:0...15);
-        
         paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
     }
     
-    //Chekc if correct or wrong and also if it is last word
-    func checkWord() {
-        
-        if typedWord == paragraphList.paragraph.wordArr[wordElement] {
-            
-            //green colour word
-        }
-        
-        
-        
-        if (wordElement+1) == paragraphList.paragraph.wordArr.count {
+    //Check if the paragraph is complete
+    func 😂😂😂😂😂🆗() {
+        if (wordElement-1) == paragraphList.paragraph.wordArr.count {
             completeParagraph = true;
+            wordElement = 0
         }
-        
-        
     }
     
-    //update paragraph text view
+    //update paragraph text view (maybe for version 2)
     func updateParagraph() {
         //Check to make sure instruction label is not nil
         guard let _: String = instructionsLabel?.text else {
