@@ -84,8 +84,6 @@ class TypingGame: UIViewController {
     
     @IBAction func typingTextFieldEditingChange(_ typingTextField: UITextField) {
         
-        instructionsLabel.text = "Type the following paragraph"
-        
         if !completeParagraph {
             if typingTextField.text!.isAlphabet {
                 typedWord = typingTextField.text!
@@ -116,7 +114,7 @@ class TypingGame: UIViewController {
         
         print(typedWord + " \(wordElement)")
         
-        😂😂🆗()
+        🆗()
     }
     
     //Showing keyboard
@@ -142,7 +140,7 @@ class TypingGame: UIViewController {
     }
     
     //Check if the paragraph is complete
-    func 😂😂🆗() {
+    func 🆗() {
         if (wordElement-1) == paragraphList.paragraph.wordArr.count {
             completeParagraph = true;
             wordElement = 0
@@ -169,6 +167,10 @@ class TypingGame: UIViewController {
             instructionsLabel.text = "NANI?? NO PARAGRAPHS??"
             return
         }
+        
+        //for i in 0
+        
+        
         
         
     }
