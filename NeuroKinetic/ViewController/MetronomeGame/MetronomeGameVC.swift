@@ -11,31 +11,7 @@ import Foundation
 import AVFoundation
 
 
-/*
-let timer = Timer.scheduledTimer(TimeInterval: 1, target: self, Selector: #selector(update), userInfo: nil, repeats: true)
-*/
 
-/*
-let circleCenter = CGPoint(x: 600,y:600)
-let circleWidth = CGFloat(100)
-let circleHeight = circleWidth
-let circleView = CircleView(frame: CGRect(x: circleCenter.x, y: circleCenter.y, width: circleWidth, height: circleHeight))
-
-var frameView = CircleView(frame: CGRect(x: circleCenter.x, y: circleCenter.y, width: circleWidth, height: circleHeight))
-*/
-
-
-/*
-func pulse() {
-    UIView.animate(withDuration: 0.5, animations:{
-        circleView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-    }, completion: { _ in
-        UIView.animate(withDuration: 0.5, animations: {
-            circleView.transform = .identity
-        })
-    })
-}
-*/
 
 func setupButtonStyle(button : UIButton, color: UIColor){
     // Customizing Menu Button Style
@@ -52,6 +28,10 @@ class MetronomeGame: UIViewController {
     var str = "0"
     var isWait:Bool = false
     var didStart: Bool = false
+    var isGameOver: Bool = false
+    
+    
+    //let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     
     
@@ -117,8 +97,17 @@ class MetronomeGame: UIViewController {
                         finished in
                         self.tapCount += 1
                         self.audioPlayer.play()
-                        self.moveRight()
-        })
+                        if(!(self.tapCount>=19))
+                        {
+                            self.moveRight()
+                        }
+                        else
+                        {
+                            self.message.text = "GAME OVER"
+                            self.isGameOver = true
+                            self.animateFinish()
+                        }
+                        })
     }
     
     //start button disappears
@@ -129,6 +118,19 @@ class MetronomeGame: UIViewController {
         self.tap.removeFromSuperview()
     }
     
+    func animateFinish()
+    {
+        self.tap.setTitle("DONE", for: .normal)
+        UIView.animate(withDuration: 3,
+                       animations:{
+                        self.tap.alpha = 1
+                        self.right.alpha = 0
+                        self.left.alpha = 0
+                        self.soundNote.alpha = 0
+                        self.message.alpha = 0
+                        self.label.alpha = 0
+        } )
+    }
     
     
     //MARK: Properties
@@ -137,6 +139,9 @@ class MetronomeGame: UIViewController {
         
         //bring image to the front
         view.addSubview(soundNote)
+        
+        //Game Menu View Controller
+        
         
         //initialize sound file
         let sound = Bundle.main.path(forResource:"metronomeSound(2)", ofType: "mp3")
@@ -160,15 +165,27 @@ class MetronomeGame: UIViewController {
             startTime = Date.init()
             didStart = true
         }
+        if(isGameOver)
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "GameMenu")
+            self.present(controller, animated: true, completion: nil)
+        }
     }
     
     //tap buttons
     @IBAction func tapRight(_ sender: UIButton) {
-        if(didStart)
+        if(didStart && !isGameOver)
         {
             let tempTime: Date = Date.init()
             tapTime = tempTime.timeIntervalSince(startTime)
-            let difference = tapTime - expectedTime(isRight: false)
+            var difference = tapTime - expectedTime(isRight: false)
+            
+            
+            if(difference > 2.0)
+            {
+                difference -= 2.0
+            }
             label.text = String(difference)
             if(difference>0.5)
             {
@@ -182,11 +199,17 @@ class MetronomeGame: UIViewController {
     }
     
     @IBAction func tapLeft(_ sender: UIButton) {
-        if(didStart)
+        if(didStart && !isGameOver)
         {
             let tempTime: Date = Date.init()
             tapTime = tempTime.timeIntervalSince(startTime)
-            let difference = tapTime - expectedTime(isRight: false)
+            var difference = tapTime - expectedTime(isRight: false)
+            
+            
+            if(difference > 2.0)
+            {
+                difference -= 2.0
+            }
             label.text = String(difference)
             if(difference>0.5)
             {
@@ -198,7 +221,5 @@ class MetronomeGame: UIViewController {
             }
         }
     }
-    
-    
-    
+
 }
