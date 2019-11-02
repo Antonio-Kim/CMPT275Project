@@ -1,22 +1,24 @@
 //
-//  HandwritingPracticeVC.swift
+//  SentenceBank.swift
 //  NeuroKinetic
 //
-//  Created by yyonata on 10/24/19.
+//  Created by yyonata on 2019-10-31.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
 import UIKit
 
-class HandwritingPractice: UIViewController {
+class SentenceBank: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    let sentenceBank: UILabel = {
+        
+    }
     
-
     /*
     // MARK: - Navigation
 

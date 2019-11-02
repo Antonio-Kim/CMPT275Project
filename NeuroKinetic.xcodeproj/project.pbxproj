@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
 		41E81C732366F605003313B8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C722366F605003313B8 /* Setting.swift */; };
+		8379E061236BB9A600A0EDD9 /* writingGuideline.png in Resources */ = {isa = PBXBuildFile; fileRef = 8379E060236BB9A600A0EDD9 /* writingGuideline.png */; };
+		83A313BF2368F54100BC251A /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313BE2368F54100BC251A /* CanvasView.swift */; };
+		83A313C32368F98E00BC251A /* SentenceWriteCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313C22368F98E00BC251A /* SentenceWriteCanvas.swift */; };
+		83B00101236D1F31001488AA /* SignViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00100236D1F31001488AA /* SignViewControl.swift */; };
+		83B00103236D2361001488AA /* writingLines.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B00102236D2361001488AA /* writingLines.png */; };
+		83B00105236D236A001488AA /* writingLines.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B00104236D236A001488AA /* writingLines.png */; };
+		83B00107236D2587001488AA /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00106236D2587001488AA /* Word.swift */; };
+		83B00109236D25A3001488AA /* ParagraphBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00108236D25A3001488AA /* ParagraphBank.swift */; };
 		83F22F062362280500AA0D94 /* HandwritingPracticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */; };
 		BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */; };
 		BE1B1A5C235BF97100E6ED19 /* TypingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A5B235BF97100E6ED19 /* TypingGame.swift */; };
@@ -39,6 +47,14 @@
 /* Begin PBXFileReference section */
 		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		41E81C722366F605003313B8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		8379E060236BB9A600A0EDD9 /* writingGuideline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = writingGuideline.png; path = ../../../writingGuideline.png; sourceTree = "<group>"; };
+		83A313BE2368F54100BC251A /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		83A313C22368F98E00BC251A /* SentenceWriteCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceWriteCanvas.swift; sourceTree = "<group>"; };
+		83B00100236D1F31001488AA /* SignViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewControl.swift; sourceTree = "<group>"; };
+		83B00102236D2361001488AA /* writingLines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = writingLines.png; path = ../../../writingLines.png; sourceTree = "<group>"; };
+		83B00104236D236A001488AA /* writingLines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = writingLines.png; path = ../writingLines.png; sourceTree = "<group>"; };
+		83B00106236D2587001488AA /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		83B00108236D25A3001488AA /* ParagraphBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphBank.swift; sourceTree = "<group>"; };
 		83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingPracticeVC.swift; sourceTree = "<group>"; };
 		BE1B1A56235BF97100E6ED19 /* NeuroKinetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroKinetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				BE1B1A60235BF97200E6ED19 /* Assets.xcassets */,
+				83B00102236D2361001488AA /* writingLines.png */,
+				8379E060236BB9A600A0EDD9 /* writingGuideline.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -120,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				41E81C702366F58C003313B8 /* Paragraph.swift */,
+				83B00106236D2587001488AA /* Word.swift */,
+				83B00108236D25A3001488AA /* ParagraphBank.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,9 +191,28 @@
 		41E81C6F2366F458003313B8 /* HandwritingPractice */ = {
 			isa = PBXGroup;
 			children = (
-				83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */,
+				7B9BAD552368BAF50094D708 /* Controller */,
+				7B9BAD522368BA3C0094D708 /* Views */,
 			);
 			path = HandwritingPractice;
+			sourceTree = "<group>";
+		};
+		7B9BAD522368BA3C0094D708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83A313BE2368F54100BC251A /* CanvasView.swift */,
+				83A313C22368F98E00BC251A /* SentenceWriteCanvas.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7B9BAD552368BAF50094D708 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */,
+				83B00100236D1F31001488AA /* SignViewControl.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		BE1B1A4D235BF97100E6ED19 = {
@@ -183,6 +222,7 @@
 				BE1B1A58235BF97100E6ED19 /* NeuroKinetic */,
 				BE1B1A6D235BF97200E6ED19 /* NeuroKineticTests */,
 				BE1B1A57235BF97100E6ED19 /* Products */,
+				83B00104236D236A001488AA /* writingLines.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,9 +338,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B00105236D236A001488AA /* writingLines.png in Resources */,
 				BE1B1A64235BF97200E6ED19 /* LaunchScreen.storyboard in Resources */,
+				8379E061236BB9A600A0EDD9 /* writingGuideline.png in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
 				BE1B1A5F235BF97100E6ED19 /* Main.storyboard in Resources */,
+				83B00103236D2361001488AA /* writingLines.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +361,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B00109236D25A3001488AA /* ParagraphBank.swift in Sources */,
+				83A313C32368F98E00BC251A /* SentenceWriteCanvas.swift in Sources */,
 				41E81C732366F605003313B8 /* Setting.swift in Sources */,
 				BE4575332365371A00BADD25 /* CircleView.swift in Sources */,
+				83A313BF2368F54100BC251A /* CanvasView.swift in Sources */,
+				83B00107236D2587001488AA /* Word.swift in Sources */,
 				BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */,
 				BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */,
 				83F22F062362280500AA0D94 /* HandwritingPracticeVC.swift in Sources */,
@@ -331,6 +378,7 @@
 				41E81C712366F58C003313B8 /* Paragraph.swift in Sources */,
 				BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */,
 				BE351714235D375B00C13527 /* StartViewController.swift in Sources */,
+				83B00101236D1F31001488AA /* SignViewControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
