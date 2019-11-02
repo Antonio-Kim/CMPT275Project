@@ -88,11 +88,11 @@ class TypingGame: UIViewController {
         if !completeParagraph {
             if typingTextField.text!.isAlphabet {
                 typedWord = typingTextField.text!
-                print("😂 😂 😂 😂 😂 😂 😂 😂 😂 😂")
+                print("LETTER")
             }else if typingTextField.text!.isNumeric {
                 print("NUMBER")
             }else if typingTextField.text!.isSpace {
-                print("😂 SPACE 😂")
+                print("SPACE")
                 
                 if typedWord == paragraphList.paragraph.wordArr[wordElement] {
                     //turn word to green
@@ -102,14 +102,12 @@ class TypingGame: UIViewController {
                     //prints correct since the typed word is correct
                     instructionsLabel.text = " 😂 100% CORRECT 😂"
                     
-                    print(" 😂 CORRECT WORD 😂 ")
+                    print("CORRECT WORD")
                     
                     typedWord = ""
                     wordElement += 1
                     typingTextField.text = ""
                 }
-            }else if typingTextField.text!.isBackSpace {
-                print("BACKSPACE")
             }else if typingTextField.text!.isOthers {
                 print("OTHERS")
             }
@@ -117,7 +115,7 @@ class TypingGame: UIViewController {
     
         print(typedWord + " \(wordElement)")
         
-        😂😂😂😂😂🆗()
+        😂😂🆗()
     }
     
     //Showing keyboard
@@ -143,7 +141,7 @@ class TypingGame: UIViewController {
     }
     
     //Check if the paragraph is complete
-    func 😂😂😂😂😂🆗() {
+    func 😂😂🆗() {
         if (wordElement-1) == paragraphList.paragraph.wordArr.count {
             completeParagraph = true;
             wordElement = 0
