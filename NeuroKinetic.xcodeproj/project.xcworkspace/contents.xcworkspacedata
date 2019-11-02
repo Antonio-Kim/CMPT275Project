@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:NeuroKinetic.xcodeproj">
+      location = "group:../fonts">
+   </FileRef>
+   <FileRef
+      location = "group:../img">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
