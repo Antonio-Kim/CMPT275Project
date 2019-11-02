@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import AVFoundation
 
 
@@ -52,26 +53,48 @@ class MetronomeGame: UIViewController {
     var isWait:Bool = false
     var didStart: Bool = false
     
+    
+    
+    //timers
+    var startTime:Date = Date.init()
+    var tapTime: Double = 0.0
+    
+    //start button and tap count
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tap: UIButton!
+    @IBOutlet weak var message: UILabel!
+    
     //TAP buttons
-    @IBOutlet weak var left: UIButton!
     @IBOutlet weak var right: UIButton!
+    @IBOutlet weak var left: UIButton!
+    
+    
     @IBOutlet weak var soundNote: UIImageView!
     
+    func expectedTime(isRight: Bool) ->Double
+    {
+            return Double(tapCount*2+2)
+    }
     
     //sound note moves to the right tap button
     func moveRight()
     {
+        //
         UIView.animate(withDuration: 2,
                        delay: 0.0,
                        options: .curveLinear,
                        animations: {
-                        self.soundNote.frame.origin.x = self.right.frame.origin.x
+                        //if(self.didStart == false)
+                        //{
+                        //    self.tap.alpha = 0
+                        //    self.didStart = true
+                        //}
+                        self.soundNote.frame.origin.x = self.right.frame.origin.x + 100
                         
         } ,
                        completion:{
                         finished in
+                        self.tapCount += 1
                         self.audioPlayer.play()
                         self.moveLeft()
         })
@@ -83,11 +106,16 @@ class MetronomeGame: UIViewController {
                        delay: 0.0,
                        options: .curveLinear,
                        animations: {
-                        self.soundNote.frame.origin.x = self.left.frame.origin.x
-                        
+                        //if(self.didStart == false)
+                        //{
+                        //    self.tap.alpha = 0
+                        //    self.didStart = true
+                        //}
+                        self.soundNote.frame.origin.x = self.left.frame.origin.x + 100
         } ,
                        completion:{
                         finished in
+                        self.tapCount += 1
                         self.audioPlayer.play()
                         self.moveRight()
         })
@@ -107,12 +135,8 @@ class MetronomeGame: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let button = UIButton()
-        //button.frame = CGRect(x: 10, y:100, width:100,height:100)
-        //self.view.addSubview(button)
-        //initialize two buttons
-        setupButtonStyle(button: left, color: UIColor.red)
-        setupButtonStyle(button: right, color: UIColor.red)
+        //bring image to the front
+        view.addSubview(soundNote)
         
         //initialize sound file
         let sound = Bundle.main.path(forResource:"metronomeSound(2)", ofType: "mp3")
@@ -122,27 +146,59 @@ class MetronomeGame: UIViewController {
         catch{
             print(error)
         }
+    
     }
     
     //starts the game
     @IBAction func TAP(_ sender: UIButton) {
+        //starting game
         if(!didStart)
         {
-            //move right initiates animation chain
+            //startTime = Date.init()
+            UIView.animate(withDuration: 2, animations:{self.tap.alpha = 0} )
             moveRight()
-            //start button disappears
-            startDisappear()
+            startTime = Date.init()
             didStart = true
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //tap buttons
+    @IBAction func tapRight(_ sender: UIButton) {
+        if(didStart)
+        {
+            let tempTime: Date = Date.init()
+            tapTime = tempTime.timeIntervalSince(startTime)
+            let difference = tapTime - expectedTime(isRight: false)
+            label.text = String(difference)
+            if(difference>0.5)
+            {
+                message.text = "Not Good"
+            }
+            else
+            {
+                message.text = "Good"
+            }
+        }
     }
-    */
-
+    
+    @IBAction func tapLeft(_ sender: UIButton) {
+        if(didStart)
+        {
+            let tempTime: Date = Date.init()
+            tapTime = tempTime.timeIntervalSince(startTime)
+            let difference = tapTime - expectedTime(isRight: false)
+            label.text = String(difference)
+            if(difference>0.5)
+            {
+                message.text = "Not Good"
+            }
+            else
+            {
+                message.text = "Good"
+            }
+        }
+    }
+    
+    
+    
 }

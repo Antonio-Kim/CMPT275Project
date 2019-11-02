@@ -311,41 +311,53 @@
                                     <action selector="TAP:" destination="uiR-MZ-HIV" eventType="touchUpInside" id="6Ea-Mj-9gJ"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new.png" translatesAutoresizingMaskIntoConstraints="NO" id="rhc-yb-lTa">
+                                <rect key="frame" x="633" y="744" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="WVu-MX-9hi"/>
+                                    <constraint firstAttribute="width" constant="100" id="vzp-1v-3hm"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="233" translatesAutoresizingMaskIntoConstraints="NO" id="o7k-rA-d9F">
                                 <rect key="frame" x="94" y="744" width="1178" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTP-3x-7Wl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrh-eD-HpO">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="3BJ-Xw-VKO"/>
-                                            <constraint firstAttribute="height" constant="100" id="giA-IX-QHu"/>
+                                            <constraint firstAttribute="height" constant="100" id="GNz-7n-dTF"/>
+                                            <constraint firstAttribute="width" constant="100" id="KzP-PF-0X6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <size key="titleShadowOffset" width="12" height="0.0"/>
-                                        <state key="normal" title="TAP"/>
+                                        <state key="normal" title="left" image="tapButton.png"/>
+                                        <connections>
+                                            <action selector="tapLeft:" destination="uiR-MZ-HIV" eventType="touchUpInside" id="mwh-pu-R2w"/>
+                                        </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new.png" translatesAutoresizingMaskIntoConstraints="NO" id="rhc-yb-lTa">
-                                        <rect key="frame" x="539" y="0.0" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="WVu-MX-9hi"/>
-                                            <constraint firstAttribute="width" constant="100" id="vzp-1v-3hm"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1Q-Q3-ULd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4q-fu-7Oe">
                                         <rect key="frame" x="1078" y="0.0" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="Kt9-jc-rgX"/>
-                                            <constraint firstAttribute="width" constant="100" id="oSM-gp-ZLQ"/>
+                                            <constraint firstAttribute="height" constant="100" id="NGl-iG-OEo"/>
+                                            <constraint firstAttribute="width" constant="100" id="Xgy-Ij-T2n"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <state key="normal" title="TAP"/>
+                                        <state key="normal" title="right" image="tapButton.png"/>
+                                        <connections>
+                                            <action selector="tapRight:" destination="uiR-MZ-HIV" eventType="touchUpInside" id="ba4-jB-KKp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-WE-cQy">
+                                <rect key="frame" x="662" y="233" width="76" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rhc-yb-lTa" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="RXc-Ci-Ed0"/>
                             <constraint firstItem="o7k-rA-d9F" firstAttribute="leading" secondItem="AO5-ui-PWJ" secondAttribute="leading" constant="94" id="Uf5-Kl-qub"/>
+                            <constraint firstItem="AO5-ui-PWJ" firstAttribute="bottom" secondItem="rhc-yb-lTa" secondAttribute="bottom" constant="160" id="XG3-HV-Jqe"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="Xm6-j4-gni"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="centerY" secondItem="Aed-E0-NbH" secondAttribute="centerY" id="ntV-h4-TCd"/>
                             <constraint firstItem="AO5-ui-PWJ" firstAttribute="bottom" secondItem="o7k-rA-d9F" secondAttribute="bottom" constant="160" id="usb-dB-Mqe"/>
@@ -355,8 +367,9 @@
                     </view>
                     <connections>
                         <outlet property="label" destination="3GR-Vu-4dS" id="qvW-fX-nhL"/>
-                        <outlet property="left" destination="UTP-3x-7Wl" id="Hto-Sl-cmV"/>
-                        <outlet property="right" destination="o1Q-Q3-ULd" id="r83-ia-ki3"/>
+                        <outlet property="left" destination="Lrh-eD-HpO" id="Ax0-gs-KBV"/>
+                        <outlet property="message" destination="QMV-WE-cQy" id="jxa-Nz-W8W"/>
+                        <outlet property="right" destination="x4q-fu-7Oe" id="c91-Fs-UGz"/>
                         <outlet property="soundNote" destination="rhc-yb-lTa" id="h1n-rA-ztx"/>
                         <outlet property="tap" destination="odz-5O-Qhe" id="A2i-od-0OK"/>
                     </connections>
@@ -603,6 +616,7 @@
     </scenes>
     <resources>
         <image name="new.png" width="980" height="982"/>
+        <image name="tapButton.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GH1-F3-uPf"/>
