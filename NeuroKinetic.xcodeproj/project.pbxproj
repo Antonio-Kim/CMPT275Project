@@ -10,9 +10,6 @@
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
 		41E81C732366F605003313B8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C722366F605003313B8 /* Setting.swift */; };
 		7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C332F236E291800BAFC5A /* Main.storyboard */; };
-		7B7C3333236E332500BAFC5A /* metronomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C3332236E332500BAFC5A /* metronomeSound.mp3 */; };
-		7B7C3335236E333F00BAFC5A /* metronomeSound(1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C3334236E333F00BAFC5A /* metronomeSound(1).mp3 */; };
-		7B7C3337236E334900BAFC5A /* metronomeSound(2).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C3336236E334900BAFC5A /* metronomeSound(2).mp3 */; };
 		83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */; };
 		83A313C32368F98E00BC251A /* SignatureCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313C22368F98E00BC251A /* SignatureCanvas.swift */; };
 		83B00101236D1F31001488AA /* SignViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00100236D1F31001488AA /* SignViewControl.swift */; };
@@ -31,10 +28,27 @@
 		BEF428012367D13F00D9F021 /* TypingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428002367D13F00D9F021 /* TypingStats.swift */; };
 		BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428022367D14F00D9F021 /* GeneralStats.swift */; };
 		BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428042367D15D00D9F021 /* HandwritingStats.swift */; };
+		F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */; };
+		F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */; };
+		F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */; };
+		F92F3C6F236F011900DC8A8D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */; };
+		F9B7AA7C236F3851000B3BF1 /* metronomeSound(1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9B7AA79236F3850000B3BF1 /* metronomeSound(1).mp3 */; };
+		F9B7AA7D236F3851000B3BF1 /* metronomeSound(2).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9B7AA7A236F3851000B3BF1 /* metronomeSound(2).mp3 */; };
+		F9B7AA7E236F3851000B3BF1 /* metronomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9B7AA7B236F3851000B3BF1 /* metronomeSound.mp3 */; };
+		F9B7AA86236F39FE000B3BF1 /* NeuroKineticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B7AA85236F39FE000B3BF1 /* NeuroKineticUITests.swift */; };
+		F9B7AA8E236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */; };
+		F9B7AAA0236F5396000B3BF1 /* NeuroKineticTypingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		BE1B1A6B235BF97200E6ED19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE1B1A4E235BF97100E6ED19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE1B1A55235BF97100E6ED19;
+			remoteInfo = NeuroKinetic;
+		};
+		F9B7AA88236F39FE000B3BF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BE1B1A4E235BF97100E6ED19 /* Project object */;
 			proxyType = 1;
@@ -47,9 +61,6 @@
 		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		41E81C722366F605003313B8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		7B7C3330236E291800BAFC5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7B7C3332236E332500BAFC5A /* metronomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = metronomeSound.mp3; path = ../../../metronomeSound.mp3; sourceTree = "<group>"; };
-		7B7C3334236E333F00BAFC5A /* metronomeSound(1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "metronomeSound(1).mp3"; path = "../../../metronomeSound(1).mp3"; sourceTree = "<group>"; };
-		7B7C3336236E334900BAFC5A /* metronomeSound(2).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "metronomeSound(2).mp3"; path = "../../../metronomeSound(2).mp3"; sourceTree = "<group>"; };
 		83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceWriteCanvas.swift; sourceTree = "<group>"; };
 		83A313C22368F98E00BC251A /* SignatureCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureCanvas.swift; sourceTree = "<group>"; };
 		83B00100236D1F31001488AA /* SignViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewControl.swift; sourceTree = "<group>"; };
@@ -73,6 +84,19 @@
 		BEF428002367D13F00D9F021 /* TypingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingStats.swift; sourceTree = "<group>"; };
 		BEF428022367D14F00D9F021 /* GeneralStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStats.swift; sourceTree = "<group>"; };
 		BEF428042367D15D00D9F021 /* HandwritingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStats.swift; sourceTree = "<group>"; };
+		F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "fonts/Montserrat-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
+		F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "fonts/Montserrat-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "fonts/Montserrat-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
+		F9B7AA79236F3850000B3BF1 /* metronomeSound(1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "metronomeSound(1).mp3"; sourceTree = "<group>"; };
+		F9B7AA7A236F3851000B3BF1 /* metronomeSound(2).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "metronomeSound(2).mp3"; sourceTree = "<group>"; };
+		F9B7AA7B236F3851000B3BF1 /* metronomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronomeSound.mp3; sourceTree = "<group>"; };
+		F9B7AA83236F39FE000B3BF1 /* NeuroKineticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeuroKineticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9B7AA85236F39FE000B3BF1 /* NeuroKineticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticUITests.swift; sourceTree = "<group>"; };
+		F9B7AA87236F39FE000B3BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticMetronomeTest.swift; sourceTree = "<group>"; };
+		F9B7AA95236F52F6000B3BF1 /* NeuroKineticTypingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticTypingTests.swift; sourceTree = "<group>"; };
+		F9B7AA97236F52F6000B3BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticTypingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,16 +114,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9B7AA80236F39FE000B3BF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		41E81C652366F38A003313B8 /* NeuroKineticsUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NeuroKineticsUITests;
-			sourceTree = "<group>";
-		};
 		41E81C662366F3B5003313B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,9 +168,9 @@
 		41E81C6A2366F3D9003313B8 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				7B7C3336236E334900BAFC5A /* metronomeSound(2).mp3 */,
-				7B7C3334236E333F00BAFC5A /* metronomeSound(1).mp3 */,
-				7B7C3332236E332500BAFC5A /* metronomeSound.mp3 */,
+				F9B7AA7B236F3851000B3BF1 /* metronomeSound.mp3 */,
+				F9B7AA79236F3850000B3BF1 /* metronomeSound(1).mp3 */,
+				F9B7AA7A236F3851000B3BF1 /* metronomeSound(2).mp3 */,
 				BE1B1A62235BF97200E6ED19 /* LaunchScreen.storyboard */,
 				BE1B1A65235BF97200E6ED19 /* Info.plist */,
 			);
@@ -218,9 +242,10 @@
 		BE1B1A4D235BF97100E6ED19 = {
 			isa = PBXGroup;
 			children = (
-				41E81C652366F38A003313B8 /* NeuroKineticsUITests */,
 				BE1B1A58235BF97100E6ED19 /* NeuroKinetic */,
 				BE1B1A6D235BF97200E6ED19 /* NeuroKineticTests */,
+				F9B7AA84236F39FE000B3BF1 /* NeuroKineticUITests */,
+				F9B7AA94236F52F6000B3BF1 /* NeuroKineticTypingTests */,
 				BE1B1A57235BF97100E6ED19 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -230,6 +255,7 @@
 			children = (
 				BE1B1A56235BF97100E6ED19 /* NeuroKinetic.app */,
 				BE1B1A6A235BF97200E6ED19 /* NeuroKineticTests.xctest */,
+				F9B7AA83236F39FE000B3BF1 /* NeuroKineticUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,6 +263,7 @@
 		BE1B1A58235BF97100E6ED19 /* NeuroKinetic */ = {
 			isa = PBXGroup;
 			children = (
+				F92F3C64236EFF4600DC8A8D /* Fonts */,
 				BE1B1A59235BF97100E6ED19 /* AppDelegate.swift */,
 				41E81C682366F3C8003313B8 /* ViewController */,
 				41E81C672366F3C0003313B8 /* View */,
@@ -254,6 +281,37 @@
 				BE1B1A70235BF97200E6ED19 /* Info.plist */,
 			);
 			path = NeuroKineticTests;
+			sourceTree = "<group>";
+		};
+		F92F3C64236EFF4600DC8A8D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */,
+				F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */,
+				F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */,
+			);
+			name = Fonts;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F9B7AA84236F39FE000B3BF1 /* NeuroKineticUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */,
+				F9B7AA85236F39FE000B3BF1 /* NeuroKineticUITests.swift */,
+				F9B7AA87236F39FE000B3BF1 /* Info.plist */,
+				F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */,
+			);
+			path = NeuroKineticUITests;
+			sourceTree = "<group>";
+		};
+		F9B7AA94236F52F6000B3BF1 /* NeuroKineticTypingTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9B7AA95236F52F6000B3BF1 /* NeuroKineticTypingTests.swift */,
+				F9B7AA97236F52F6000B3BF1 /* Info.plist */,
+			);
+			path = NeuroKineticTypingTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,12 +352,31 @@
 			productReference = BE1B1A6A235BF97200E6ED19 /* NeuroKineticTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F9B7AA82236F39FE000B3BF1 /* NeuroKineticUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9B7AA8A236F39FE000B3BF1 /* Build configuration list for PBXNativeTarget "NeuroKineticUITests" */;
+			buildPhases = (
+				F9B7AA7F236F39FE000B3BF1 /* Sources */,
+				F9B7AA80236F39FE000B3BF1 /* Frameworks */,
+				F9B7AA81236F39FE000B3BF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9B7AA89236F39FE000B3BF1 /* PBXTargetDependency */,
+			);
+			name = NeuroKineticUITests;
+			productName = NeuroKineticUITests;
+			productReference = F9B7AA83236F39FE000B3BF1 /* NeuroKineticUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BE1B1A4E235BF97100E6ED19 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = teamRANDY;
@@ -308,6 +385,10 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					BE1B1A69235BF97200E6ED19 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BE1B1A55235BF97100E6ED19;
+					};
+					F9B7AA82236F39FE000B3BF1 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = BE1B1A55235BF97100E6ED19;
 					};
@@ -328,6 +409,7 @@
 			targets = (
 				BE1B1A55235BF97100E6ED19 /* NeuroKinetic */,
 				BE1B1A69235BF97200E6ED19 /* NeuroKineticTests */,
+				F9B7AA82236F39FE000B3BF1 /* NeuroKineticUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -337,15 +419,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B7C3335236E333F00BAFC5A /* metronomeSound(1).mp3 in Resources */,
-				7B7C3337236E334900BAFC5A /* metronomeSound(2).mp3 in Resources */,
-				7B7C3333236E332500BAFC5A /* metronomeSound.mp3 in Resources */,
+				F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */,
 				7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */,
+				F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
+				F9B7AA7D236F3851000B3BF1 /* metronomeSound(2).mp3 in Resources */,
+				F9B7AA7C236F3851000B3BF1 /* metronomeSound(1).mp3 in Resources */,
+				F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */,
+				F9B7AA7E236F3851000B3BF1 /* metronomeSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BE1B1A68235BF97200E6ED19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F92F3C6F236F011900DC8A8D /* Montserrat-SemiBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9B7AA81236F39FE000B3BF1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -388,6 +481,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9B7AA7F236F39FE000B3BF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9B7AA8E236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift in Sources */,
+				F9B7AA86236F39FE000B3BF1 /* NeuroKineticUITests.swift in Sources */,
+				F9B7AAA0236F5396000B3BF1 /* NeuroKineticTypingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -395,6 +498,11 @@
 			isa = PBXTargetDependency;
 			target = BE1B1A55235BF97100E6ED19 /* NeuroKinetic */;
 			targetProxy = BE1B1A6B235BF97200E6ED19 /* PBXContainerItemProxy */;
+		};
+		F9B7AA89236F39FE000B3BF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE1B1A55235BF97100E6ED19 /* NeuroKinetic */;
+			targetProxy = F9B7AA88236F39FE000B3BF1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -608,6 +716,42 @@
 			};
 			name = Release;
 		};
+		F9B7AA8B236F39FE000B3BF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NeuroKineticUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.antoniok.NeuroKineticUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NeuroKinetic;
+			};
+			name = Debug;
+		};
+		F9B7AA8C236F39FE000B3BF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NeuroKineticUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.antoniok.NeuroKineticUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NeuroKinetic;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -634,6 +778,15 @@
 			buildConfigurations = (
 				BE1B1A77235BF97200E6ED19 /* Debug */,
 				BE1B1A78235BF97200E6ED19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9B7AA8A236F39FE000B3BF1 /* Build configuration list for PBXNativeTarget "NeuroKineticUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9B7AA8B236F39FE000B3BF1 /* Debug */,
+				F9B7AA8C236F39FE000B3BF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
