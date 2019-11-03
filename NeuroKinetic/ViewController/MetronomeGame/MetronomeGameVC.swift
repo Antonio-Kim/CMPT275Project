@@ -10,22 +10,10 @@ import UIKit
 import Foundation
 import AVFoundation
 
-
-
-
-func setupButtonStyle(button : UIButton, color: UIColor){
-    // Customizing Menu Button Style
-    button.layer.cornerRadius = 0.5 * button.bounds.size.width
-    button.clipsToBounds = true
-    button.backgroundColor = color
-}
-
-
 class MetronomeGame: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
     var tapCount:Int = 0;
-    var str = "0"
     var didStart: Bool = false
     var isGameOver: Bool = false
     
@@ -34,7 +22,6 @@ class MetronomeGame: UIViewController {
     var tapTime: Double = 0.0
     
     //start button and tap count
-    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tap: UIButton!
     @IBOutlet weak var message: UILabel!
     
@@ -45,11 +32,12 @@ class MetronomeGame: UIViewController {
     //soundNote
     @IBOutlet weak var soundNote: UIImageView!
     
-    func expectedTime(isRight: Bool) ->Double
+    //returns the expected timing button is tapped
+    func expectedTime(isLeft: Bool) ->Double
     {
         let isOdd = tapCount%2
         
-        if(isRight)
+        if(isLeft)
         {
             if(isOdd == 0)
             {
@@ -77,25 +65,18 @@ class MetronomeGame: UIViewController {
     //sound note moves to the right tap button
     func moveRight()
     {
-        //
         UIView.animate(withDuration: 2,
                        delay: 0.0,
                        options: .curveLinear,
                        animations: {
-                        //if(self.didStart == false)
-                        //{
-                        //    self.tap.alpha = 0
-                        //    self.didStart = true
-                        //}
                         self.soundNote.frame.origin.x = self.right.frame.origin.x
-                        
-        } ,
+                       } ,
                        completion:{
                         finished in
                         self.tapCount += 1
                         self.audioPlayer.play()
                         self.moveLeft()
-        })
+                       })
     }
     //sound note moves to the left tap button
     func moveLeft()
@@ -131,6 +112,7 @@ class MetronomeGame: UIViewController {
         self.tap.removeFromSuperview()
     }
     
+    //animation executed at the end of the game
     func animateFinish()
     {
         self.tap.setTitle("DONE", for: .normal)
@@ -141,7 +123,7 @@ class MetronomeGame: UIViewController {
                         self.left.alpha = 0
                         self.soundNote.alpha = 0
                         self.message.alpha = 0
-                        self.label.alpha = 0
+                        
         } )
     }
     
@@ -192,21 +174,25 @@ class MetronomeGame: UIViewController {
         {
             let tempTime: Date = Date.init()
             tapTime = tempTime.timeIntervalSince(startTime)
-            var difference = tapTime - expectedTime(isRight: true)
+            var difference = tapTime - expectedTime(isLeft: false)
             
             
-            if(difference > 2.0)
+            if(difference<0)
             {
-                difference -= 2.0
-            	}
-            label.text = String(difference)
+                difference *= (-1)
+            }
+            
             if(difference>0.5 || difference < -0.5)
             {
-                message.text = "Not Good"
+                message.alpha = 1
+                message.text = "Miss"
+                UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
             else
             {
-                message.text = "Good"
+                message.alpha = 1
+                message.text = "Good Tap"
+                UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
         }
     }
@@ -216,20 +202,22 @@ class MetronomeGame: UIViewController {
         {
             let tempTime: Date = Date.init()
             tapTime = tempTime.timeIntervalSince(startTime)
-            var difference = tapTime - expectedTime(isRight: false)
-            
-            if(difference > 2.0)
+            var difference = tapTime - expectedTime(isLeft: true)
+            if(difference<0)
             {
-                difference -= 2.0
+                difference *= (-1)
             }
-            label.text = String(difference)
-            if(difference>0.5 || difference < -0.5)
+            if(difference>0.5)
             {
-                message.text = "Not Good"
+                message.alpha = 1
+                message.text = "Miss"
+                UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
             else
             {
-                message.text = "Good"
+                message.alpha = 1
+                message.text = "Good Tap"
+                UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
         }
     }
