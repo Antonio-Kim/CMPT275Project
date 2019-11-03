@@ -10,17 +10,16 @@ import UIKit
 
 class SignViewControl: UIViewController {
     
-    @IBOutlet var signCanvas: [SentenceWriteCanvas]!
-
+    @IBOutlet weak var signCanvas: SignatureCanvas!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func clearbutton(_ sender: Any) {
-        
+    @IBAction func clearButton(_ sender: Any) {
+        signCanvas.clear()
     }
     
     

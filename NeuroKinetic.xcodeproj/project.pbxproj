@@ -13,8 +13,8 @@
 		7B7C3333236E332500BAFC5A /* metronomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C3332236E332500BAFC5A /* metronomeSound.mp3 */; };
 		7B7C3335236E333F00BAFC5A /* metronomeSound(1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C3334236E333F00BAFC5A /* metronomeSound(1).mp3 */; };
 		7B7C3337236E334900BAFC5A /* metronomeSound(2).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C3336236E334900BAFC5A /* metronomeSound(2).mp3 */; };
-		83A313BF2368F54100BC251A /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313BE2368F54100BC251A /* CanvasView.swift */; };
-		83A313C32368F98E00BC251A /* SentenceWriteCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313C22368F98E00BC251A /* SentenceWriteCanvas.swift */; };
+		83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */; };
+		83A313C32368F98E00BC251A /* SignatureCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313C22368F98E00BC251A /* SignatureCanvas.swift */; };
 		83B00101236D1F31001488AA /* SignViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00100236D1F31001488AA /* SignViewControl.swift */; };
 		83B00107236D2587001488AA /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00106236D2587001488AA /* Word.swift */; };
 		83B00109236D25A3001488AA /* ParagraphBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00108236D25A3001488AA /* ParagraphBank.swift */; };
@@ -50,8 +50,8 @@
 		7B7C3332236E332500BAFC5A /* metronomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = metronomeSound.mp3; path = ../../../metronomeSound.mp3; sourceTree = "<group>"; };
 		7B7C3334236E333F00BAFC5A /* metronomeSound(1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "metronomeSound(1).mp3"; path = "../../../metronomeSound(1).mp3"; sourceTree = "<group>"; };
 		7B7C3336236E334900BAFC5A /* metronomeSound(2).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "metronomeSound(2).mp3"; path = "../../../metronomeSound(2).mp3"; sourceTree = "<group>"; };
-		83A313BE2368F54100BC251A /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
-		83A313C22368F98E00BC251A /* SentenceWriteCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceWriteCanvas.swift; sourceTree = "<group>"; };
+		83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceWriteCanvas.swift; sourceTree = "<group>"; };
+		83A313C22368F98E00BC251A /* SignatureCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureCanvas.swift; sourceTree = "<group>"; };
 		83B00100236D1F31001488AA /* SignViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewControl.swift; sourceTree = "<group>"; };
 		83B00106236D2587001488AA /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		83B00108236D25A3001488AA /* ParagraphBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphBank.swift; sourceTree = "<group>"; };
@@ -200,8 +200,8 @@
 		7B9BAD522368BA3C0094D708 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				83A313BE2368F54100BC251A /* CanvasView.swift */,
-				83A313C22368F98E00BC251A /* SentenceWriteCanvas.swift */,
+				83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */,
+				83A313C22368F98E00BC251A /* SignatureCanvas.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,10 +360,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				83B00109236D25A3001488AA /* ParagraphBank.swift in Sources */,
-				83A313C32368F98E00BC251A /* SentenceWriteCanvas.swift in Sources */,
+				83A313C32368F98E00BC251A /* SignatureCanvas.swift in Sources */,
 				41E81C732366F605003313B8 /* Setting.swift in Sources */,
 				BE4575332365371A00BADD25 /* CircleView.swift in Sources */,
-				83A313BF2368F54100BC251A /* CanvasView.swift in Sources */,
+				83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */,
 				83B00107236D2587001488AA /* Word.swift in Sources */,
 				BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */,
 				BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */,

@@ -131,8 +131,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exs-x7-7zN" customClass="CanvasView" customModule="NeuroKinetic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="428" width="1212" height="360"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exs-x7-7zN" customClass="SentenceWriteCanvas" customModule="NeuroKinetic" customModuleProvider="target">
+                                <rect key="frame" x="77" y="411" width="1212" height="360"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.9640061797347933" blue="0.95793287712407238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -146,18 +146,18 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="SentenceBank" destination="iN3-vk-Fmz" id="ui4-5o-6zm"/>
+                        <outlet property="SentenceBank" destination="iN3-vk-Fmz" id="IYY-Yo-okL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjd-L1-8Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1241.727672035139" y="890.62499999999989"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign View Control-->
         <scene sceneID="Uez-Q3-hxY">
             <objects>
-                <viewController id="7xa-yS-hdQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MI3-gg-94L" customClass="View" customModule="NeuroKinetic" customModuleProvider="target">
+                <viewController id="7xa-yS-hdQ" customClass="SignViewControl" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MI3-gg-94L">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -191,8 +191,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButton:" destination="7xa-yS-hdQ" eventType="touchUpInside" id="9jd-dn-31c"/>
+                                </connections>
                             </button>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRD-VR-jbk" customClass="SentenceWriteCanvas" customModule="NeuroKinetic" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRD-VR-jbk" customClass="SignatureCanvas" customModule="NeuroKinetic" customModuleProvider="target">
                                 <rect key="frame" x="379" y="376" width="609" height="229"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.93201954715525837" blue="0.851674534022687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -200,11 +203,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8a7-46-iMh"/>
-                        <connections>
-                            <outlet property="signCanvas" destination="oRD-VR-jbk" id="MAI-Jn-gTW"/>
-                            <outletCollection property="signCanvas" destination="oRD-VR-jbk" id="vzX-lp-voa"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="signCanvas" destination="oRD-VR-jbk" id="MtE-b7-Ly1"/>
+                        <outletCollection property="signCanvas" destination="oRD-VR-jbk" collectionClass="NSMutableArray" id="BoL-tx-qbU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xG-NC-R2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -370,7 +373,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="GameChoose_Write"/>
                                 <connections>
-                                    <segue destination="7xa-yS-hdQ" kind="presentation" id="B0g-8o-pTa"/>
+                                    <segue destination="7xa-yS-hdQ" kind="presentation" id="Xyd-qE-rtw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crR-Ae-xeQ">
@@ -731,9 +734,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="GH1-F3-uPf"/>
         <segue reference="Raq-LN-5uW"/>
-        <segue reference="yzq-G9-nTb"/>
+        <segue reference="UHC-0V-Tfe"/>
         <segue reference="MlM-9w-c64"/>
-        <segue reference="Y97-vR-eu1"/>
+        <segue reference="zFV-xq-lSJ"/>
         <segue reference="vnR-XQ-OKg"/>
     </inferredMetricsTieBreakers>
 </document>

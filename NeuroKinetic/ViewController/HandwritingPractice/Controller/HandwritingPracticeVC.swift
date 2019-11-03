@@ -11,7 +11,7 @@ import UIKit
 class HandwritingPractice: UIViewController {
     
     
-    let canvas = CanvasView()
+    let canvas = SentenceWriteCanvas()
     let undoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Undo", for: .normal)
@@ -58,7 +58,10 @@ class HandwritingPractice: UIViewController {
             view.trailingAnchor).isActive = true
     }
 
+    
     @IBOutlet weak var SentenceBank: UILabel!
+    
+ 
     fileprivate func generateSentence(){
      //  let number = Int.random(in: 0 ..< 10)
         //switch number {
