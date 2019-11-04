@@ -59,7 +59,7 @@ class NeuroKineticMetronomeTest: XCTestCase {
         tapbuttonButton2.tap()
         tapbuttonButton.tap()
         tapbuttonButton2.tap()
-        app.buttons["DONE"].tap()
+        let delayExpectation = expectation(description: "Done")
         
         
     }

@@ -15,7 +15,7 @@ class SignatureCanvas: UIView {
     var Path: UIBezierPath!
     var lineColor: UIColor!
     var lineWidth: CGFloat!
-
+    
     
     override func layoutSubviews() {
         self.clipsToBounds = true
@@ -56,3 +56,4 @@ class SignatureCanvas: UIView {
         self.setNeedsDisplay()
     }
 }
+

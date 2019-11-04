@@ -28,6 +28,7 @@
 		BEF428012367D13F00D9F021 /* TypingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428002367D13F00D9F021 /* TypingStats.swift */; };
 		BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428022367D14F00D9F021 /* GeneralStats.swift */; };
 		BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428042367D15D00D9F021 /* HandwritingStats.swift */; };
+		F907F183236F6AE700680057 /* NeuroKineticHandwritingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F907F17B236F6ABF00680057 /* NeuroKineticHandwritingTests.swift */; };
 		F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */; };
 		F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */; };
 		F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */; };
@@ -84,6 +85,7 @@
 		BEF428002367D13F00D9F021 /* TypingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingStats.swift; sourceTree = "<group>"; };
 		BEF428022367D14F00D9F021 /* GeneralStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStats.swift; sourceTree = "<group>"; };
 		BEF428042367D15D00D9F021 /* HandwritingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStats.swift; sourceTree = "<group>"; };
+		F907F17B236F6ABF00680057 /* NeuroKineticHandwritingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticHandwritingTests.swift; sourceTree = "<group>"; };
 		F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "fonts/Montserrat-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
 		F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "fonts/Montserrat-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "fonts/Montserrat-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
@@ -94,8 +96,6 @@
 		F9B7AA85236F39FE000B3BF1 /* NeuroKineticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticUITests.swift; sourceTree = "<group>"; };
 		F9B7AA87236F39FE000B3BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticMetronomeTest.swift; sourceTree = "<group>"; };
-		F9B7AA95236F52F6000B3BF1 /* NeuroKineticTypingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticTypingTests.swift; sourceTree = "<group>"; };
-		F9B7AA97236F52F6000B3BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticTypingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,7 +245,6 @@
 				BE1B1A58235BF97100E6ED19 /* NeuroKinetic */,
 				BE1B1A6D235BF97200E6ED19 /* NeuroKineticTests */,
 				F9B7AA84236F39FE000B3BF1 /* NeuroKineticUITests */,
-				F9B7AA94236F52F6000B3BF1 /* NeuroKineticTypingTests */,
 				BE1B1A57235BF97100E6ED19 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -300,18 +299,10 @@
 				F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */,
 				F9B7AA85236F39FE000B3BF1 /* NeuroKineticUITests.swift */,
 				F9B7AA87236F39FE000B3BF1 /* Info.plist */,
+				F907F17B236F6ABF00680057 /* NeuroKineticHandwritingTests.swift */,
 				F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */,
 			);
 			path = NeuroKineticUITests;
-			sourceTree = "<group>";
-		};
-		F9B7AA94236F52F6000B3BF1 /* NeuroKineticTypingTests */ = {
-			isa = PBXGroup;
-			children = (
-				F9B7AA95236F52F6000B3BF1 /* NeuroKineticTypingTests.swift */,
-				F9B7AA97236F52F6000B3BF1 /* Info.plist */,
-			);
-			path = NeuroKineticTypingTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,7 +368,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = teamRANDY;
 				TargetAttributes = {
@@ -488,6 +479,7 @@
 				F9B7AA8E236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift in Sources */,
 				F9B7AA86236F39FE000B3BF1 /* NeuroKineticUITests.swift in Sources */,
 				F9B7AAA0236F5396000B3BF1 /* NeuroKineticTypingTests.swift in Sources */,
+				F907F183236F6AE700680057 /* NeuroKineticHandwritingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

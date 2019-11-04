@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad11_0rounded" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -113,14 +113,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sentence Example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN3-vk-Fmz">
-                                <rect key="frame" x="513" y="303" width="340" height="52"/>
+                                <rect key="frame" x="427" y="295" width="340" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3a-62-L8C">
+                                <rect key="frame" x="20" y="24" width="101" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="mku-KJ-sjU"/>
+                                </connections>
+                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exs-x7-7zN" customClass="SentenceWriteCanvas" customModule="NeuroKinetic" customModuleProvider="target">
-                                <rect key="frame" x="77" y="411" width="1212" height="360"/>
+                                <rect key="frame" x="20" y="355" width="1163" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.9640061797347933" blue="0.95793287712407238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -139,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjd-L1-8Xx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1241.727672035139" y="890.62499999999989"/>
+            <point key="canvasLocation" x="1241.7085427135678" y="889.92805755395693"/>
         </scene>
         <!--Sign View Control-->
         <scene sceneID="Uez-Q3-hxY">
@@ -149,15 +160,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCz-lA-Th2">
-                                <rect key="frame" x="32" y="71" width="86" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="&lt; BACK"/>
-                                <connections>
-                                    <segue destination="lDo-HC-Lf8" kind="presentation" id="UHC-0V-Tfe"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MB3-TY-hXu">
                                 <rect key="frame" x="872" y="693" width="116" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -188,6 +190,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.93201954715525837" blue="0.851674534022687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98Y-D8-uqM">
+                                <rect key="frame" x="20" y="24" width="101" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="gkn-dd-v3l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8a7-46-iMh"/>
@@ -209,14 +222,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1U-lA-bBW">
-                                <rect key="frame" x="1273" y="65" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="lDo-HC-Lf8" kind="presentation" id="qhf-vX-IG0"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type the following sentence" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE7-Ki-M3x">
                                 <rect key="frame" x="300" y="124" width="594" height="60"/>
                                 <color key="backgroundColor" red="0.079662822186946869" green="0.47308212518692017" blue="0.36692225933074951" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -235,7 +240,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fill your text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUx-Ei-PSn">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUx-Ei-PSn">
                                 <rect key="frame" x="200" y="584" width="794" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -248,6 +253,9 @@
                                 <rect key="frame" x="1011" y="667" width="83" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="lDo-HC-Lf8" kind="presentation" id="GQo-3u-hdN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.079662822186946869" green="0.47308212518692017" blue="0.36692225933074951" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -486,7 +494,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movingMusicCircle" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-X4-Xjt">
-                                <rect key="frame" x="257" y="554" width="100" height="100"/>
+                                <rect key="frame" x="257" y="554" width="100" height="100.00000000000023"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="A1d-I8-9pz"/>
                                     <constraint firstAttribute="width" constant="100" id="I9e-ZL-vtj"/>
@@ -590,7 +598,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hor-de-OnN">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RCG-cH-6pm">
                                                 <rect key="frame" x="1082.5" y="92.5" width="113.5" height="31"/>
                                             </switch>
                                         </subviews>
@@ -802,22 +810,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GameChoose_Tap" width="418.5" height="399.75"/>
-        <image name="GameChoose_Type" width="419.25" height="403.5"/>
-        <image name="GameChoose_Write" width="419.25" height="403.5"/>
-        <image name="Logo" width="793.5" height="747"/>
-        <image name="MainMenu_Settings" width="810" height="810"/>
-        <image name="MainMenu_StartButton" width="810" height="810"/>
-        <image name="MainMenu_Stats" width="810" height="810"/>
+        <image name="GameChoose_Tap" width="558" height="533"/>
+        <image name="GameChoose_Type" width="559" height="538"/>
+        <image name="GameChoose_Write" width="559" height="538"/>
+        <image name="Logo" width="1058" height="996"/>
+        <image name="MainMenu_Settings" width="1080" height="1080"/>
+        <image name="MainMenu_StartButton" width="1080" height="1080"/>
+        <image name="MainMenu_Stats" width="1080" height="1080"/>
         <image name="movingMusicCircle" width="980" height="982"/>
         <image name="tapButton" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ERi-x1-JKb"/>
         <segue reference="Raq-LN-5uW"/>
-        <segue reference="U1s-Ul-uJJ"/>
+        <segue reference="GQo-3u-hdN"/>
         <segue reference="FzK-bU-J74"/>
-        <segue reference="Y97-vR-eu1"/>
-        <segue reference="Qxv-wZ-7YN"/>
+        <segue reference="zFV-xq-lSJ"/>
+        <segue reference="mku-KJ-sjU"/>
     </inferredMetricsTieBreakers>
 </document>

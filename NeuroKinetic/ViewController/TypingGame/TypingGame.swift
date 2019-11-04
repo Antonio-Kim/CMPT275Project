@@ -8,8 +8,6 @@
 
 import UIKit
 
-let timeLimit = 600 //10 minutes
-
 //extensions for type String
 extension String {
     //Checks if input is a-z, A-Z, 0-9
@@ -26,14 +24,27 @@ extension String {
         return !isEmpty && range(of: "^\\s", options: .regularExpression) == nil
     }
     
-    //Checks if input is backspace
-    var isBackSpace: Bool {
-        return !isEmpty && range(of: "^\\b", options: .regularExpression) == nil
-    }
-    
     //Checks if input is punctuation, tabs, or other things
     var isOthers: Bool {
-        return !isEmpty && range(of: "^\\t|[^-'.%$#&/]", options: .regularExpression) == nil
+        return !isEmpty && range(of: "[^-'.%$#&/]", options: .regularExpression) == nil
+    }
+}
+
+//Referenced from https://github.com/anoop4real/UILabelStyles
+extension NSMutableAttributedString {
+    // If no text is send, then the style will be applied to full text
+    func setColorForText(_ textToFind: String?, with color: UIColor) {
+        
+        let range:NSRange?
+        if let text = textToFind{
+            range = self.mutableString.range(of: text, options: .caseInsensitive)
+        }else{
+            range = NSMakeRange(0, self.length)
+        }
+        
+        if range!.location != NSNotFound {
+            addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range!)
+        }
     }
 }
 
@@ -45,14 +56,11 @@ class TypingGame: UIViewController {
     
     @IBOutlet weak var typingTextField: UITextField!
     
-   
     @IBOutlet weak var doneButton: UIButton!
     
     var wordElement: Int = 0
     
-    var wordCorrectCount: Int = 0
-    
-    var wordWrongCount: Int = 0
+    var paragraphPrintCount: Int = 0
     
     var paragraphList: ParagraphBank = ParagraphBank()
     
@@ -63,7 +71,6 @@ class TypingGame: UIViewController {
     var wordCorrect: Bool = false
     
     var completeParagraph: Bool = false
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,44 +84,39 @@ class TypingGame: UIViewController {
         
         paragraphView.text = paragraphDisplay
         paragraphView.numberOfLines = 0
-        //paragraphView.size
         paragraphView.textAlignment = NSTextAlignment.justified
     }
-    
     
     @IBAction func typingTextFieldEditingChange(_ typingTextField: UITextField) {
         
         if !completeParagraph {
-            if typingTextField.text!.isAlphabet {
-                typedWord = typingTextField.text!
-                print("LETTER")
-            }else if typingTextField.text!.isNumeric {
-                print("NUMBER")
-            }else if typingTextField.text!.isSpace {
-                print("SPACE")
+            //Check to make sure typing text field is not nil
+            //User might type some letter and then clear everything from textfield
+            //This guard prevents that situation from causes crashes
+            guard let text = typingTextField.text, !text.isEmpty else {
+                return
+            }
+            
+            typedWord = typingTextField.text!
+            
+            let temp = typingTextField.text!.last!
                 
+            if temp == " " {
+                typedWord = String(typedWord.dropLast())
+            
                 if typedWord == paragraphList.paragraph.wordArr[wordElement] {
-                    //turn word to green
-                    //save to wordsCorrect
-                    //updateParagraph()
-                    
-                    //prints correct since the typed word is correct
-                    instructionsLabel.text = " 😂 100% CORRECT 😂"
-                    
-                    print("CORRECT WORD")
+                    paragraphPrintCount += typedWord.count + 1
                     
                     typedWord = ""
                     wordElement += 1
                     typingTextField.text = ""
+                
+                    updateParagraph()
                 }
-            }else if typingTextField.text!.isOthers {
-                print("OTHERS")
             }
         }
         
-        print(typedWord + " \(wordElement)")
-        
-        🆗()
+        checkComplete()
     }
     
     //Showing keyboard
@@ -140,41 +142,36 @@ class TypingGame: UIViewController {
     }
     
     //Check if the paragraph is complete
-    func 🆗() {
-        if (wordElement-1) == paragraphList.paragraph.wordArr.count {
+    func checkComplete() {
+        if wordElement == paragraphList.paragraph.wordArr.count {
             completeParagraph = true;
             wordElement = 0
+            print("Complete Paragraph")
         }
     }
     
-    //update paragraph text view (maybe for version 2)
+    //update paragraph text view
     func updateParagraph() {
         //Check to make sure instruction label is not nil
-        guard let _: String = instructionsLabel?.text else {
+        guard let iText = instructionsLabel.text, !iText.isEmpty else {
             instructionsLabel.text = "NO INSTRUCTIONS??"
             return
         }
         
-        //Check to make sure typing text field is not nil
-        //Might not need it if we are updating/emptying out text field
-        guard let _: String = typingTextField?.text else {
-            instructionsLabel.text = "Please type something"
-            return
-        }
-        
         //Check to make sure paragraph view is not nil
-        guard let _: String = paragraphView?.text else {
+        guard let pText = paragraphView.text, !pText.isEmpty else {
             instructionsLabel.text = "NANI?? NO PARAGRAPHS??"
             return
         }
         
-        //for i in 0
+        let tempSubstring = paragraphDisplay.prefix(paragraphPrintCount)
         
+        let string = NSMutableAttributedString(string: paragraphDisplay)
         
+        string.setColorForText(String(tempSubstring), with: UIColor.white)
         
-        
+        paragraphView.attributedText = string
     }
-    
 }
 
 

@@ -2,6 +2,9 @@
 //  ParagraphBank.swift
 //  NeuroKinetic
 //
+//  Some of the paragraphs from paragraph bank are from this website
+//  https://thoughtcatalog.com/koty-neelis/2015/06/31-of-the-most-beautiful-and-profound-passages-in-literature-youll-want-to-read-over-and-over-again/
+//
 //  Created by Rico Chao on 2019-10-28.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
@@ -71,7 +74,7 @@ class ParagraphBank {
             temp = "Wikipedia is the best thing ever. Anyone in the world can write anything they want about any subject. So you know you are getting the best possible information."
             
         case 15:
-            temp = "hello I am me"
+            temp = "hello, I am me"
             
         default:
             temp = ""

@@ -174,7 +174,7 @@ class MetronomeGame: UIViewController {
         {
             let tempTime: Date = Date.init()
             tapTime = tempTime.timeIntervalSince(startTime)
-            var difference = tapTime - expectedTime(isLeft: false)
+            var difference = tapTime - expectedTime(isLeft: true)
             
             
             if(difference<0)
@@ -185,13 +185,13 @@ class MetronomeGame: UIViewController {
             if(difference>0.5 || difference < -0.5)
             {
                 message.alpha = 1
-                message.text = "Miss"
+                message.text = "Miss(RIGHT)"
                 UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
             else
             {
                 message.alpha = 1
-                message.text = "Good Tap"
+                message.text = "Good Tap(RIGHT)"
                 UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
         }
@@ -202,7 +202,7 @@ class MetronomeGame: UIViewController {
         {
             let tempTime: Date = Date.init()
             tapTime = tempTime.timeIntervalSince(startTime)
-            var difference = tapTime - expectedTime(isLeft: true)
+            var difference = tapTime - expectedTime(isLeft: false)
             if(difference<0)
             {
                 difference *= (-1)
@@ -210,13 +210,13 @@ class MetronomeGame: UIViewController {
             if(difference>0.5)
             {
                 message.alpha = 1
-                message.text = "Miss"
+                message.text = "Miss(LEFT)"
                 UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
             else
             {
                 message.alpha = 1
-                message.text = "Good Tap"
+                message.text = "Good Tap(LEFT)"
                 UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
         }

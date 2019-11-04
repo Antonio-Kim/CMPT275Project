@@ -22,7 +22,6 @@ class SignViewControl: UIViewController {
         signCanvas.clear()
     }
     
-    
     /*
     // MARK: - Navigation
 
@@ -32,5 +31,4 @@ class SignViewControl: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

@@ -10,66 +10,35 @@ import UIKit
 
 class HandwritingPractice: UIViewController {
     
-    
+    @IBAction func ClearButton(_ sender: Any) {
+        SentenceWrite.clear()
+    }
+    @IBOutlet weak var SentenceWrite: SentenceWriteCanvas!
     let canvas = SentenceWriteCanvas()
-    let undoButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Undo", for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.addTarget(self, action: #selector(handleUndo), for: .touchUpInside)
-        return button
-    }()
     
-    @objc fileprivate func handleUndo() {
-        canvas.undo()
-    }
-    let clearButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Clear", for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        button.addTarget(self, action: #selector(handleClear), for: .touchUpInside)
-        return button
-    }()
-    @objc func handleClear() {
-        canvas.clear()
-    }
-//    override func loadView() {
-//        self.view = canvas
-//    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //view.addSubview(canvas)
-        canvas.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "writingGuideline.png"))
-        setupLayout()
+        generateSentence()
     }
-    fileprivate func setupLayout() {
-        //canvas.frame = view.frame
-        let stackView = UIStackView(arrangedSubviews: [
-            undoButton,
-            clearButton
-            ])
-        stackView.distribution = .fillEqually
-        view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo:
-            view.trailingAnchor).isActive = true
-    }
-
+    
     
     @IBOutlet weak var SentenceBank: UILabel!
     
- 
     fileprivate func generateSentence(){
-     //  let number = Int.random(in: 0 ..< 10)
-        //switch number {
-        //case 1:
-        //    SentenceBank.text = "The Toronto Raptors"
-        //}
+        let number = Int.random(in: 0 ..< 5)
+        switch number {
+        case 1:
+            SentenceBank.text = "All we have to decide is what to do with the time that is given to us"
+        case 2:
+            SentenceBank.text = "It matters not what someone is born, but what they grow to be"
+        case 3:
+            SentenceBank.text = "Whatever our souls are made of, his and mine are the same"
+        case 4:
+            SentenceBank.text = "Not all those who wander are lost"
+        case 5:
+            SentenceBank.text = "Real courage is when you know you’re licked before you begin, but you begin anyway and see it through no matter what"
+        default:
+            SentenceBank.text = "We are such stuff as dreams are made on, and our little life is rounded with a sleep"
+        }
     }
-    
-    
-    
 }

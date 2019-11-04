@@ -96,17 +96,18 @@ class NeuroKineticUITests: XCTestCase {
      */
         
         let app = XCUIApplication()
-        let window = app.children(matching: .window).element(boundBy: 0)
-        window.children(matching: .other).element(boundBy: 3).children(matching: .other).element.children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
+        app.otherElements.containing(.image, identifier:"Logo").children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
         
         let backButton = app.buttons["< Back"]
         backButton.tap()
-        window.children(matching: .other).element(boundBy: 5).children(matching: .other).element.children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
+        
+        let window = app.children(matching: .window).element(boundBy: 0)
+        window.children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
         
         let nextButton = app.buttons["Next"]
         nextButton.tap()
         backButton.tap()
-        window.children(matching: .other).element(boundBy: 8).children(matching: .other).element.children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
+        window.children(matching: .other).element(boundBy: 4).children(matching: .other).element.children(matching: .button).matching(identifier: "Button").element(boundBy: 1).tap()
         nextButton.tap()
         nextButton.tap()
         backButton.tap()
@@ -121,6 +122,20 @@ class NeuroKineticUITests: XCTestCase {
         nextButton.tap()
         nextButton.tap()
         backButton.tap()
+        
+    }
+    
+    func testSettingChecks(){
+        
+        let app = XCUIApplication()
+        app.otherElements.containing(.image, identifier:"Logo").children(matching: .button).matching(identifier: "Button").element(boundBy: 2).tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 0).sliders["50%"].swipeDown()
+        
+        let slider = app.sliders["0%"]
+        slider.swipeUp()
+        app.sliders["50%"].swipeDown()
+        slider.swipeUp()
+        app.sliders["90%"].tap()
         
     }
 
