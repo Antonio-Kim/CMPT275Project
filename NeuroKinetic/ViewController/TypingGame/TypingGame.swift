@@ -4,6 +4,8 @@
 //
 //  View controller for Typing Game
 //
+//  NOTE: User should be using a hardware keyboard for the typing game (Make sure Connect Hardware Keyboard is enabled)
+//
 //  Created by Rico Chao on 10/19/19.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
