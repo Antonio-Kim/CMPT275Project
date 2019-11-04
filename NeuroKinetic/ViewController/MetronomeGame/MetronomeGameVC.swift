@@ -12,7 +12,6 @@ import AVFoundation
 
 
 //This UIViewController class is for metronome game
-
 class MetronomeGame: UIViewController {
     
     //MP3 Initialization for metronome sound
@@ -150,7 +149,7 @@ class MetronomeGame: UIViewController {
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
         }
-            //If it fails to load, returns, error
+        //If it fails to load, returns, error
         catch{
             print(error)
         }

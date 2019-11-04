@@ -2,13 +2,15 @@
 //  Word.swift
 //  NeuroKinetic
 //
+//  Class for Word which we might need in version 2
+//
 //  Created by Rico Chao on 2019-10-28.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
 import Foundation
 
-class Word {    //might not need it
+class Word {    //might not need it for version 1
     
     var word: String
     var charCount: Int

@@ -2,6 +2,9 @@
 //  Paragraph.swift
 //  NeuroKinetic
 //
+//  Class for Paragraph which contains data members paragraphWordCount, paragraph, and wordArr,
+//  and member functions findWordCount(String), as well as an init() for constructor
+//
 //  Created by Rico Chao on 2019-10-28.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
@@ -14,7 +17,7 @@ class Paragraph {
     
     var paragraph: String
     
-    var wordArr: [String]
+    var wordArr: [String]   //Separates the words from the paragraph and stores it in an array
     
     init() {
         paragraphWordCount = 0
@@ -22,7 +25,7 @@ class Paragraph {
         wordArr = []
     }
     
-    //Returns paragraphWordCount
+    //Returns word count for the paragraph
     func findWordCount(paragraph: String) -> Int {
         
         if paragraph == "" {

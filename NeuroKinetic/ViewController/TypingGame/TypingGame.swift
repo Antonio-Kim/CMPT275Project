@@ -2,37 +2,18 @@
 //  TypingGameViewController.swift
 //  NeuroKinetic
 //
-//  Created by nmaeda on 10/19/19.
+//  View controller for Typing Game
+//
+//  Created by Rico Chao on 10/19/19.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
 import UIKit
 
-//extensions for type String
-extension String {
-    //Checks if input is a-z, A-Z, 0-9
-    var isAlphabet: Bool {
-        return !isEmpty && range(of: "[^a-zA-Z]", options: .regularExpression) == nil
-    }
-    
-    var isNumeric: Bool {
-        return !isEmpty && range(of: "[^0-9]", options: .regularExpression) == nil
-    }
-    
-    //Checks if input is space
-    var isSpace: Bool {
-        return !isEmpty && range(of: "^\\s", options: .regularExpression) == nil
-    }
-    
-    //Checks if input is punctuation, tabs, or other things
-    var isOthers: Bool {
-        return !isEmpty && range(of: "[^-'.%$#&/]", options: .regularExpression) == nil
-    }
-}
-
 //Referenced from https://github.com/anoop4real/UILabelStyles
+//Extension for NSMutableAttributedString
 extension NSMutableAttributedString {
-    // If no text is send, then the style will be applied to full text
+    // A function to set color for text, used to changing colors in paragraph
     func setColorForText(_ textToFind: String?, with color: UIColor) {
         
         let range:NSRange?
@@ -75,10 +56,8 @@ class TypingGame: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        typingTextField.isUserInteractionEnabled = true
+        typingTextField.isUserInteractionEnabled = true //ensures the user can type in the textfield
         
         chooseParagraph()
         
@@ -101,19 +80,19 @@ class TypingGame: UIViewController {
             
             typedWord = typingTextField.text!
             
-            let temp = typingTextField.text!.last!
+            let temp = typingTextField.text!.last!  //Grabs the users last input to check if it is space
                 
             if temp == " " {
-                typedWord = String(typedWord.dropLast())
+                typedWord = String(typedWord.dropLast())    //Drops the space
             
-                if typedWord == paragraphList.paragraph.wordArr[wordElement] {
+                if typedWord == paragraphList.paragraph.wordArr[wordElement] {  //typed word comparing with the corresponding paragraph word
                     paragraphPrintCount += typedWord.count + 1
                     
                     typedWord = ""
                     wordElement += 1
                     typingTextField.text = ""
                 
-                    updateParagraph()
+                    updateParagraph()   //Updates the paragraphView
                 }
             }
         }
@@ -121,26 +100,10 @@ class TypingGame: UIViewController {
         checkComplete()
     }
     
-    //Showing keyboard
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    //Hiding keyboard
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
-    
     //Pick paragraph from list
     func chooseParagraph() {
         let tempNum: Int = Int.random(in:0...15);
-        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: 13)
+        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
     }
     
     //Check if the paragraph is complete
@@ -149,7 +112,7 @@ class TypingGame: UIViewController {
             completeParagraph = true;
             wordElement = 0
             print("Complete Paragraph")
-            typingTextField.isUserInteractionEnabled = false
+            typingTextField.isUserInteractionEnabled = false    //Make sure the user cannot type after the paragraph is completed
             instructionsLabel.text = "Done, Good Job!"
         }
     }
@@ -164,11 +127,11 @@ class TypingGame: UIViewController {
         
         //Check to make sure paragraph view is not nil
         guard let pText = paragraphView.text, !pText.isEmpty else {
-            instructionsLabel.text = "NANI?? NO PARAGRAPHS??"
+            instructionsLabel.text = "NO PARAGRAPHS??"
             return
         }
         
-        let tempSubstring = paragraphDisplay.prefix(paragraphPrintCount)
+        let tempSubstring = paragraphDisplay.prefix(paragraphPrintCount)    //Grabs the typed part to set color
         
         let string = NSMutableAttributedString(string: paragraphDisplay)
         
