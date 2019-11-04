@@ -29,7 +29,8 @@ class NeuroKineticIntegrationTest: XCTestCase {
     func testIntegrationTests() {
         
         
-        // FOUND MAJOR BUG DURING INTEGRATION TEST. WILL NEED TO BE ADDRESSED ON THE NEXT RELEASE
+        // FOUND MAJOR BUG ON THE METRONOMEGAVEVC.SWIFT DURING INTEGRATION TEST.
+        // WILL NEED TO BE ADDRESSED ON THE NEXT RELEASE
         //          - ANTONIO KIM
         // The integeration test goes through all the features of the app, including
         // metronome game, handwriting game, and typing game. Please see each UI tests

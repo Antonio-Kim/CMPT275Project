@@ -17,7 +17,9 @@ class NeuroKineticMetronomeTest: XCTestCase {
 
     override func tearDown() {
     }
-/* FOUND MAJOR BUG DURING INTEGRATION TEST. WILL NEED TO BE ADDRESSED ON THE NEXT RELEASE - ANTONIO KIM
+/* FOUND MAJOR BUG ON THE METRONOMEGAVEVC.SWIFT DURING INTEGRATION TEST.
+   WILL NEED TO BE ADDRESSED ON THE NEXT RELEASE - ANTONIO KIM
+     
     func testMetronomeFullTest() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
