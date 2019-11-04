@@ -20,6 +20,7 @@ class SignViewControl: UIViewController {
         super.viewDidLoad()
     }
     
+    //Function call to clear written input from the canvas
     @IBAction func clear(_ sender: UIButton) {
         signCanvas.clear()
     }

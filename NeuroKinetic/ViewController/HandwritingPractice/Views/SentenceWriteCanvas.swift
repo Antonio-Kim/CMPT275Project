@@ -9,13 +9,15 @@
 import UIKit
 
 class SentenceWriteCanvas: UIView {
+    
+    //Variable declarations
     var StartingPoint:CGPoint!
     var TouchPoint: CGPoint!
     var Path: UIBezierPath!
     var lineColor: UIColor!
     var lineWidth: CGFloat!
     
-    
+    //Setting the canvas and line color/width
     override func layoutSubviews() {
         self.clipsToBounds = true
         self.isMultipleTouchEnabled = false
@@ -24,11 +26,13 @@ class SentenceWriteCanvas: UIView {
         lineWidth = 5
     }
     
+    //Detecting the first touch input for writing from the pen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
         StartingPoint = touch?.location(in: self)
     }
     
+    //Detecting written input movement from the pen
     override func touchesMoved( _ touches: Set<UITouch>, with event: UIEvent?){
         let touch = touches.first
         TouchPoint = touch?.location(in: self)
@@ -40,6 +44,7 @@ class SentenceWriteCanvas: UIView {
         drawShapeLayer()
     }
     
+    //Setting the shape layers for writing
     func drawShapeLayer(){
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = Path.cgPath
@@ -49,11 +54,11 @@ class SentenceWriteCanvas: UIView {
         self.setNeedsDisplay()
     }
     
+    //Clear function implementation to remove all written input from the canvas
     func clear(){
         if self.layer.sublayers == nil {
             return
         }
-        
         Path.removeAllPoints()
         self.layer.sublayers = nil
         self.setNeedsDisplay()

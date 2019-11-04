@@ -10,6 +10,7 @@ import UIKit
 
 class HandwritingPractice: UIViewController {
     
+    //Function call to clear all written lines on the canvas
     @IBAction func ClearButton(_ sender: Any) {
         SentenceWrite.clear()
     }
@@ -23,6 +24,8 @@ class HandwritingPractice: UIViewController {
     
     @IBOutlet weak var SentenceBank: UILabel!
     
+    //Referenced from: https://www.englishtrackers.com/english-blog/famous-literary-quotes/
+    //Bank of quotes used for handwriting practice on the canvas
     fileprivate func generateSentence(){
         let number = Int.random(in: 0 ..< 5)
         switch number {

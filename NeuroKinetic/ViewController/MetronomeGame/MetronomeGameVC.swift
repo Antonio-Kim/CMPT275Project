@@ -96,7 +96,7 @@ class MetronomeGame: UIViewController {
                 //Metronome Sound
                 self.audioPlayer.play()
                 //If tap count is less than or equal to 19, continue the game
-                if(!(self.tapCount>=10))
+                if(!(self.tapCount>=19))
                 {
                     ////Chain animation. Start moving to the right.
                     self.moveRight()
