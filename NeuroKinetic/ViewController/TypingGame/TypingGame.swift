@@ -78,6 +78,8 @@ class TypingGame: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        typingTextField.isUserInteractionEnabled = true
+        
         chooseParagraph()
         
         instructionsLabel.text = "Type the following paragraph"
@@ -147,6 +149,8 @@ class TypingGame: UIViewController {
             completeParagraph = true;
             wordElement = 0
             print("Complete Paragraph")
+            typingTextField.isUserInteractionEnabled = false
+            instructionsLabel.text = "Done, Good Job!"
         }
     }
     

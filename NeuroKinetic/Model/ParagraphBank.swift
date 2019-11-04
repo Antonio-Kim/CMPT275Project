@@ -68,13 +68,13 @@ class ParagraphBank {
             temp = "Sometimes the clothes at Gap Kids are too flashy, so I’m forced to go to the American Girl store and order clothes for large colonial dolls."
             
         case 13:
-            temp = "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?"
+            temp = "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal"
             
         case 14:
             temp = "Wikipedia is the best thing ever. Anyone in the world can write anything they want about any subject. So you know you are getting the best possible information."
             
         case 15:
-            temp = "hello, I am me"
+            temp = "I have a dream that one day this nation will rise up and live out the true meaning of creed: “We hold these truths to be self-evident, that all men are created equal”"
             
         default:
             temp = ""

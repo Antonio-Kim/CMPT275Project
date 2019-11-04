@@ -14,7 +14,6 @@ class HandwritingPractice: UIViewController {
         SentenceWrite.clear()
     }
     @IBOutlet weak var SentenceWrite: SentenceWriteCanvas!
-    let canvas = SentenceWriteCanvas()
     
     override func viewDidLoad() {
         super.viewDidLoad()

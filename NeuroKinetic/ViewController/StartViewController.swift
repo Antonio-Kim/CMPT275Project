@@ -10,10 +10,23 @@ import UIKit
 
 class StartViewController: UIViewController {
 
+    @IBOutlet weak var statsButton: UIButton!
+    
+    @IBOutlet weak var settingButton: UIButton!
+    
+    @IBOutlet weak var statsLabelButton: UIButton!
+    
+    @IBOutlet weak var settingLabelButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        statsButton.isHidden = true
+        settingButton.isHidden = true
+        statsLabelButton.isHidden = true
+        settingLabelButton.isHidden = true
     }
     
 

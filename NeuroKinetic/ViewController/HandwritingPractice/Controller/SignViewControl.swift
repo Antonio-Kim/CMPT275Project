@@ -12,23 +12,16 @@ class SignViewControl: UIViewController {
     
     @IBOutlet weak var signCanvas: SignatureCanvas!
     
+    
+    @IBOutlet weak var clear: UIButton!
+    @IBOutlet weak var done: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func clearButton(_ sender: Any) {
+    @IBAction func clear(_ sender: UIButton) {
         signCanvas.clear()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

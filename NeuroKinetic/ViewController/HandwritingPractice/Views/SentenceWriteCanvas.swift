@@ -19,7 +19,7 @@ class SentenceWriteCanvas: UIView {
     override func layoutSubviews() {
         self.clipsToBounds = true
         self.isMultipleTouchEnabled = false
-        self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "lines-1.jpg"))
+        self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "lines.jpg"))
         lineColor = UIColor.black
         lineWidth = 5
     }
@@ -50,6 +50,10 @@ class SentenceWriteCanvas: UIView {
     }
     
     func clear(){
+        if self.layer.sublayers == nil {
+            return
+        }
+        
         Path.removeAllPoints()
         self.layer.sublayers = nil
         self.setNeedsDisplay()
