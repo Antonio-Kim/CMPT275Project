@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NeuroKineticUITests/NeuroKineticHandwritingTests.swift"
-            timestampString = "594539260.700563"
+            timestampString = "594599394.942183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "testHandwritingDone()"
             landmarkType = "7">
          </BreakpointContent>

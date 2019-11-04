@@ -29,6 +29,7 @@
 		BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428022367D14F00D9F021 /* GeneralStats.swift */; };
 		BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428042367D15D00D9F021 /* HandwritingStats.swift */; };
 		F907F183236F6AE700680057 /* NeuroKineticHandwritingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F907F17B236F6ABF00680057 /* NeuroKineticHandwritingTests.swift */; };
+		F909B9A32370D600006CC591 /* NeuroKineticUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F909B9A22370D600006CC591 /* NeuroKineticUnitTests.swift */; };
 		F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */; };
 		F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */; };
 		F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */; };
@@ -87,6 +88,7 @@
 		BEF428022367D14F00D9F021 /* GeneralStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStats.swift; sourceTree = "<group>"; };
 		BEF428042367D15D00D9F021 /* HandwritingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStats.swift; sourceTree = "<group>"; };
 		F907F17B236F6ABF00680057 /* NeuroKineticHandwritingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticHandwritingTests.swift; sourceTree = "<group>"; };
+		F909B9A22370D600006CC591 /* NeuroKineticUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticUnitTests.swift; sourceTree = "<group>"; };
 		F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "fonts/Montserrat-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
 		F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "fonts/Montserrat-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "fonts/Montserrat-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
@@ -281,6 +283,7 @@
 			children = (
 				BE1B1A6E235BF97200E6ED19 /* NeuroKineticTests.swift */,
 				BE1B1A70235BF97200E6ED19 /* Info.plist */,
+				F909B9A22370D600006CC591 /* NeuroKineticUnitTests.swift */,
 			);
 			path = NeuroKineticTests;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE1B1A6F235BF97200E6ED19 /* NeuroKineticTests.swift in Sources */,
+				F909B9A32370D600006CC591 /* NeuroKineticUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
