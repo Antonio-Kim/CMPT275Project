@@ -10,33 +10,38 @@ import UIKit
 import Foundation
 import AVFoundation
 
+
+//This UIViewController class is for metronome game
+
 class MetronomeGame: UIViewController {
     
+    //MP3 Initialization for metronome sound
     var audioPlayer = AVAudioPlayer()
+    //Varible Initialization
     var tapCount:Int = 0;
     var didStart: Bool = false
     var isGameOver: Bool = false
     
-    //timers
+    //Timer Initialization
     var startTime:Date = Date.init()
     var tapTime: Double = 0.0
     
-    //start button and tap count
+    //Start button and Message label
     @IBOutlet weak var tap: UIButton!
     @IBOutlet weak var message: UILabel!
     
-    //TAP buttons
+    //TAP right and left button
     @IBOutlet weak var right: UIButton!
     @IBOutlet weak var left: UIButton!
     
-    //soundNote
+    //Music Note Image
     @IBOutlet weak var soundNote: UIImageView!
     
-    //returns the expected timing button is tapped
+    //Returns the expected timing button is supposed to be tapped depending on the tap count and which button is being pressed
     func expectedTime(isLeft: Bool) ->Double
     {
         let isOdd = tapCount%2
-        
+        //If left button is tapped
         if(isLeft)
         {
             if(isOdd == 0)
@@ -46,9 +51,10 @@ class MetronomeGame: UIViewController {
             else
             {
                 
-               return Double(2*(tapCount+1))
+                return Double(2*(tapCount+1))
             }
         }
+        //If right button is tapped
         else
         {
             if(isOdd == 1)
@@ -62,60 +68,64 @@ class MetronomeGame: UIViewController {
         }
     }
     
-    //sound note moves to the right tap button
+    //Animation for music note: Right movement
     func moveRight()
     {
         UIView.animate(withDuration: 2,
                        delay: 0.0,
                        options: .curveLinear,
-                       animations: {
-                        self.soundNote.frame.origin.x = self.right.frame.origin.x
-                       } ,
+                       animations: {self.soundNote.frame.origin.x = self.right.frame.origin.x } ,
                        completion:{
                         finished in
                         self.tapCount += 1
+                        //Metronome Sound
                         self.audioPlayer.play()
+                        //Chain animation. Start moving to the left.
                         self.moveLeft()
-                       })
+        })
     }
-    //sound note moves to the left tap button
+    //Animation for music note: Left movement
     func moveLeft()
     {
-        UIView.animate(withDuration: 2,
-                       delay: 0.0,
-                       options: .curveLinear,
-                       animations: {
-                        self.soundNote.frame.origin.x = self.left.frame.origin.x
-        } ,
-                       completion:{
-                        finished in
-                        self.tapCount += 1
-                        self.audioPlayer.play()
-                        if(!(self.tapCount>=19))
-                        {
-                            self.moveRight()
-                        }
-                        else
-                        {
-                            self.message.text = "GAME OVER"
-                            self.isGameOver = true
-                            self.animateFinish()
-                        }
+        //The music note will move towards the left button linearly over two seconds
+        UIView.animate(withDuration: 2, delay: 0.0, options: .curveLinear,
+                       animations: { self.soundNote.frame.origin.x = self.left.frame.origin.x} ,
+                       //After animation is completed below statements are executed
+            completion:{
+                finished in
+                self.tapCount += 1
+                //Metronome Sound
+                self.audioPlayer.play()
+                //If tap count is less than or equal to 19, continue the game
+                if(!(self.tapCount>=10))
+                {
+                    ////Chain animation. Start moving to the right.
+                    self.moveRight()
+                }
+                    //If tap count is bigger than or equal to 19, finish the game displaying "GAME OVER"
+                    //And fade out all the buttons
+                else
+                {
+                    self.message.text = "GAME OVER"
+                    self.isGameOver = true
+                    self.animateFinish()
+                }
         })
     }
     
-    //start button disappears
+    //Start button disappears
     func startDisappear()
     {
         UIView.animate(withDuration: 2,
                        animations:{self.tap.alpha = 0} )
-        self.tap.removeFromSuperview()
+        //self.tap.removeFromSuperview()
     }
     
-    //animation executed at the end of the game
+    //Animation to be executed when the game is finished
     func animateFinish()
     {
         self.tap.setTitle("DONE", for: .normal)
+        //Display "DONE". Fade out all the other buttons and labels.
         UIView.animate(withDuration: 3,
                        animations:{
                         self.tap.alpha = 1
@@ -128,38 +138,40 @@ class MetronomeGame: UIViewController {
     }
     
     
-    //MARK: Properties
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //bring image to the front
+        //Bringing image to the front
         view.addSubview(soundNote)
         
-        //Game Menu View Controller
-        
-        
-        //initialize sound file
+        //Initializing sound file
         let sound = Bundle.main.path(forResource:"metronomeSound(2)", ofType: "mp3")
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
         }
+            //If it fails to load, returns, error
         catch{
             print(error)
         }
-        
     }
     
-    //starts the game
+    //The button has two functionalities
+    //Before game is started: Works as a start button
+    //After game is over: Works as a quit button
     @IBAction func TAP(_ sender: UIButton) {
-        //starting game
+        //Starting game if the game hasn't started yet
         if(!didStart)
         {
+            //Take Start time
             startTime = Date.init()
+            //Fade out start button
             UIView.animate(withDuration: 2, animations:{self.tap.alpha = 0} )
             moveRight()
             startTime = Date.init()
             didStart = true
         }
+        //Navigating to the menu, if the game is finished
         if(isGameOver)
         {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -168,58 +180,80 @@ class MetronomeGame: UIViewController {
         }
     }
     
-    //tap buttons
+    //
     @IBAction func tapRight(_ sender: UIButton) {
+        //The button functions if and only if the game has started and hasn't finished yet
         if(didStart && !isGameOver)
         {
+            //Take the user tap time
             let tempTime: Date = Date.init()
             tapTime = tempTime.timeIntervalSince(startTime)
-            var difference = tapTime - expectedTime(isLeft: true)
             
+            //Take a difference between user tap time and expected timing
+            var difference = tapTime - expectedTime(isLeft: false)
             
+            //If the difference is negative, convert it to positive
             if(difference<0)
             {
                 difference *= (-1)
             }
             
-            if(difference>0.5 || difference < -0.5)
+            //Display "Miss" or "Good Tap" depending on user's timing and expected time difference
+            if(difference>0.5)
             {
+                //Display "Miss"
+                message.text = "Miss"
                 message.alpha = 1
-                message.text = "Miss(RIGHT)"
+                //Fade out "Miss" with animation
                 UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
             else
             {
+                //Display "Good Tap"
+                message.text = "Good Tap"
                 message.alpha = 1
-                message.text = "Good Tap(RIGHT)"
+                //Fade out "Good" with animation
                 UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
         }
     }
     
     @IBAction func tapLeft(_ sender: UIButton) {
+        //The button functions if and only if the game has started and hasn't finished yet
         if(didStart && !isGameOver)
         {
+            //Take the user tap time
             let tempTime: Date = Date.init()
             tapTime = tempTime.timeIntervalSince(startTime)
-            var difference = tapTime - expectedTime(isLeft: false)
+            
+            //Take a difference between user tap time and expected timing
+            var difference = tapTime - expectedTime(isLeft: true)
+            //If the difference is negative, convert it to positive
             if(difference<0)
             {
                 difference *= (-1)
             }
+            
+            //Display "Miss" or "Good Tap" depending on user's timing and expected time difference
             if(difference>0.5)
             {
+                //Display "Miss"
+                message.text = "Miss"
                 message.alpha = 1
-                message.text = "Miss(LEFT)"
+                //Fade out "Miss" with animation
                 UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
             else
             {
+                //Display "Good Tap"
+                message.text = "Good Tap"
                 message.alpha = 1
-                message.text = "Good Tap(LEFT)"
+                //Fade out "Good" with animation
                 UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
         }
     }
     
 }
+
+

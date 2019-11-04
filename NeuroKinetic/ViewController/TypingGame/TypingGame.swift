@@ -140,7 +140,7 @@ class TypingGame: UIViewController {
     //Pick paragraph from list
     func chooseParagraph() {
         let tempNum: Int = Int.random(in:0...15);
-        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
+        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: 13)
     }
     
     //Check if the paragraph is complete

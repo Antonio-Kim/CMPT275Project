@@ -33,10 +33,11 @@
 		F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */; };
 		F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */; };
 		F92F3C6F236F011900DC8A8D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */; };
+		F98BCBD5236FE94300E56FCE /* NeuroKineticIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BCBD4236FE94300E56FCE /* NeuroKineticIntegrationTest.swift */; };
+		F98BCBD7236FEEEF00E56FCE /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F98BCBD6236FEEEF00E56FCE /* Logo.png */; };
 		F9B7AA7C236F3851000B3BF1 /* metronomeSound(1).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9B7AA79236F3850000B3BF1 /* metronomeSound(1).mp3 */; };
 		F9B7AA7D236F3851000B3BF1 /* metronomeSound(2).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9B7AA7A236F3851000B3BF1 /* metronomeSound(2).mp3 */; };
 		F9B7AA7E236F3851000B3BF1 /* metronomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9B7AA7B236F3851000B3BF1 /* metronomeSound.mp3 */; };
-		F9B7AA86236F39FE000B3BF1 /* NeuroKineticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B7AA85236F39FE000B3BF1 /* NeuroKineticUITests.swift */; };
 		F9B7AA8E236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */; };
 		F9B7AAA0236F5396000B3BF1 /* NeuroKineticTypingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */; };
 /* End PBXBuildFile section */
@@ -89,11 +90,12 @@
 		F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "fonts/Montserrat-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
 		F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "fonts/Montserrat-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "fonts/Montserrat-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
+		F98BCBD4236FE94300E56FCE /* NeuroKineticIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticIntegrationTest.swift; sourceTree = "<group>"; };
+		F98BCBD6236FEEEF00E56FCE /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = img/Logo.png; sourceTree = SOURCE_ROOT; };
 		F9B7AA79236F3850000B3BF1 /* metronomeSound(1).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "metronomeSound(1).mp3"; sourceTree = "<group>"; };
 		F9B7AA7A236F3851000B3BF1 /* metronomeSound(2).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "metronomeSound(2).mp3"; sourceTree = "<group>"; };
 		F9B7AA7B236F3851000B3BF1 /* metronomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronomeSound.mp3; sourceTree = "<group>"; };
 		F9B7AA83236F39FE000B3BF1 /* NeuroKineticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeuroKineticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9B7AA85236F39FE000B3BF1 /* NeuroKineticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticUITests.swift; sourceTree = "<group>"; };
 		F9B7AA87236F39FE000B3BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticMetronomeTest.swift; sourceTree = "<group>"; };
 		F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticTypingTests.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				F9B7AA7A236F3851000B3BF1 /* metronomeSound(2).mp3 */,
 				BE1B1A62235BF97200E6ED19 /* LaunchScreen.storyboard */,
 				BE1B1A65235BF97200E6ED19 /* Info.plist */,
+				F98BCBD6236FEEEF00E56FCE /* Logo.png */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -297,10 +300,10 @@
 			isa = PBXGroup;
 			children = (
 				F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */,
-				F9B7AA85236F39FE000B3BF1 /* NeuroKineticUITests.swift */,
 				F9B7AA87236F39FE000B3BF1 /* Info.plist */,
 				F907F17B236F6ABF00680057 /* NeuroKineticHandwritingTests.swift */,
 				F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */,
+				F98BCBD4236FE94300E56FCE /* NeuroKineticIntegrationTest.swift */,
 			);
 			path = NeuroKineticUITests;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98BCBD7236FEEEF00E56FCE /* Logo.png in Resources */,
 				F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */,
 				7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */,
 				F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */,
@@ -476,8 +480,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98BCBD5236FE94300E56FCE /* NeuroKineticIntegrationTest.swift in Sources */,
 				F9B7AA8E236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift in Sources */,
-				F9B7AA86236F39FE000B3BF1 /* NeuroKineticUITests.swift in Sources */,
 				F9B7AAA0236F5396000B3BF1 /* NeuroKineticTypingTests.swift in Sources */,
 				F907F183236F6AE700680057 /* NeuroKineticHandwritingTests.swift in Sources */,
 			);

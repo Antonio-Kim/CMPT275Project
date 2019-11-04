@@ -1,14 +1,14 @@
 //
-//  NeuroKineticUITests.swift
+//  NeuroKineticIntegrationTest.swift
 //  NeuroKineticUITests
 //
-//  Created by Antonio Kim on 2019-11-03.
+//  Created by antoniok on 2019-11-03.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
 import XCTest
 
-class NeuroKineticUITests: XCTestCase {
+class NeuroKineticIntegrationTest: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -24,6 +24,10 @@ class NeuroKineticUITests: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+
+    func testIntegrationTests() {
+        
     }
 
 }

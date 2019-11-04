@@ -37,12 +37,12 @@ class NeuroKineticHandwritingTests: XCTestCase {
          *      3) Draw something on the highlighted box
          *      4) Click Done, and moves onto the next game
          */
- 
+        
         let app = XCUIApplication()
-        app.otherElements.containing(.image, identifier:"Logo").children(matching: .button).matching(identifier: "Button").element(boundBy: 0).tap()
+        app.buttons["Button"].tap()
         app.buttons["GameChoose Write"].tap()
-        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element/*@START_MENU_TOKEN@*/.swipeLeft()/*[[".swipeUp()",".swipeLeft()"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        app.buttons["DONE"].tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeUp()
+        app.buttons["Done"].tap()
         
     }
     
@@ -65,5 +65,50 @@ class NeuroKineticHandwritingTests: XCTestCase {
         app.buttons["Clear"].tap()
         
     }
- 
+    
+    func testHandwritingClear(){
+        /** This test cases ensures that handwriting test is completed and clears the
+         *  the writing once the "Clear" button is pressed. When the handwriting is written,
+         *  the test case will click on "Clear" button and will remove any handwritings on the paper.
+         *
+         *  # Testing procedures #
+         *      1) Start the game by clicking on the "Start" icon
+         *      2) Click on Handwriting game icon
+         *      3) Press Done
+         *      4) Draw something on the paper
+         *      4) Click Clear, and removes any handwritings on the paper
+         */
+        
+        let app = XCUIApplication()
+        app.buttons["Button"].tap()
+        app.buttons["GameChoose Write"].tap()
+        app.buttons["Done"].tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 2).children(matching: .other).element.children(matching: .image).element.swipeUp()
+        app.buttons["Clear"].tap()
+        
+    }
+    
+    func testHandwritingDone(){
+        /** This test cases ensures that handwriting test is completed and moves to the
+         *  main menu once the "Done" button is pressed. When the handwriting is written,
+         *  the test case will click on "Clear" button and will remove any handwritings on the paper.
+         *
+         *  # Testing procedures #
+         *      1) Start the game by clicking on the "Start" icon
+         *      2) Click on Handwriting game icon
+         *      3) Press Done
+         *      4) Draw something on the paper
+         *      4) Click Done, and return to the main menu
+         */
+        
+        let app = XCUIApplication()
+        app.buttons["Button"].tap()
+        app.buttons["GameChoose Write"].tap()
+        
+        let doneButton = app.buttons["Done"]
+        doneButton.tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 2).children(matching: .other).element.children(matching: .image).element.swipeUp()
+        doneButton.tap()
+        
+    }
 }
