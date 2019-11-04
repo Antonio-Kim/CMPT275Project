@@ -20,7 +20,7 @@ class SignatureCanvas: UIView {
     override func layoutSubviews() {
         self.clipsToBounds = true
         self.isMultipleTouchEnabled = false
-        
+           self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "signatureline.jpg"))
         lineColor = UIColor.black
         lineWidth = 5
     }
