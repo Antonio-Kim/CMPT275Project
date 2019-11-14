@@ -31,6 +31,12 @@ extension NSMutableAttributedString {
     }
 }
 
+enum ParagraphState {   //Determines how update paragraph should work
+    case normal
+    case correctWord
+    case wrongWord
+}
+
 class TypingGame: UIViewController {
     
     @IBOutlet weak var instructionsLabel: UILabel!
@@ -41,19 +47,27 @@ class TypingGame: UIViewController {
     
     @IBOutlet weak var doneButton: UIButton!
     
+    var paragraphState = ParagraphState.normal
+    
     var wordElement: Int = 0
     
     var paragraphPrintCount: Int = 0
     
+    var lastParagraphPrintCount: Int = 0
+    
     var paragraphList: ParagraphBank = ParagraphBank()
     
     var paragraphDisplay: String = ""
+    
+    var maxTypedWord: String = ""
     
     var typedWord: String = ""
     
     var wordCorrect: Bool = false
     
     var completeParagraph: Bool = false
+    
+    var correctWord: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,44 +82,119 @@ class TypingGame: UIViewController {
         paragraphView.text = paragraphDisplay
         paragraphView.numberOfLines = 0
         paragraphView.textAlignment = NSTextAlignment.justified
+        
+        paragraphState = ParagraphState.normal
     }
     
     @IBAction func typingTextFieldEditingChange(_ typingTextField: UITextField) {
         
         if !completeParagraph {
             //Check to make sure typing text field is not nil
-            //User might type some letter and then clear everything from textfield
+            //User might type some letter and then clear everything from tfield
             //This guard prevents that situation from causes crashes
             guard let text = typingTextField.text, !text.isEmpty else {
                 return
             }
             
+            //            let temp = typingTextField.text!.last!  //Grabs the users last input to check if it is space
+            //
+            //            if temp != " " && typingTextField.text! == String(typedWord.dropLast()) {
+            //
+            //                print("なに backspace -1")
+            //
+            //                if paragraphPrintCount > lastParagraphPrintCount {
+            //                    paragraphPrintCount -= 1
+            //                }
+            //                //updateParagraph()
+            //
+            //                print("paragraph print count: " + "\(paragraphPrintCount)")
+            //
+            //                typedWord = typingTextField.text!
+            //
+            //                return
+            //            }
+            //
+            //            typedWord = typingTextField.text!
+            //
+            //            print("typed word: " + typedWord)
+            //
+            //            print("WordArr count: " + "\(paragraphList.paragraph.wordArr[wordElement].count)")
+            //
+            //            print("typed word count: " + "\(typedWord.count)")
+            //
+            //            print("WordArr element: " + "\(paragraphList.paragraph.wordArr[wordElement])")
+            //
+            //            if typedWord.count <= (paragraphList.paragraph.wordArr[wordElement].count) {   //Check if the typed length exceed what the user is suppose to type
+            //
+            //                print(paragraphList.paragraph.wordArr[wordElement].prefix(typedWord.count))
+            //
+            //                if typedWord == paragraphList.paragraph.wordArr[wordElement].prefix(typedWord.count) {
+            //                    paragraphPrintCount += 1
+            //
+            //                    lastParagraphPrintCount = paragraphPrintCount
+            //
+            //                    print("Inside updating paragraph for correct words")
+            //
+            //                    paragraphState = ParagraphState.normal
+            //                    updateParagraph()   //Updates real time now
+            //                }
+            //
+            //                maxTypedWord = typedWord
+            //
+            //                print("paragraph print count: " + "\(paragraphPrintCount)" + "\n")
+            //
+            //            }else if typedWord.count == (paragraphList.paragraph.wordArr[wordElement].count+1) && temp == " " {
+            //
+            //                typedWord = String(typedWord.dropLast())    //Drops the space
+            //
+            //                print("paragraph print count in space: " + "\(paragraphPrintCount)" + "\n")
+            //
+            //                if typedWord == paragraphList.paragraph.wordArr[wordElement] {  //typed word comparing with the corresponding paragraph word
+            //                    paragraphPrintCount += 1
+            //
+            //                    typedWord = ""
+            //                    wordElement += 1
+            //                    typingTextField.text = ""
+            //                    paragraphState = ParagraphState.correctWord
+            //                    updateParagraph()   //Updates real time now
+            //
+            //                }else {
+            //                    //paragraphState = ParagraphState.wrongWord
+            //                    //turn that word into red
+            //                    //updateParagraph()
+            //                }
+            //
+            //            }else {
+            //                typingTextField.text! = maxTypedWord
+            //            }
+            
             typedWord = typingTextField.text!
             
             let temp = typingTextField.text!.last!  //Grabs the users last input to check if it is space
-                
+            
             if temp == " " {
                 typedWord = String(typedWord.dropLast())    //Drops the space
-            
+                
                 if typedWord == paragraphList.paragraph.wordArr[wordElement] {  //typed word comparing with the corresponding paragraph word
                     paragraphPrintCount += typedWord.count + 1
                     
                     typedWord = ""
                     wordElement += 1
                     typingTextField.text = ""
-                
+                    paragraphState = ParagraphState.correctWord
+                    
                     updateParagraph()   //Updates the paragraphView
                 }
             }
+            
         }
-        
         checkComplete()
     }
     
     //Pick paragraph from list
     func chooseParagraph() {
         let tempNum: Int = Int.random(in:0...15);
-        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
+        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: 15)
     }
     
     //Check if the paragraph is complete
@@ -133,15 +222,42 @@ class TypingGame: UIViewController {
             return
         }
         
-        let tempSubstring = paragraphDisplay.prefix(paragraphPrintCount)    //Grabs the typed part to set color
+        switch paragraphState {
+        case .normal:
+            let tempSubstring = paragraphDisplay.prefix(paragraphPrintCount)    //Grabs the typed part to set color
+            
+            let string = NSMutableAttributedString(string: paragraphDisplay)
+            
+            string.setColorForText(String(tempSubstring), with: UIColor.white)
+            
+            paragraphView.attributedText = string
+            
+        case .correctWord:
+            let tempSubstring = paragraphDisplay.prefix(paragraphPrintCount)    //Grabs the typed part to set color
+            
+            let string = NSMutableAttributedString(string: paragraphDisplay)
+            
+            string.setColorForText(paragraphList.paragraph.wordArr[wordElement-1], with: UIColor.green)
+            string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement-1].count+1)), with: UIColor.white)
+            
+            paragraphView.attributedText = string
+            
+        case .wrongWord:
+            let tempSubstring = paragraphDisplay.prefix(paragraphPrintCount)    //Grabs the typed part to set color
+            
+            let string = NSMutableAttributedString(string: paragraphDisplay)
+            
+            string.setColorForText(paragraphList.paragraph.wordArr[wordElement-1], with: UIColor.red)
+            string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement-1].count+1)), with: UIColor.white)
+            
+            paragraphView.attributedText = string
+            
+        }
         
-        let string = NSMutableAttributedString(string: paragraphDisplay)
-        
-        string.setColorForText(String(tempSubstring), with: UIColor.white)
-        
-        paragraphView.attributedText = string
     }
 }
+
+
 
 
 

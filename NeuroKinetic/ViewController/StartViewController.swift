@@ -23,10 +23,6 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        statsButton.isHidden = true
-        settingButton.isHidden = true
-        statsLabelButton.isHidden = true
-        settingLabelButton.isHidden = true
     }
     
 

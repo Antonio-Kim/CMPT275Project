@@ -312,7 +312,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ben-S6-4FT">
-                                <rect key="frame" x="1037" y="677" width="57" height="37"/>
+                                <rect key="frame" x="1046" y="678" width="48" height="36"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -588,6 +588,13 @@
                                     <action selector="tapRight:" destination="uiR-MZ-HIV" eventType="touchUpInside" id="pAD-DQ-LnE"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5gM-Sk-7i3">
+                                <rect key="frame" x="538" y="163" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeDifficulity:" destination="uiR-MZ-HIV" eventType="valueChanged" id="YiK-n2-i2V"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.81791979074478149" green="0.50921565294265747" blue="0.43820959329605103" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -605,6 +612,7 @@
                         <viewLayoutGuide key="safeArea" id="AO5-ui-PWJ"/>
                     </view>
                     <connections>
+                        <outlet property="difficulityBar" destination="5gM-Sk-7i3" id="sZN-7D-u9V"/>
                         <outlet property="left" destination="ouv-aR-iF7" id="4gU-3G-S5v"/>
                         <outlet property="message" destination="Lg1-ix-3OM" id="3if-cT-vkV"/>
                         <outlet property="right" destination="Gkf-8G-ifi" id="x81-Ej-Q2x"/>
@@ -876,20 +884,20 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GameChoose_Tap" width="558" height="533"/>
-        <image name="GameChoose_Type" width="559" height="538"/>
-        <image name="GameChoose_Write" width="559" height="538"/>
-        <image name="Logo" width="1058" height="996"/>
-        <image name="MainMenu_Settings" width="1080" height="1080"/>
-        <image name="MainMenu_StartButton" width="1080" height="1080"/>
-        <image name="MainMenu_Stats" width="1080" height="1080"/>
+        <image name="GameChoose_Tap" width="418.5" height="399.75"/>
+        <image name="GameChoose_Type" width="419.25" height="403.5"/>
+        <image name="GameChoose_Write" width="419.25" height="403.5"/>
+        <image name="Logo" width="793.5" height="747"/>
+        <image name="MainMenu_Settings" width="810" height="810"/>
+        <image name="MainMenu_StartButton" width="810" height="810"/>
+        <image name="MainMenu_Stats" width="810" height="810"/>
         <image name="movingMusicCircle" width="980" height="982"/>
         <image name="tapButton" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hDn-2a-nQ5"/>
         <segue reference="Raq-LN-5uW"/>
-        <segue reference="5wv-Gz-ltI"/>
+        <segue reference="yzq-G9-nTb"/>
         <segue reference="FzK-bU-J74"/>
         <segue reference="iNj-2p-92K"/>
     </inferredMetricsTieBreakers>
