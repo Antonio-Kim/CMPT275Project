@@ -10,6 +10,9 @@
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
 		41E81C732366F605003313B8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C722366F605003313B8 /* Setting.swift */; };
 		7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C332F236E291800BAFC5A /* Main.storyboard */; };
+		83466746237E1092009344DA /* always_remember.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83466743237E1092009344DA /* always_remember.mp3 */; };
+		83466747237E1092009344DA /* WritingBigger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83466744237E1092009344DA /* WritingBigger.mp3 */; };
+		83466748237E1092009344DA /* bigger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 83466745237E1092009344DA /* bigger.mp3 */; };
 		83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */; };
 		83A313C32368F98E00BC251A /* SignatureCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313C22368F98E00BC251A /* SignatureCanvas.swift */; };
 		83B00101236D1F31001488AA /* SignViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00100236D1F31001488AA /* SignViewControl.swift */; };
@@ -64,6 +67,9 @@
 		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		41E81C722366F605003313B8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		7B7C3330236E291800BAFC5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83466743237E1092009344DA /* always_remember.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = always_remember.mp3; path = ../../../../Downloads/always_remember.mp3; sourceTree = "<group>"; };
+		83466744237E1092009344DA /* WritingBigger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = WritingBigger.mp3; path = ../../../../Downloads/WritingBigger.mp3; sourceTree = "<group>"; };
+		83466745237E1092009344DA /* bigger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bigger.mp3; path = ../../../../Downloads/bigger.mp3; sourceTree = "<group>"; };
 		83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceWriteCanvas.swift; sourceTree = "<group>"; };
 		83A313C22368F98E00BC251A /* SignatureCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureCanvas.swift; sourceTree = "<group>"; };
 		83B00100236D1F31001488AA /* SignViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewControl.swift; sourceTree = "<group>"; };
@@ -132,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				BE1B1A60235BF97200E6ED19 /* Assets.xcassets */,
+				83466743237E1092009344DA /* always_remember.mp3 */,
+				83466745237E1092009344DA /* bigger.mp3 */,
+				83466744237E1092009344DA /* WritingBigger.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -418,10 +427,13 @@
 			files = (
 				F98BCBD7236FEEEF00E56FCE /* Logo.png in Resources */,
 				F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */,
+				83466746237E1092009344DA /* always_remember.mp3 in Resources */,
 				7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */,
+				83466748237E1092009344DA /* bigger.mp3 in Resources */,
 				F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
 				F9B7AA7D236F3851000B3BF1 /* metronomeSound(2).mp3 in Resources */,
+				83466747237E1092009344DA /* WritingBigger.mp3 in Resources */,
 				F9B7AA7C236F3851000B3BF1 /* metronomeSound(1).mp3 in Resources */,
 				F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */,
 				F9B7AA7E236F3851000B3BF1 /* metronomeSound.mp3 in Resources */,

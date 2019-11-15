@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension CGPoint {
+    func distance(to point: CGPoint) -> CGFloat {
+        return sqrt(pow(x - point.x, 2) + pow(y - point.y, 2))
+    }
+}
+
 class SignatureCanvas: UIView {
     
     //Variable declarations
@@ -16,6 +22,7 @@ class SignatureCanvas: UIView {
     var Path: UIBezierPath!
     var lineColor: UIColor!
     var lineWidth: CGFloat!
+    var yCoordinates = [Float]()
     
     //Setting the canvas and line color/width
     override func layoutSubviews() {
@@ -30,17 +37,34 @@ class SignatureCanvas: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
         StartingPoint = touch?.location(in: self)
+        if (Int(StartingPoint.y) < 0){
+            yCoordinates.append(0.0)
+        }
+        else if(Int(StartingPoint.y) > 230){
+            yCoordinates.append(230.0)
+        }
+        else{
+           yCoordinates.append(Float32(StartingPoint.y))
+        }
     }
     
     //Detecting written input movement from the pen
     override func touchesMoved( _ touches: Set<UITouch>, with event: UIEvent?){
         let touch = touches.first
         TouchPoint = touch?.location(in: self)
+        if (Int(TouchPoint.y) < 0){
+            yCoordinates.append(0.0)
+        }
+        else if(Int(TouchPoint.y) > 230){
+            yCoordinates.append(230.0)
+        }
+        else{
+            yCoordinates.append(Float32(TouchPoint.y))
+        }
         Path = UIBezierPath()
         Path.move(to: StartingPoint)
         Path.addLine(to: TouchPoint)
         StartingPoint=TouchPoint
-        
         drawShapeLayer()
     }
     
@@ -56,12 +80,21 @@ class SignatureCanvas: UIView {
     
     //Clear function implementation to remove all written input from the canvas
     func clear(){
+        calculateAmplitude()
+        
         if self.layer.sublayers == nil {
             return
         }
+        yCoordinates.removeAll()
         Path.removeAllPoints()
         self.layer.sublayers = nil
         self.setNeedsDisplay()
     }
+    func calculateAmplitude(){
+        //let diff = (yCoordinates.max() - yCoordinates.min())
+        var diff: CGFloat = CGFloat(yCoordinates.min()!.distance(to: yCoordinates.max()!))
+        print("Print diff: " + "\(diff)")
+    }
+    
 }
 
