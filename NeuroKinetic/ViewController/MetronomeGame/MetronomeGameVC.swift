@@ -9,11 +9,9 @@
 import UIKit
 import Foundation
 import AVFoundation
-
-
+import FirebaseDatabase
 //This UIViewController class is for metronome game
 class MetronomeGame: UIViewController {
-    
     //MP3 Initialization for metronome sound
     var audioPlayer = AVAudioPlayer()
     //Varible Initialization
@@ -32,6 +30,11 @@ class MetronomeGame: UIViewController {
     var rightTime:Date = Date()
     var leftTime:Date = Date()
     var tapTime: Double = 0.0
+    
+    //UserDefault preference storing
+    let preferences = UserDefaults.standard
+    let currentLevelKey = "TotalMetronomeGamesPlayed"
+    var gamesPlayed: Int = 0
     
     //Start button and Message label
     @IBOutlet weak var tap: UIButton!
@@ -83,12 +86,16 @@ class MetronomeGame: UIViewController {
                        animations: {self.soundNote.frame.origin.x = self.right.frame.origin.x } ,
                        completion:{
                         _ in
+                        self.tapCount += 1
+                        DispatchQueue.main.async {
+                            self.audioPlayer.play()
+                        }
                         self.moveLeft()
                         self.rightTime = Date()
                         self.leftTime = Date(timeIntervalSinceNow: self.interval)
-                        self.tapCount += 1
+                        
                         //Metronome Sound
-                        self.audioPlayer.play()
+                        
                         //Chain animation. Start moving to the left.
                         
         })
@@ -105,7 +112,10 @@ class MetronomeGame: UIViewController {
                 
                 self.tapCount += 1
                 //Metronome Sound
-                self.audioPlayer.play()
+                DispatchQueue.main.async {
+                    self.audioPlayer.play()
+                }
+                
                 //If tap count is less than or equal to 19, continue the game
                 if(!(self.tapCount>=19))
                 {
@@ -147,6 +157,25 @@ class MetronomeGame: UIViewController {
     {
         self.tap.setTitle("DONE", for: .normal)
         self.message.text = "Score :" + String(self.totalScore)
+        let ref = Database.database().reference()
+        let gameFinishTime :Date = Date()
+        let calendar = Calendar.current
+        let year:Int = calendar.component(.year, from:gameFinishTime)
+        let month:Int = calendar.component(.month, from:gameFinishTime)
+        let day:Int = calendar.component(.day, from:gameFinishTime)
+        gamesPlayed += 1
+        
+        //Setting gamesPlayed into the perferences
+        preferences.set(gamesPlayed, forKey: currentLevelKey)
+        
+        //  Save to disk
+        let didSave = preferences.synchronize()
+        
+        if !didSave {
+            //  Couldn't save (I've never seen this happen in real world testing)
+        }
+        ref.child("Metronome/\(year)-\(month)-\(day)/TotalGamesPlayed").setValue(gamesPlayed)
+        ref.child("Metronome/\(year)-\(month)-\(day)/Score").setValue(totalScore)
         //Display "DONE". Fade out all the other buttons and labels.
         UIView.animate(withDuration: 3,
                        animations:{
@@ -165,6 +194,14 @@ class MetronomeGame: UIViewController {
         
         //Bringing image to the front
         view.addSubview(soundNote)
+        
+        //Grabs the gamesPlayed from the stored preference
+        if preferences.object(forKey: currentLevelKey) == nil {
+            //  Doesn't exist
+        } else {
+            gamesPlayed = preferences.integer(forKey: currentLevelKey)
+            print(gamesPlayed)
+        }
         
         //Initializing sound file
         let sound = Bundle.main.path(forResource:"metronomeSound(2)", ofType: "mp3")
