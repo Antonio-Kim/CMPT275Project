@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>281479965531-09d1ketpugg4vk9aav99de0akg4gvajo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.281479965531-09d1ketpugg4vk9aav99de0akg4gvajo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyADGKWyW-rHGTxNPbeAPABI_2c3x3JVk10</string>
+	<key>GCM_SENDER_ID</key>
+	<string>281479965531</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>temRANDY.NeuroKinetic</string>
+	<key>PROJECT_ID</key>
+	<string>neurokinetic-cb7a1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>neurokinetic-cb7a1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:281479965531:ios:ea8f376bb52aa7f2bc087e</string>
+	<key>DATABASE_URL</key>
+	<string>https://neurokinetic-cb7a1.firebaseio.com</string>
+</dict>
+</plist>
