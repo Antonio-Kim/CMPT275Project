@@ -6,14 +6,26 @@
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
+// Use the following reference to figure the volume issue:
+// https://www.youtube.com/watch?v=tq49LUKbRLY
+// https://stackoverflow.com/questions/31538921/how-to-change-ios-volume-in-swift-with-help-uislider/31540153#31540153
+// https://www.ioscreator.com/tutorials/volume-view-ios-tutorial
+
 import UIKit
+import MediaPlayer
 
 class Setting: UIViewController {
+    
+    @IBOutlet weak var systemVolumeSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        let systemVolumeView = MPVolumeView(frame: systemVolumeSlider.frame)
+        systemVolumeView.isHidden = false
+        systemVolumeView.alpha = 0.01
+        systemVolumView.backgroundColor = UIColor.clear
+        view.addSubview(systemVolumeView)
     }
     
     

@@ -31,6 +31,7 @@
 		BEF428012367D13F00D9F021 /* TypingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428002367D13F00D9F021 /* TypingStats.swift */; };
 		BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428022367D14F00D9F021 /* GeneralStats.swift */; };
 		BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF428042367D15D00D9F021 /* HandwritingStats.swift */; };
+		F9066EFC23805E1600977AB8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9066EFB23805E1500977AB8 /* MediaPlayer.framework */; };
 		F907F183236F6AE700680057 /* NeuroKineticHandwritingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F907F17B236F6ABF00680057 /* NeuroKineticHandwritingTests.swift */; };
 		F909B9A32370D600006CC591 /* NeuroKineticUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F909B9A22370D600006CC591 /* NeuroKineticUnitTests.swift */; };
 		F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */; };
@@ -100,6 +101,7 @@
 		BEF428042367D15D00D9F021 /* HandwritingStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingStats.swift; sourceTree = "<group>"; };
 		E7DBC151757F89E5DB8668EE /* Pods-NeuroKinetic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuroKinetic.release.xcconfig"; path = "Target Support Files/Pods-NeuroKinetic/Pods-NeuroKinetic.release.xcconfig"; sourceTree = "<group>"; };
 		E8F31E0730ACE1C3D001A4DA /* Pods-NeuroKinetic-NeuroKineticUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuroKinetic-NeuroKineticUITests.debug.xcconfig"; path = "Target Support Files/Pods-NeuroKinetic-NeuroKineticUITests/Pods-NeuroKinetic-NeuroKineticUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9066EFB23805E1500977AB8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		F907F17B236F6ABF00680057 /* NeuroKineticHandwritingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticHandwritingTests.swift; sourceTree = "<group>"; };
 		F909B9A22370D600006CC591 /* NeuroKineticUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticUnitTests.swift; sourceTree = "<group>"; };
 		F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "fonts/Montserrat-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9066EFC23805E1600977AB8 /* MediaPlayer.framework in Frameworks */,
 				B199C484C2470D033C4A3654 /* Pods_NeuroKinetic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +151,7 @@
 		1661D3008AFBADFE63504BDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9066EFB23805E1500977AB8 /* MediaPlayer.framework */,
 				585D6E969998D5545EC0D873 /* Pods_NeuroKinetic.framework */,
 				95B169062D973BB1072FC3FD /* Pods_NeuroKinetic_NeuroKineticUITests.framework */,
 				229706FCFCC6F77F83549A89 /* Pods_NeuroKineticTests.framework */,
