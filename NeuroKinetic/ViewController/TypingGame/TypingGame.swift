@@ -11,7 +11,7 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 //Referenced from https://github.com/anoop4real/UILabelStyles
 //Extension for NSMutableAttributedString
 extension NSMutableAttributedString {
@@ -37,37 +37,53 @@ enum ParagraphState {   //Determines how update paragraph should work
     case wrongWord
 }
 
+
 class TypingGame: UIViewController {
     
+    //UI Labels
     @IBOutlet weak var instructionsLabel: UILabel!
-    
     @IBOutlet weak var paragraphView: UILabel!
     
+    //UI Text field
     @IBOutlet weak var typingTextField: UITextField!
     
+    //UI Button
     @IBOutlet weak var doneButton: UIButton!
     
+    //UserDefault preference storing
+    let preferences = UserDefaults.standard
+    let currentLevelKey = "TotalTypingGamesPlayed"
+    var gamesPlayed: Int = 0
+    
+    //Paragraph State
     var paragraphState = ParagraphState.normal
     
-    var wordElement: Int = 0
-    
-    var paragraphPrintCount: Int = 0
-    
-    var lastParagraphPrintCount: Int = 0
-    
+    //Paragraph bank class
     var paragraphList: ParagraphBank = ParagraphBank()
     
+    //Int
+    var wordElement: Int = 0
+    var paragraphPrintCount: Int = 0
+    var correctWordsNum = 0
+    var wrongWordsNum = 0
+    var wpm: Int = 0
+    
+    //var lastParagraphPrintCount: Int = 0
+    
+    //Strings
     var paragraphDisplay: String = ""
-    
     var maxTypedWord: String = ""
-    
     var typedWord: String = ""
     
+    //Bool
     var wordCorrect: Bool = false
-    
     var completeParagraph: Bool = false
     
-    var correctWord: Bool = true
+    //Time measurement
+    var startTime: Date = Date()
+    var finishTime: Date = Date()
+    var totalTime: Double = 0
+    var didStart: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +100,14 @@ class TypingGame: UIViewController {
         paragraphView.textAlignment = NSTextAlignment.justified
         
         paragraphState = ParagraphState.normal
+        
+        //Grabs the gamesPlayed from the stored preference
+        if preferences.object(forKey: currentLevelKey) == nil {
+            //  Doesn't exist
+        } else {
+            gamesPlayed = preferences.integer(forKey: currentLevelKey)
+            print(gamesPlayed)
+        }
     }
     
     @IBAction func typingTextFieldEditingChange(_ typingTextField: UITextField) {
@@ -94,6 +118,12 @@ class TypingGame: UIViewController {
             //This guard prevents that situation from causes crashes
             guard let text = typingTextField.text, !text.isEmpty else {
                 return
+            }
+            
+            if (!didStart) {
+                startTime = Date()
+                didStart = true
+                print(startTime)
             }
             
             //            let temp = typingTextField.text!.last!  //Grabs the users last input to check if it is space
@@ -184,9 +214,12 @@ class TypingGame: UIViewController {
                     paragraphState = ParagraphState.correctWord
                     
                     updateParagraph()   //Updates the paragraphView
+                }else {
+                    //paragraphState = ParagraphState.wrongWord
+                    
+                    //updateParagraph()   //Updates the paragraphView
                 }
             }
-            
         }
         checkComplete()
     }
@@ -200,12 +233,68 @@ class TypingGame: UIViewController {
     //Check if the paragraph is complete
     func checkComplete() {
         if wordElement == paragraphList.paragraph.wordArr.count {
+            let ref = Database.database().reference()
             completeParagraph = true;
             wordElement = 0
+            finishTime = Date()
             print("Complete Paragraph")
-            typingTextField.isUserInteractionEnabled = false    //Make sure the user cannot type after the paragraph is completed
+            totalTime = finishTime.timeIntervalSince(startTime)
+            wpm = Int(Double(paragraphList.paragraph.wordArr.count) / (totalTime/60))
+            print("Number of words: " + "\(paragraphList.paragraph.wordArr.count)")
+            print("TotalTime is " + "\(totalTime)")
+            print("Words per minute: " + "\(wpm)")
+            //let date:Date = Date()
+            let gameFinishTime :Date = Date()
+            let calendar = Calendar.current
+            let year:Int = calendar.component(.year, from:gameFinishTime)
+            let month:Int = calendar.component(.month, from:gameFinishTime)
+            let day:Int = calendar.component(.day, from:gameFinishTime)
+            
+            typingTextField.isUserInteractionEnabled = false    //Make sure keybaord disabled after paragraph is completed
+            animationFinish()
             instructionsLabel.text = "Done, Good Job!"
+            
+            gamesPlayed += 1
+            
+            //Setting gamesPlayed into the perferences
+            preferences.set(gamesPlayed, forKey: currentLevelKey)
+            
+            //  Save to disk
+            let didSave = preferences.synchronize()
+            
+            if !didSave {
+                //  Couldn't save (I've never seen this happen in real world testing)
+            }
+            
+            //Writing into Firebase Realtime Database
+            ref.child("TypingGame/\(year)-\(month)-\(day)/TotalGamesPlayed").setValue(gamesPlayed)
+            ref.child("TypingGame/\(year)-\(month)-\(day)/WPM").setValue(wpm)
+            
         }
+    }
+    
+    func animationFinish()
+    {
+        //Display "DONE". Fade out all the other buttons and labels.
+        instructionsLabel.text = "Done, Good Job!"
+        UIView.animate( withDuration: 2,
+                        delay: 0,
+                        options: .curveLinear,
+                        animations:{self.paragraphView.alpha = 0},
+                        completion:{
+                            _ in
+                            self.paragraphView.text = "WPM: " + "\(self.wpm)"
+                            self.paragraphView.textColor = UIColor.white
+                            self.paragraphView.font = self.paragraphView.font.withSize(30)
+        })
+        
+        UIView.animate( withDuration: 2,
+                        delay: 1,
+                        options: .curveLinear,
+                        animations:{self.paragraphView.alpha = 1},
+                        completion:{
+                            _ in
+        })
     }
     
     //update paragraph text view
@@ -215,6 +304,7 @@ class TypingGame: UIViewController {
             instructionsLabel.text = "NO INSTRUCTIONS??"
             return
         }
+        
         
         //Check to make sure paragraph view is not nil
         guard let pText = paragraphView.text, !pText.isEmpty else {
@@ -237,7 +327,8 @@ class TypingGame: UIViewController {
             
             let string = NSMutableAttributedString(string: paragraphDisplay)
             
-            string.setColorForText(paragraphList.paragraph.wordArr[wordElement-1], with: UIColor.green)
+            string.setColorForText(String(tempSubstring), with: UIColor.green)
+            
             string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement-1].count+1)), with: UIColor.white)
             
             paragraphView.attributedText = string
@@ -247,15 +338,17 @@ class TypingGame: UIViewController {
             
             let string = NSMutableAttributedString(string: paragraphDisplay)
             
-            string.setColorForText(paragraphList.paragraph.wordArr[wordElement-1], with: UIColor.red)
-            string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement-1].count+1)), with: UIColor.white)
+            string.setColorForText(String(tempSubstring), with: UIColor.red)
+            
+            //string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement-1].count+1)), with: UIColor.white)
             
             paragraphView.attributedText = string
             
         }
-        
     }
 }
+
+
 
 
 

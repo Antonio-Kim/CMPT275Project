@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 class StartViewController: UIViewController {
 
     @IBOutlet weak var statsButton: UIButton!
@@ -21,7 +21,7 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //var ref: DatabaseReference!
         // Do any additional setup after loading the view.
     }
     
