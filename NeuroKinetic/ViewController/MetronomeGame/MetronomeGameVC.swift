@@ -238,6 +238,7 @@ class MetronomeGame: UIViewController {
         {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "GameMenu")
+            controller.modalPresentationStyle = .fullScreen
             self.present(controller, animated: true, completion: nil)
         }
     }
