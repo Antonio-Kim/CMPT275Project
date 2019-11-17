@@ -13,15 +13,20 @@ import FirebaseDatabase
 //This UIViewController class is for metronome game
 class MetronomeGame: UIViewController {
     //MP3 Initialization for metronome sound
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     //Varible Initialization
     var tapCount:Int = 0
     var didStart: Bool = false
     var isGameOver: Bool = false
-    var interval:Double = 2.0
-    var tolerance:Double = 0.5
+    var interval:Double = 1.5
+    var tolerance:Double = 0.3
     //Difficulity Bar
     @IBOutlet weak var difficulityBar: UISlider!
+    
+    //Difficulity
+    @IBOutlet var easy: UIButton!
+    @IBOutlet var normal: UIButton!
+    @IBOutlet var hard: UIButton!
     
     //Score Variables
     var score = Array(repeating: -1, count: 20)
@@ -54,7 +59,7 @@ class MetronomeGame: UIViewController {
         //If left button is tapped
         if(isLeft)
         {
-            if(isOdd == 0)
+            if(isOdd==0)
             {
                 return tapCount - 1
             }
@@ -66,7 +71,7 @@ class MetronomeGame: UIViewController {
         //If right button is tapped
         else
         {
-            if(isOdd == 1)
+            if(isOdd==1)
             {
                 return tapCount - 1
             }
@@ -88,9 +93,10 @@ class MetronomeGame: UIViewController {
                         _ in
                         self.tapCount += 1
                         DispatchQueue.main.async {
-                            self.audioPlayer.play()
+                            self.moveLeft()
                         }
-                        self.moveLeft()
+                        self.audioPlayer.play()
+                        //self.moveLeft()
                         self.rightTime = Date()
                         self.leftTime = Date(timeIntervalSinceNow: self.interval)
                         
@@ -112,16 +118,17 @@ class MetronomeGame: UIViewController {
                 
                 self.tapCount += 1
                 //Metronome Sound
-                DispatchQueue.main.async {
-                    self.audioPlayer.play()
-                }
+                
                 
                 //If tap count is less than or equal to 19, continue the game
                 if(!(self.tapCount>=19))
                 {
                     ////Chain animation. Start moving to the right.
+                    DispatchQueue.main.async {
+                        self.moveRight()
+                    }
+                    self.audioPlayer.play()
                     print(self.score)
-                    self.moveRight()
                     self.leftTime = Date()
                     self.rightTime = Date(timeIntervalSinceNow: self.interval)
                 }
@@ -129,14 +136,15 @@ class MetronomeGame: UIViewController {
                     //And fade out all the buttons
                 else
                 {
+                    self.audioPlayer.play()
                     self.message.text = "GAME OVER"
-                    for sc in self.score
-                    {
-                        if(sc == 1)
-                        {
-                            self.totalScore += 1
-                        }
-                    }
+//                    for sc in self.score
+//                    {
+//                        if(sc == 1)
+//                        {
+//                            self.totalScore += 1
+//                        }
+//                    }
                     self.isGameOver = true
                     self.animateFinish()
                 }
@@ -278,6 +286,7 @@ class MetronomeGame: UIViewController {
                 //Display "Good Tap"
                 //message.text = "Good Tap"
                 message.alpha = 1
+                totalScore += 1
                 if(score[i] == -1)
                 {
                     score[i] = 1
@@ -285,7 +294,7 @@ class MetronomeGame: UIViewController {
                 //Fade out "Good" with animation
                 //UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
-            message.text = "\(score)"
+            message.text = "\(totalScore)"
         }
     }
     
@@ -320,6 +329,7 @@ class MetronomeGame: UIViewController {
             }
             else
             {
+                totalScore += 1
                 if(score[i] == -1)
                 {
                     score[i] = 1
@@ -330,18 +340,44 @@ class MetronomeGame: UIViewController {
                 //Fade out "Good" with animation
                 //UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
-            message.text = "\(score)"
+            message.text = "\(totalScore)"
         }
     }
-    @IBAction func changeDifficulity(_ sender: UISlider) {
-        if(!didStart)
-        {
-            message.text = String(0.5 + 1.5 * Double(sender.value))
-            interval = 0.5 + 1.5 * Double(sender.value)
-            tolerance = 0.3 + 0.2 * Double(sender.value)
-        }
+//    @IBAction func changeDifficulity(_ sender: UISlider) {
+//        if(!didStart)
+//        {
+//            message.text = String(0.5 + 1.5 * Double(sender.value))
+//            interval = 1 + 1 * Double(sender.value)
+//            tolerance = 0.3 + 0.2 * Double(sender.value)
+//        }
+//    }
+    
+    @IBAction func setEasyInterval(_ sender: UIButton) {
+        interval = 2.0
+        tolerance = 0.3
+        easy.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
+        normal.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        hard.setTitleColor(UIColor.white, for: UIControl.State.normal)
     }
     
+    
+    @IBAction func setNormalInterval(_ sender: UIButton) {
+        interval = 1.5
+        tolerance = 0.3
+        easy.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        normal.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
+        hard.setTitleColor(UIColor.white, for: UIControl.State.normal)
+
+    }
+    
+    @IBAction func setHardInterval(_ sender: Any) {
+        interval = 1.0
+        tolerance = 0.3
+        easy.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        normal.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        hard.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
+
+    }
     
     
 }

@@ -30,11 +30,10 @@ class NeuroKineticHandwritingTests: XCTestCase {
          *      4) Click Done, and moves onto the next game
          */
         
-        let app = XCUIApplication()
-        app.buttons["Button"].tap()
-        app.buttons["GameChoose Write"].tap()
-        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.swipeUp()
-        app.buttons["Done"].tap()
+        let element = XCUIApplication().children(matching: .window).element(boundBy: 2).children(matching: .other).element
+        element.swipeUp()
+        element.swipeDown()
+        
         
     }
     

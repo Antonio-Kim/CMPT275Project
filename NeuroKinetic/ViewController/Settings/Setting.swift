@@ -12,31 +12,18 @@
 // https://www.ioscreator.com/tutorials/volume-view-ios-tutorial
 
 import UIKit
-import MediaPlayer
 
 class Setting: UIViewController {
     
-    @IBOutlet weak var systemVolumeSlider: UISlider!
+    @IBOutlet var label: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let systemVolumeView = MPVolumeView(frame: systemVolumeSlider.frame)
-        systemVolumeView.isHidden = false
-        systemVolumeView.alpha = 0.01
-        systemVolumView.backgroundColor = UIColor.clear
-        view.addSubview(systemVolumeView)
+    
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        
+    }
     
 }
