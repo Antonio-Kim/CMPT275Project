@@ -774,60 +774,87 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Wfs-HK-JXq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6m-Pn-Br9">
-                                <rect key="frame" x="100" y="387" width="306" height="60"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci6-SC-3Rq">
-                                <rect key="frame" x="100" y="227" width="333.5" height="60"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auditory Assistance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q85-ca-8ve">
-                                <rect key="frame" x="100" y="547" width="476" height="60"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-7a-VIk">
-                                <rect key="frame" x="515" y="227" width="34" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Fwe-bM-dXO">
-                                <rect key="frame" x="610" y="241" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="stepperValueChanged:" destination="R3y-i4-ueE" eventType="valueChanged" id="h0L-ih-5cM"/>
-                                </connections>
-                            </stepper>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="114" translatesAutoresizingMaskIntoConstraints="NO" id="jTN-dA-vfp">
+                                <rect key="frame" x="68" y="227" width="1058.5" height="396"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="300" translatesAutoresizingMaskIntoConstraints="NO" id="oFl-xi-NNW">
+                                        <rect key="frame" x="0.0" y="0.0" width="1058.5" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci6-SC-3Rq">
+                                                <rect key="frame" x="0.0" y="0.0" width="333.5" height="60"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dia-NZ-qDH">
+                                                <rect key="frame" x="633.5" y="0.0" width="31" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="5SO-m1-tBp">
+                                                <rect key="frame" x="964.5" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="stepperValueChanged:" destination="R3y-i4-ueE" eventType="valueChanged" id="SfH-n8-pTy"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="331" translatesAutoresizingMaskIntoConstraints="NO" id="8QW-CJ-eba">
+                                        <rect key="frame" x="0.0" y="174" width="1058.5" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6m-Pn-Br9">
+                                                <rect key="frame" x="0.0" y="0.0" width="678.5" height="54"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P99-9T-Zkq">
+                                                <rect key="frame" x="1009.5" y="0.0" width="51" height="54"/>
+                                            </switch>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="5Sq-HM-JhP"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="163" translatesAutoresizingMaskIntoConstraints="NO" id="uaU-DC-QF9">
+                                        <rect key="frame" x="0.0" y="342" width="1058.5" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auditory Assistance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q85-ca-8ve">
+                                                <rect key="frame" x="0.0" y="0.0" width="846.5" height="54"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="54" id="Yxm-r8-pGb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K92-LF-K5m">
+                                                <rect key="frame" x="1009.5" y="0.0" width="51" height="54"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.31390610340000002" green="0.56785029170000001" blue="0.67086601260000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ci6-SC-3Rq" firstAttribute="leading" secondItem="URl-0i-9hl" secondAttribute="leading" constant="100" id="2m6-cq-joN"/>
-                            <constraint firstItem="q85-ca-8ve" firstAttribute="leading" secondItem="URl-0i-9hl" secondAttribute="leading" constant="100" id="MNA-AY-c7r"/>
-                            <constraint firstItem="L6m-Pn-Br9" firstAttribute="top" secondItem="ci6-SC-3Rq" secondAttribute="bottom" constant="100" id="QQf-3g-jgQ"/>
-                            <constraint firstItem="q85-ca-8ve" firstAttribute="top" secondItem="L6m-Pn-Br9" secondAttribute="bottom" constant="100" id="hHZ-Bi-Hj6"/>
-                            <constraint firstItem="L6m-Pn-Br9" firstAttribute="leading" secondItem="URl-0i-9hl" secondAttribute="leading" constant="100" id="rit-fJ-KEt"/>
-                            <constraint firstItem="L6m-Pn-Br9" firstAttribute="centerY" secondItem="qXE-6j-21H" secondAttribute="centerY" id="yRg-Od-Q7g"/>
+                            <constraint firstItem="jTN-dA-vfp" firstAttribute="top" secondItem="URl-0i-9hl" secondAttribute="top" constant="227" id="Bwm-eJ-Wzd"/>
+                            <constraint firstItem="URl-0i-9hl" firstAttribute="bottom" secondItem="jTN-dA-vfp" secondAttribute="bottom" constant="191" id="q1O-dd-7xG"/>
+                            <constraint firstItem="jTN-dA-vfp" firstAttribute="centerX" secondItem="qXE-6j-21H" secondAttribute="centerX" id="u8l-T3-aWf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="URl-0i-9hl"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="LNn-7a-VIk" id="VWL-XG-JBk"/>
-                        <outlet property="stepper2" destination="Fwe-bM-dXO" id="e0T-Kb-yb0"/>
-                        <outletCollection property="stepper" destination="Fwe-bM-dXO" collectionClass="NSMutableArray" id="RWI-ak-Kje"/>
-                        <outletCollection property="stepper" destination="Fwe-bM-dXO" collectionClass="NSMutableArray" id="upa-vF-5zy"/>
+                        <outlet property="auditoryAssistanceSwitch" destination="K92-LF-K5m" id="PxK-zL-XNo"/>
+                        <outlet property="soundEffectSwitch" destination="P99-9T-Zkq" id="Pew-Qx-Bkp"/>
+                        <outlet property="volumeStepper" destination="5SO-m1-tBp" id="ayZ-wH-jac"/>
+                        <outlet property="volumeValue" destination="dia-NZ-qDH" id="QYa-Uj-iEG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZv-21-QBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552.51798561151077" y="891.36690647482021"/>
+            <point key="canvasLocation" x="552.2613065326633" y="891.36690647482021"/>
         </scene>
         <!--Metronome Stats-->
         <scene sceneID="9VU-ur-fff">

@@ -15,15 +15,23 @@ import UIKit
 
 class Setting: UIViewController {
     
-    @IBOutlet var label: UILabel!
+    @IBOutlet weak var volumeValue: UILabel!
+    @IBOutlet weak var volumeStepper: UIStepper!
+    @IBOutlet weak var soundEffectSwitch: UISwitch!
+    @IBOutlet weak var auditoryAssistanceSwitch: UISwitch!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        volumeStepper.maximumValue = 10
+        volumeStepper.minimumValue = 0
+    }
     
-    }
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        
+        volumeValue.text = Int(sender.value).description
     }
+        
+    
+    
     
 }
