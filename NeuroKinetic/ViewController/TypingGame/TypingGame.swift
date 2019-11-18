@@ -267,8 +267,8 @@ class TypingGame: UIViewController {
             }
             
             //Writing into Firebase Realtime Database
-            ref.child("TypingGame/\(year)-\(month)-\(day)/TotalGamesPlayed").setValue(gamesPlayed)
-            ref.child("TypingGame/\(year)-\(month)-\(day)/WPM").setValue(wpm)
+            ref.child("TypingGame/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
+            ref.child("TypingGame/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/WPM").setValue(wpm)
             
         }
     }

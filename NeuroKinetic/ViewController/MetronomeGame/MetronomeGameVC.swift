@@ -10,9 +10,13 @@ import UIKit
 import Foundation
 import AVFoundation
 import FirebaseDatabase
+import MediaPlayer
+
+
 //This UIViewController class is for metronome game
 class MetronomeGame: UIViewController {
     //MP3 Initialization for metronome sound
+   
     var audioPlayer: AVAudioPlayer!
     //Varible Initialization
     var tapCount:Int = 0
@@ -182,8 +186,8 @@ class MetronomeGame: UIViewController {
         if !didSave {
             //  Couldn't save (I've never seen this happen in real world testing)
         }
-        ref.child("Metronome/\(year)-\(month)-\(day)/TotalGamesPlayed").setValue(gamesPlayed)
-        ref.child("Metronome/\(year)-\(month)-\(day)/Score").setValue(totalScore)
+        ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
+        ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/Score").setValue(totalScore)
         //Display "DONE". Fade out all the other buttons and labels.
         UIView.animate(withDuration: 3,
                        animations:{
@@ -286,9 +290,10 @@ class MetronomeGame: UIViewController {
                 //Display "Good Tap"
                 //message.text = "Good Tap"
                 message.alpha = 1
-                totalScore += 1
+                
                 if(score[i] == -1)
                 {
+                    totalScore += 1
                     score[i] = 1
                 }
                 //Fade out "Good" with animation
@@ -329,9 +334,10 @@ class MetronomeGame: UIViewController {
             }
             else
             {
-                totalScore += 1
+                
                 if(score[i] == -1)
                 {
+                    totalScore += 1
                     score[i] = 1
                 }
                 //Display "Good Tap"
