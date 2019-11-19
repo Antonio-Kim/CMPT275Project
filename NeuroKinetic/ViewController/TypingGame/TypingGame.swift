@@ -120,83 +120,11 @@ class TypingGame: UIViewController {
                 return
             }
             
-            if (!didStart) {
+            if (!didStart) {    //Starts the timer once the user starts typing
                 startTime = Date()
                 didStart = true
                 print(startTime)
             }
-            
-            //            let temp = typingTextField.text!.last!  //Grabs the users last input to check if it is space
-            //
-            //            if temp != " " && typingTextField.text! == String(typedWord.dropLast()) {
-            //
-            //                print("なに backspace -1")
-            //
-            //                if paragraphPrintCount > lastParagraphPrintCount {
-            //                    paragraphPrintCount -= 1
-            //                }
-            //                //updateParagraph()
-            //
-            //                print("paragraph print count: " + "\(paragraphPrintCount)")
-            //
-            //                typedWord = typingTextField.text!
-            //
-            //                return
-            //            }
-            //
-            //            typedWord = typingTextField.text!
-            //
-            //            print("typed word: " + typedWord)
-            //
-            //            print("WordArr count: " + "\(paragraphList.paragraph.wordArr[wordElement].count)")
-            //
-            //            print("typed word count: " + "\(typedWord.count)")
-            //
-            //            print("WordArr element: " + "\(paragraphList.paragraph.wordArr[wordElement])")
-            //
-            //            if typedWord.count <= (paragraphList.paragraph.wordArr[wordElement].count) {   //Check if the typed length exceed what the user is suppose to type
-            //
-            //                print(paragraphList.paragraph.wordArr[wordElement].prefix(typedWord.count))
-            //
-            //                if typedWord == paragraphList.paragraph.wordArr[wordElement].prefix(typedWord.count) {
-            //                    paragraphPrintCount += 1
-            //
-            //                    lastParagraphPrintCount = paragraphPrintCount
-            //
-            //                    print("Inside updating paragraph for correct words")
-            //
-            //                    paragraphState = ParagraphState.normal
-            //                    updateParagraph()   //Updates real time now
-            //                }
-            //
-            //                maxTypedWord = typedWord
-            //
-            //                print("paragraph print count: " + "\(paragraphPrintCount)" + "\n")
-            //
-            //            }else if typedWord.count == (paragraphList.paragraph.wordArr[wordElement].count+1) && temp == " " {
-            //
-            //                typedWord = String(typedWord.dropLast())    //Drops the space
-            //
-            //                print("paragraph print count in space: " + "\(paragraphPrintCount)" + "\n")
-            //
-            //                if typedWord == paragraphList.paragraph.wordArr[wordElement] {  //typed word comparing with the corresponding paragraph word
-            //                    paragraphPrintCount += 1
-            //
-            //                    typedWord = ""
-            //                    wordElement += 1
-            //                    typingTextField.text = ""
-            //                    paragraphState = ParagraphState.correctWord
-            //                    updateParagraph()   //Updates real time now
-            //
-            //                }else {
-            //                    //paragraphState = ParagraphState.wrongWord
-            //                    //turn that word into red
-            //                    //updateParagraph()
-            //                }
-            //
-            //            }else {
-            //                typingTextField.text! = maxTypedWord
-            //            }
             
             typedWord = typingTextField.text!
             
@@ -227,7 +155,7 @@ class TypingGame: UIViewController {
     //Pick paragraph from list
     func chooseParagraph() {
         let tempNum: Int = Int.random(in:0...15);
-        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: 15)
+        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
     }
     
     //Check if the paragraph is complete
@@ -273,6 +201,7 @@ class TypingGame: UIViewController {
         }
     }
     
+    //Animates the WPM showing after the user finishes typing the paragraph
     func animationFinish()
     {
         //Display "DONE". Fade out all the other buttons and labels.

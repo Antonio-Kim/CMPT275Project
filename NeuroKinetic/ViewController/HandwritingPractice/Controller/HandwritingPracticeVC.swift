@@ -13,22 +13,14 @@ class HandwritingPractice: UIViewController {
     var assistance_1,assistance_2,assistance_3:  AVAudioPlayer!
     var assistance_num:Int = -1
     var isFinish:Bool = false
-    //var assistance_2: AVAudioPlayer?
-    //var assistance_3: AVAudioPlayer?
-    //let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-    
-//    let path1 = Bundle.main.path(forResource: "always_remember.mp3", ofType: nil)!
-//    let url1 = URL(fileURLWithPath: path1)
-//    let path2 = Bundle.main.path(forResource: "WritingBigger.mp3", ofType: nil)!
-//    let url2 = URL(fileURLWithPath: path2)
-//    let path3 = Bundle.main.path(forResource: "bigger.mp3", ofType: nil)!
-//    let url3 = URL(fileURLWithPath: path3)
+
     //Function call to clear all written lines on the canvas
     @IBAction func ClearButton(_ sender: Any) {
         SentenceWrite.clear()
     }
     @IBOutlet weak var SentenceWrite: SentenceWriteCanvas!
     
+    // load audio files for auditory assistance
     override func viewDidLoad() {
         super.viewDidLoad()
         let path1 = Bundle.main.path(forResource: "always_remember.mp3", ofType: nil)!
@@ -94,6 +86,7 @@ class HandwritingPractice: UIViewController {
         }
     }
     
+    //play the audio assistance in a loop
     @objc func audioAssistance() {
         if (!isFinish){
             DispatchQueue.main.asyncAfter(deadline: .now() + 4)
@@ -119,8 +112,3 @@ class HandwritingPractice: UIViewController {
         }
     }
 }
-//    func stopAssistance(){
-//        assistance?.stop()
-//    }
-    
-

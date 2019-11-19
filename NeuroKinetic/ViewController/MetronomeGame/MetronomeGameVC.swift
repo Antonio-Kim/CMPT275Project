@@ -15,19 +15,21 @@ import MediaPlayer
 
 //This UIViewController class is for metronome game
 class MetronomeGame: UIViewController {
-    //MP3 Initialization for metronome sound
    
+    //MP3 Initialization for metronome sound
     var audioPlayer: AVAudioPlayer!
+    
     //Varible Initialization
     var tapCount:Int = 0
     var didStart: Bool = false
     var isGameOver: Bool = false
     var interval:Double = 1.5
     var tolerance:Double = 0.3
-    //Difficulity Bar
+    
+    //Difficulity bar
     @IBOutlet weak var difficulityBar: UISlider!
     
-    //Difficulity
+    //Difficulity buttons
     @IBOutlet var easy: UIButton!
     @IBOutlet var normal: UIButton!
     @IBOutlet var hard: UIButton!
@@ -35,6 +37,7 @@ class MetronomeGame: UIViewController {
     //Score Variables
     var score = Array(repeating: -1, count: 20)
     var totalScore: Int = 0
+    
     //Timer Initialization
     var rightTime:Date = Date()
     var leftTime:Date = Date()
@@ -56,7 +59,7 @@ class MetronomeGame: UIViewController {
     //Music Note Image
     @IBOutlet weak var soundNote: UIImageView!
     
-    //Returns the index of the score array
+    //Returns the index to store the score in the array
     func scoreIndex(isLeft: Bool) ->Int
     {
         let isOdd = tapCount%2
@@ -97,19 +100,18 @@ class MetronomeGame: UIViewController {
                         _ in
                         self.tapCount += 1
                         DispatchQueue.main.async {
-                            self.moveLeft()
+                            self.audioPlayer.play()
                         }
-                        self.audioPlayer.play()
-                        //self.moveLeft()
+                        self.moveLeft()
                         self.rightTime = Date()
                         self.leftTime = Date(timeIntervalSinceNow: self.interval)
                         
-                        //Metronome Sound
                         
-                        //Chain animation. Start moving to the left.
+                        
                         
         })
     }
+    
     //Animation for music note: Left movement
     func moveLeft()
     {
@@ -119,36 +121,26 @@ class MetronomeGame: UIViewController {
                        //After animation is completed below statements are executed
             completion:{
                 _ in
-                
                 self.tapCount += 1
-                //Metronome Sound
-                
-                
                 //If tap count is less than or equal to 19, continue the game
                 if(!(self.tapCount>=19))
                 {
                     ////Chain animation. Start moving to the right.
                     DispatchQueue.main.async {
-                        self.moveRight()
+                        self.audioPlayer.play()
+                        
                     }
-                    self.audioPlayer.play()
+                    self.moveRight()
                     print(self.score)
                     self.leftTime = Date()
                     self.rightTime = Date(timeIntervalSinceNow: self.interval)
                 }
-                    //If tap count is bigger than or equal to 19, finish the game displaying "GAME OVER"
-                    //And fade out all the buttons
+                //If tap count is bigger than or equal to 19, finish the game displaying "GAME OVER"
+                //And fade out all the buttons
                 else
                 {
                     self.audioPlayer.play()
                     self.message.text = "GAME OVER"
-//                    for sc in self.score
-//                    {
-//                        if(sc == 1)
-//                        {
-//                            self.totalScore += 1
-//                        }
-//                    }
                     self.isGameOver = true
                     self.animateFinish()
                 }
@@ -161,12 +153,14 @@ class MetronomeGame: UIViewController {
     {
         UIView.animate(withDuration: 2,
                        animations:{self.tap.alpha = 0} )
-        //self.tap.removeFromSuperview()
+        
     }
     
     //Animation to be executed when the game is finished
     func animateFinish()
     {
+        
+        //Database update
         self.tap.setTitle("DONE", for: .normal)
         self.message.text = "Score :" + String(self.totalScore)
         let ref = Database.database().reference()
@@ -184,7 +178,7 @@ class MetronomeGame: UIViewController {
         let didSave = preferences.synchronize()
         
         if !didSave {
-            //  Couldn't save (I've never seen this happen in real world testing)
+            
         }
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/Score").setValue(totalScore)
@@ -349,15 +343,8 @@ class MetronomeGame: UIViewController {
             message.text = "\(totalScore)"
         }
     }
-//    @IBAction func changeDifficulity(_ sender: UISlider) {
-//        if(!didStart)
-//        {
-//            message.text = String(0.5 + 1.5 * Double(sender.value))
-//            interval = 1 + 1 * Double(sender.value)
-//            tolerance = 0.3 + 0.2 * Double(sender.value)
-//        }
-//    }
-    
+
+    //easy button tapped. set difficulity to easy.
     @IBAction func setEasyInterval(_ sender: UIButton) {
         interval = 2.0
         tolerance = 0.3
@@ -366,7 +353,7 @@ class MetronomeGame: UIViewController {
         hard.setTitleColor(UIColor.white, for: UIControl.State.normal)
     }
     
-    
+    //normal button tapped. set difficulity to normal.
     @IBAction func setNormalInterval(_ sender: UIButton) {
         interval = 1.5
         tolerance = 0.3
@@ -375,7 +362,7 @@ class MetronomeGame: UIViewController {
         hard.setTitleColor(UIColor.white, for: UIControl.State.normal)
 
     }
-    
+    //hard button tapped. set difficulity to hard.
     @IBAction func setHardInterval(_ sender: Any) {
         interval = 1.0
         tolerance = 0.3

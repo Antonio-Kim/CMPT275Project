@@ -8,6 +8,7 @@
 
 import UIKit
 
+// distance calculation extension for amplitude calculation for version 3
 extension CGPoint {
     func distance(to point: CGPoint) -> CGFloat {
         return sqrt(pow(x - point.x, 2) + pow(y - point.y, 2))
@@ -80,7 +81,7 @@ class SignatureCanvas: UIView {
     
     //Clear function implementation to remove all written input from the canvas
     func clear(){
-        calculateAmplitude()
+        //calculateAmplitude()
         
         if self.layer.sublayers == nil {
             return
@@ -90,11 +91,12 @@ class SignatureCanvas: UIView {
         self.layer.sublayers = nil
         self.setNeedsDisplay()
     }
-    func calculateAmplitude(){
-        //let diff = (yCoordinates.max() - yCoordinates.min())
-        var diff: CGFloat = CGFloat(yCoordinates.min()!.distance(to: yCoordinates.max()!))
-        print("Print diff: " + "\(diff)")
-    }
+    //amplitude calculation for version 3
+//    func calculateAmplitude(){
+//        //let diff = (yCoordinates.max() - yCoordinates.min())
+//        var diff: CGFloat = CGFloat(yCoordinates.min()!.distance(to: yCoordinates.max()!))
+//        print("Print diff: " + "\(diff)")
+//    }
     
 }
 
