@@ -13,6 +13,7 @@ import FirebaseDatabase
 import MediaPlayer
 
 
+
 //This UIViewController class is for metronome game
 class MetronomeGame: UIViewController {
    
@@ -140,9 +141,14 @@ class MetronomeGame: UIViewController {
                 else
                 {
                     self.audioPlayer.play()
-                    self.message.text = "GAME OVER"
-                    self.isGameOver = true
-                    self.animateFinish()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + self.interval)
+                    {
+                        self.isGameOver = true
+                        self.message.text = "GAME OVER"
+                        self.animateFinish()
+                    }
+                    
                 }
                 
         })
@@ -194,7 +200,6 @@ class MetronomeGame: UIViewController {
     }
     
     
-    //
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -343,12 +348,12 @@ class MetronomeGame: UIViewController {
             message.text = "\(totalScore)"
         }
     }
-
+    
     //easy button tapped. set difficulity to easy.
     @IBAction func setEasyInterval(_ sender: UIButton) {
         interval = 2.0
         tolerance = 0.3
-        easy.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
+        easy.setTitleColor(UIColor.blue, for: UIControl.State.normal)
         normal.setTitleColor(UIColor.white, for: UIControl.State.normal)
         hard.setTitleColor(UIColor.white, for: UIControl.State.normal)
     }
@@ -358,9 +363,8 @@ class MetronomeGame: UIViewController {
         interval = 1.5
         tolerance = 0.3
         easy.setTitleColor(UIColor.white, for: UIControl.State.normal)
-        normal.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
+        normal.setTitleColor(UIColor.blue, for: UIControl.State.normal)
         hard.setTitleColor(UIColor.white, for: UIControl.State.normal)
-
     }
     //hard button tapped. set difficulity to hard.
     @IBAction func setHardInterval(_ sender: Any) {
@@ -368,9 +372,8 @@ class MetronomeGame: UIViewController {
         tolerance = 0.3
         easy.setTitleColor(UIColor.white, for: UIControl.State.normal)
         normal.setTitleColor(UIColor.white, for: UIControl.State.normal)
-        hard.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
-
+        hard.setTitleColor(UIColor.blue, for: UIControl.State.normal)
     }
-    
-    
 }
+
+

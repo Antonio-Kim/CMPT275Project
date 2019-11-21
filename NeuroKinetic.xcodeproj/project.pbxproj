@@ -25,7 +25,6 @@
 		BE1B1A6F235BF97200E6ED19 /* NeuroKineticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A6E235BF97200E6ED19 /* NeuroKineticTests.swift */; };
 		BE351714235D375B00C13527 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351713235D375B00C13527 /* StartViewController.swift */; };
 		BE351718235D4C4E00C13527 /* MetronomeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351717235D4C4E00C13527 /* MetronomeStats.swift */; };
-		BE4575332365371A00BADD25 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4575322365371A00BADD25 /* CircleView.swift */; };
 		BE7318F3238256CE00A99007 /* bigger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE7318F2238256CE00A99007 /* bigger.mp3 */; };
 		BE7318F5238256DC00A99007 /* always_remember.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE7318F4238256DC00A99007 /* always_remember.mp3 */; };
 		BE7318F7238256E700A99007 /* WritingBigger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE7318F6238256E700A99007 /* WritingBigger.mp3 */; };
@@ -96,7 +95,6 @@
 		BE28D2ED86C58704B4BAC896 /* Pods-NeuroKineticTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuroKineticTests.debug.xcconfig"; path = "Target Support Files/Pods-NeuroKineticTests/Pods-NeuroKineticTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE351713235D375B00C13527 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		BE351717235D4C4E00C13527 /* MetronomeStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeStats.swift; sourceTree = "<group>"; };
-		BE4575322365371A00BADD25 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BE7318F2238256CE00A99007 /* bigger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bigger.mp3; path = Assets.xcassets/bigger.dataset/bigger.mp3; sourceTree = "<group>"; };
 		BE7318F4238256DC00A99007 /* always_remember.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = always_remember.mp3; path = Assets.xcassets/always_remember.dataset/always_remember.mp3; sourceTree = "<group>"; };
 		BE7318F6238256E700A99007 /* WritingBigger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = WritingBigger.mp3; path = Assets.xcassets/WritingBigger.dataset/WritingBigger.mp3; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 		41E81C672366F3C0003313B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BE4575322365371A00BADD25 /* CircleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -621,7 +618,6 @@
 				83B00109236D25A3001488AA /* ParagraphBank.swift in Sources */,
 				83A313C32368F98E00BC251A /* SignatureCanvas.swift in Sources */,
 				41E81C732366F605003313B8 /* Setting.swift in Sources */,
-				BE4575332365371A00BADD25 /* CircleView.swift in Sources */,
 				83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */,
 				83B00107236D2587001488AA /* Word.swift in Sources */,
 				BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */,
