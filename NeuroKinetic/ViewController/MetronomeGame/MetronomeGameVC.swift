@@ -26,14 +26,13 @@ class MetronomeGame: UIViewController {
     var isGameOver: Bool = false
     var interval:Double = 1.5
     var tolerance:Double = 0.3
-    
-    //Difficulity bar
-    @IBOutlet weak var difficulityBar: UISlider!
-    
-    //Difficulity buttons
+
+    //Difficulity buttons and message label
     @IBOutlet var easy: UIButton!
     @IBOutlet var normal: UIButton!
     @IBOutlet var hard: UIButton!
+    @IBOutlet weak var difficulityLabel: UILabel!
+    
     
     //Score Variables
     var score = Array(repeating: -1, count: 20)
@@ -141,11 +140,10 @@ class MetronomeGame: UIViewController {
                 else
                 {
                     self.audioPlayer.play()
-                    
+                    //self.message.text = "GAME OVER"
                     DispatchQueue.main.asyncAfter(deadline: .now() + self.interval)
                     {
                         self.isGameOver = true
-                        self.message.text = "GAME OVER"
                         self.animateFinish()
                     }
                     
@@ -238,7 +236,13 @@ class MetronomeGame: UIViewController {
             leftTime = Date(timeIntervalSinceNow:4)
             //Fade out start button
             didStart = true
-            UIView.animate(withDuration: 2, animations:{self.tap.alpha = 0} )
+            UIView.animate(withDuration: 2, animations:{
+                self.tap.alpha = 0
+                self.easy.alpha = 0
+                self.normal.alpha = 0
+                self.hard.alpha = 0
+                self.difficulityLabel.alpha = 0
+            } )
             
             moveRight()
             //startTime = Date.init()
@@ -274,31 +278,32 @@ class MetronomeGame: UIViewController {
             //Display "Miss" or "Good Tap" depending on user's timing and expected time difference
             if(tapTime>tolerance)
             {
-                //Display "Miss"
-                message.text = "Miss"
-                message.alpha = 1
                 if(score[i] == -1)
                 {
                     score[i] = 0
+                    message.text = "Miss"
+                    message.alpha = 1
+                    UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
-                //Fade out "Miss" with animation
-               // UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
             }
             else
             {
                 //Display "Good Tap"
-                //message.text = "Good Tap"
-                message.alpha = 1
+                
                 
                 if(score[i] == -1)
                 {
                     totalScore += 1
                     score[i] = 1
+                    message.text = "Good Tap"
+                    message.alpha = 1
+                    UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
-                //Fade out "Good" with animation
-                //UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
+
             }
-            message.text = "\(totalScore)"
+            //Fading out "Good Tap" and "Miss" with animation
+            
+            //message.text = "\(totalScore)"
         }
     }
     
@@ -309,9 +314,7 @@ class MetronomeGame: UIViewController {
             //Take a difference between user tap time and expected timing
             let tempTime: Date = Date()
             tapTime = tempTime.timeIntervalSince(leftTime)
-            
-            
-            
+
             //If the difference is negative, convert it to positive
             if(tapTime<0)
             {
@@ -324,28 +327,28 @@ class MetronomeGame: UIViewController {
                 if(score[i] == -1)
                 {
                     score[i] = 0
+                    message.text = "Miss"
+                    message.alpha = 1
+                    UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
                 //Display "Miss"
-                //message.text = "Miss"
-                message.alpha = 1
-                //Fade out "Miss" with animation
-                //UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
+                
             }
             else
             {
-                
                 if(score[i] == -1)
                 {
                     totalScore += 1
                     score[i] = 1
+                    message.text = "Good Tap"
+                    message.alpha = 1
+                    UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
                 //Display "Good Tap"
-                //message.text = "Good Tap"
-                message.alpha = 1
-                //Fade out "Good" with animation
-                //UIView.animate(withDuration: 1, animations: {self.message.alpha = 0}, completion: {finished in})
+                
             }
-            message.text = "\(totalScore)"
+            
+            //message.text = "\(totalScore)"
         }
     }
     
