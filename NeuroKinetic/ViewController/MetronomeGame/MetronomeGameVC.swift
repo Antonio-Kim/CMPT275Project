@@ -37,6 +37,7 @@ class MetronomeGame: UIViewController {
     //Score Variables
     var score = Array(repeating: -1, count: 20)
     var totalScore: Int = 0
+    @IBOutlet weak var scoreLabel: UILabel!
     
     //Timer Initialization
     var rightTime:Date = Date()
@@ -141,7 +142,7 @@ class MetronomeGame: UIViewController {
                 {
                     self.audioPlayer.play()
                     //self.message.text = "GAME OVER"
-                    DispatchQueue.main.asyncAfter(deadline: .now() + self.interval)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + self.tolerance)
                     {
                         self.isGameOver = true
                         self.animateFinish()
@@ -150,14 +151,6 @@ class MetronomeGame: UIViewController {
                 }
                 
         })
-    }
-    
-    //Start button disappears
-    func startDisappear()
-    {
-        UIView.animate(withDuration: 2,
-                       animations:{self.tap.alpha = 0} )
-        
     }
     
     //Animation to be executed when the game is finished
@@ -236,7 +229,7 @@ class MetronomeGame: UIViewController {
             leftTime = Date(timeIntervalSinceNow:4)
             //Fade out start button
             didStart = true
-            UIView.animate(withDuration: 2, animations:{
+            UIView.animate(withDuration: 1, animations:{
                 self.tap.alpha = 0
                 self.easy.alpha = 0
                 self.normal.alpha = 0
@@ -297,13 +290,14 @@ class MetronomeGame: UIViewController {
                     score[i] = 1
                     message.text = "Good Tap"
                     message.alpha = 1
+                    scoreLabel.text = "Score:  \(totalScore)"
                     UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
 
             }
             //Fading out "Good Tap" and "Miss" with animation
             
-            //message.text = "\(totalScore)"
+            //
         }
     }
     
@@ -342,13 +336,12 @@ class MetronomeGame: UIViewController {
                     score[i] = 1
                     message.text = "Good Tap"
                     message.alpha = 1
+                    scoreLabel.text = "Score:  \(totalScore)"
                     UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
                 //Display "Good Tap"
                 
             }
-            
-            //message.text = "\(totalScore)"
         }
     }
     
