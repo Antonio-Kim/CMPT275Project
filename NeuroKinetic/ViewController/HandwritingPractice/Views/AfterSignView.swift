@@ -93,9 +93,11 @@ class AfterSignView: UIView {
         self.setNeedsDisplay()
     }
     //amplitude calculation for version 3
-    //    func calculateAmplitude(){
-    //        //let diff = (yCoordinates.max() - yCoordinates.min())
-    //        var diff: CGFloat = CGFloat(yCoordinates.min()!.distance(to: yCoordinates.max()!))
-    //        print("Print diff: " + "\(diff)")
-    //    }
+    func calculateAmplitude() -> CGFloat {
+        if (yCoordinates.isEmpty){
+            return 0
+        }
+        let ampl2: CGFloat = CGFloat(yCoordinates.min()!.distance(to: yCoordinates.max()!))
+        return ampl2
+    }
 }
