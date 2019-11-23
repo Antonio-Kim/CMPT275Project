@@ -1,32 +1,36 @@
 //
-//  SentenceWriteCanvas.swift
+//  AfterSignView.swift
 //  NeuroKinetic
 //
-//  Created by yyonata on 10/29/19.
+//  Created by yyonata on 2019-11-21.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
 import UIKit
-import AVFoundation
 
-class SentenceWriteCanvas: UIView {
-    
+class AfterSignView: UIView {
+
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
     //Variable declarations
     var StartingPoint:CGPoint!
     var TouchPoint: CGPoint!
     var Path: UIBezierPath!
     var lineColor: UIColor!
     var lineWidth: CGFloat!
-    var isErase: Bool = false
-    var lineStrokes = [intmax_t]()
-    var lineLength = 0
-    var strokeCounter = 0
+    var yCoordinates = [Float]()
     
     //Setting the canvas and line color/width
     override func layoutSubviews() {
         self.clipsToBounds = true
         self.isMultipleTouchEnabled = false
-        self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "lines.jpg"))
+        self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "signatureline.jpg"))
         lineColor = UIColor.black
         lineWidth = 5
     }
@@ -35,14 +39,30 @@ class SentenceWriteCanvas: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first
         StartingPoint = touch?.location(in: self)
-        lineLength = 0
+        if (Int(StartingPoint.y) < 0){
+            yCoordinates.append(0.0)
+        }
+        else if(Int(StartingPoint.y) > 230){
+            yCoordinates.append(230.0)
+        }
+        else{
+            yCoordinates.append(Float32(StartingPoint.y))
+        }
     }
     
     //Detecting written input movement from the pen
     override func touchesMoved( _ touches: Set<UITouch>, with event: UIEvent?){
         let touch = touches.first
-        lineLength = lineLength + 1
         TouchPoint = touch?.location(in: self)
+        if (Int(TouchPoint.y) < 0){
+            yCoordinates.append(0.0)
+        }
+        else if(Int(TouchPoint.y) > 230){
+            yCoordinates.append(230.0)
+        }
+        else{
+            yCoordinates.append(Float32(TouchPoint.y))
+        }
         Path = UIBezierPath()
         Path.move(to: StartingPoint)
         Path.addLine(to: TouchPoint)
@@ -50,52 +70,34 @@ class SentenceWriteCanvas: UIView {
         drawShapeLayer()
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //checking the end of a line stroke, reinitializing variables
-        lineStrokes.append(lineLength)
-        strokeCounter = strokeCounter + 1
-        lineLength = 0
-    }
-    
     //Setting the shape layers for writing
     func drawShapeLayer(){
         let shapeLayer = CAShapeLayer()
-        shapeLayer.lineWidth = lineWidth
-        lineColor = UIColor.black
-        shapeLayer.strokeColor = lineColor.cgColor
         shapeLayer.path = Path.cgPath
+        shapeLayer.strokeColor = lineColor.cgColor
+        shapeLayer.lineWidth = lineWidth
         self.layer.addSublayer(shapeLayer)
         self.setNeedsDisplay()
     }
     
     //Clear function implementation to remove all written input from the canvas
     func clear(){
-        strokeCounter = 0
+        //calculateAmplitude()
+        
         if self.layer.sublayers == nil {
             return
         }
+        yCoordinates.removeAll()
         Path.removeAllPoints()
-        lineStrokes.removeAll()
         self.layer.sublayers = nil
         self.setNeedsDisplay()
     }
-    
-    func undo(){
-        guard let n = layer.sublayers?.count, n >= 1 else { return }
-        //repeatedly popping the layers of writing to undo the last stroke
-        if (lineStrokes.count - 1 >= 0){
-            if (lineStrokes[lineStrokes.count - 1] > 1){
-                for _ in 1...lineStrokes[lineStrokes.count - 1]{
-                    _ = layer.sublayers?.popLast()
-                }
-            }
-            lineStrokes.remove(at: lineStrokes.count - 1)
-            self.setNeedsDisplay()
-            strokeCounter = strokeCounter - 1
-            //To avoid undoing past 0 lineStrokes
-            if (strokeCounter < 0){
-                strokeCounter = 0
-            }
+    //amplitude calculation for version 3
+    func calculateAmplitude() -> CGFloat {
+        if (yCoordinates.isEmpty){
+            return 0.0
         }
+        let ampl2: CGFloat = CGFloat(yCoordinates.min()!.distance(to: yCoordinates.max()!))
+        return ampl2
     }
 }

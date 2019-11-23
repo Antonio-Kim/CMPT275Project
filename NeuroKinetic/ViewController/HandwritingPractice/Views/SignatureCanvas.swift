@@ -92,11 +92,15 @@ class SignatureCanvas: UIView {
         self.setNeedsDisplay()
     }
     //amplitude calculation for version 3
-//    func calculateAmplitude(){
-//        //let diff = (yCoordinates.max() - yCoordinates.min())
-//        var diff: CGFloat = CGFloat(yCoordinates.min()!.distance(to: yCoordinates.max()!))
-//        print("Print diff: " + "\(diff)")
-//    }
+    func calculateAmplitude() -> CGFloat{
+        //let diff = (yCoordinates.max() - yCoordinates.min())
+        if (yCoordinates.isEmpty){
+            return 0.0
+        }
+        let ampl1: CGFloat = CGFloat(yCoordinates.min()!.distance(to: yCoordinates.max()!))
+        print("Print diff: " + "\(ampl1)")
+        return ampl1
+    }
     
 }
 

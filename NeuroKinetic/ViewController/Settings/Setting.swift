@@ -12,45 +12,56 @@
 // https://www.ioscreator.com/tutorials/volume-view-ios-tutorial
 
 import UIKit
+import AVFoundation
 import MediaPlayer
 
+
+/** This extension is used to control the volume of the
+ 
+ */
 extension MPVolumeView {
-    static func setVolume(_ volume: Float) {
-        // Need to use the MPVolumeView in order to change volume, but don't care about UI set so frame to .zero
-        let volumeView = MPVolumeView(frame: .zero)
-        // Search for the slider
-        let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
-        // Update the slider value with the desired volume.
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
-            slider?.value = volume
-        }
-        // Optional - Remove the HUD
-        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
-            volumeView.alpha = 0.000001
-            window.addSubview(volumeView)
-        }
+  static func setVolume(_ volume: Float) {
+    let volumeView = MPVolumeView(frame: .zero)
+    let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
+
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
+      slider?.value = volume
     }
+  }
 }
+
 class Setting: UIViewController {
+    
+    // Setting up UI Variables on the Setting.
     
     @IBOutlet weak var volumeValue: UILabel!
     @IBOutlet weak var volumeStepper: UIStepper!
     @IBOutlet weak var soundEffectSwitch: UISwitch!
     @IBOutlet weak var auditoryAssistanceSwitch: UISwitch!
     
+    var volume: Float = 0.0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         volumeStepper.maximumValue = 10
         volumeStepper.minimumValue = 0
-        MPVolumeView.setVolume(0.0)
+        volumeStepper.value = 5
         
+        volume = 0.5
+        
+        MPVolumeView.setVolume(volume)
+        volumeValue.text = Int(volume*10).description
     }
     
+    
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        volumeValue.text = Int(sender.value).description
-    }
+        volume = Float(Int(sender.value))*0.1
+        MPVolumeView.setVolume(volume)
+        volumeValue.text = Int(volume*10).description
         
+        print(volume)
+    }
     
     
     

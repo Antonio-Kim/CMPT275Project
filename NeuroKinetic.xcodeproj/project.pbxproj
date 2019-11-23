@@ -48,6 +48,8 @@
 		F9B7AA7E236F3851000B3BF1 /* metronomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9B7AA7B236F3851000B3BF1 /* metronomeSound.mp3 */; };
 		F9B7AA8E236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */; };
 		F9B7AAA0236F5396000B3BF1 /* NeuroKineticTypingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */; };
+		F9DF28C42388C40900791048 /* AfterSignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DF28C32388C40900791048 /* AfterSignVC.swift */; };
+		F9DF28C62388C42E00791048 /* AfterSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DF28C52388C42E00791048 /* AfterSignView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		F9B7AA87236F39FE000B3BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B7AA8D236F4B2B000B3BF1 /* NeuroKineticMetronomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticMetronomeTest.swift; sourceTree = "<group>"; };
 		F9B7AA9F236F5396000B3BF1 /* NeuroKineticTypingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticTypingTests.swift; sourceTree = "<group>"; };
+		F9DF28C32388C40900791048 /* AfterSignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSignVC.swift; sourceTree = "<group>"; };
+		F9DF28C52388C42E00791048 /* AfterSignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSignView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +272,7 @@
 			children = (
 				83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */,
 				83A313C22368F98E00BC251A /* SignatureCanvas.swift */,
+				F9DF28C52388C42E00791048 /* AfterSignView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 			children = (
 				83F22F052362280500AA0D94 /* HandwritingPracticeVC.swift */,
 				83B00100236D1F31001488AA /* SignViewControl.swift */,
+				F9DF28C32388C40900791048 /* AfterSignVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				83B00109236D25A3001488AA /* ParagraphBank.swift in Sources */,
 				83A313C32368F98E00BC251A /* SignatureCanvas.swift in Sources */,
 				41E81C732366F605003313B8 /* Setting.swift in Sources */,
+				F9DF28C62388C42E00791048 /* AfterSignView.swift in Sources */,
 				83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */,
 				83B00107236D2587001488AA /* Word.swift in Sources */,
 				BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */,
@@ -627,6 +634,7 @@
 				BE7C725323610C5E005EBFF5 /* MetronomeGameVC.swift in Sources */,
 				BE1B1A5C235BF97100E6ED19 /* TypingGame.swift in Sources */,
 				BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */,
+				F9DF28C42388C40900791048 /* AfterSignVC.swift in Sources */,
 				BE351718235D4C4E00C13527 /* MetronomeStats.swift in Sources */,
 				41E81C712366F58C003313B8 /* Paragraph.swift in Sources */,
 				BE1B1A5A235BF97100E6ED19 /* AppDelegate.swift in Sources */,
