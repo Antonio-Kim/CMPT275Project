@@ -20,7 +20,7 @@ class SignViewControl: UIViewController {
     @IBOutlet weak var Label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Label.text = "Please enter your signature in the field below"
     }
     
     @IBAction func Done(_ sender: UIButton) {
