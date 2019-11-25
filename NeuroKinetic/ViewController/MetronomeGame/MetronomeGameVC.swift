@@ -156,7 +156,6 @@ class MetronomeGame: UIViewController {
     //Animation to be executed when the game is finished
     func animateFinish()
     {
-        
         //Database update
         self.tap.setTitle("DONE", for: .normal)
         self.message.text = "Score :" + String(self.totalScore)
@@ -186,7 +185,7 @@ class MetronomeGame: UIViewController {
                         self.right.alpha = 0
                         self.left.alpha = 0
                         self.soundNote.alpha = 0
-                        //self.message.alpha = 0
+                        self.message.alpha = 1
         } )
     }
     
@@ -235,11 +234,9 @@ class MetronomeGame: UIViewController {
                 self.normal.alpha = 0
                 self.hard.alpha = 0
                 self.difficulityLabel.alpha = 0
+                self.message.alpha = 0
             } )
-            
             moveRight()
-            //startTime = Date.init()
-            
         }
         //Navigating to the menu, if the game is finished
         if(isGameOver)
@@ -251,7 +248,6 @@ class MetronomeGame: UIViewController {
         }
     }
     
-    //
     @IBAction func tapRight(_ sender: UIButton) {
         //The button functions if and only if the game has started and hasn't finished yet
         if(didStart && !isGameOver)
@@ -281,9 +277,6 @@ class MetronomeGame: UIViewController {
             }
             else
             {
-                //Display "Good Tap"
-                
-                
                 if(score[i] == -1)
                 {
                     totalScore += 1
@@ -293,11 +286,7 @@ class MetronomeGame: UIViewController {
                     scoreLabel.text = "Score:  \(totalScore)"
                     UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
-
             }
-            //Fading out "Good Tap" and "Miss" with animation
-            
-            //
         }
     }
     
@@ -325,8 +314,6 @@ class MetronomeGame: UIViewController {
                     message.alpha = 1
                     UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
-                //Display "Miss"
-                
             }
             else
             {
@@ -339,8 +326,6 @@ class MetronomeGame: UIViewController {
                     scoreLabel.text = "Score:  \(totalScore)"
                     UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
-                //Display "Good Tap"
-                
             }
         }
     }
