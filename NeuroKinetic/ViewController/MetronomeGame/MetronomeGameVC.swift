@@ -19,7 +19,10 @@ class MetronomeGame: UIViewController {
     
    
     //MP3 Initialization for metronome sound
-    var audioPlayer: AVAudioPlayer!
+    var metroSE,classic_music: AVAudioPlayer!
+    
+    //Read user setting for classic music on/off
+    let SE = UserDefaults.standard.bool(forKey: "metronomeSE")
     
     //Varible Initialization
     var tapCount:Int = 0
@@ -102,7 +105,7 @@ class MetronomeGame: UIViewController {
                         _ in
                         self.tapCount += 1
                         DispatchQueue.main.async {
-                            self.audioPlayer.play()
+                            self.metroSE.play()
                         }
                         self.moveLeft()
                         self.rightTime = Date()
@@ -129,7 +132,7 @@ class MetronomeGame: UIViewController {
                 {
                     ////Chain animation. Start moving to the right.
                     DispatchQueue.main.async {
-                        self.audioPlayer.play()
+                        self.metroSE.play()
                         
                     }
                     self.moveRight()
@@ -141,7 +144,7 @@ class MetronomeGame: UIViewController {
                 //And fade out all the buttons
                 else
                 {
-                    self.audioPlayer.play()
+                    self.metroSE.play()
                     //self.message.text = "GAME OVER"
                     DispatchQueue.main.asyncAfter(deadline: .now() + self.tolerance)
                     {
@@ -179,6 +182,18 @@ class MetronomeGame: UIViewController {
         }
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/Score").setValue(totalScore)
+        
+        //Fade out classic music
+        classic_music.setVolume(0, fadeDuration: 2)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)
+        {
+            if(self.classic_music?.isPlaying == true)
+            {
+                self.classic_music.stop()
+                self.classic_music.currentTime = 0
+            }
+        }
+        
         //Display "DONE". Fade out all the other buttons and labels.
         UIView.animate(withDuration: 3,
                        animations:{
@@ -194,8 +209,7 @@ class MetronomeGame: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Read user setting
-        let SE = UserDefaults.standard.bool(forKey: "metronomeSE")
+        
         
         //Bringing image to the front
         view.addSubview(soundNote)
@@ -209,21 +223,40 @@ class MetronomeGame: UIViewController {
         }
         
         //Initializing sound file
-        let sound = Bundle.main.path(forResource:"metronomeSound(2)", ofType: "mp3")
+        let metroSound = Bundle.main.path(forResource:"metronomeSound(2)", ofType: "mp3")
+        
         do{
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+            
+            metroSE = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: metroSound!))
         }
         //If it fails to load, returns, error
         catch{
             print(error)
         }
         
+        //If classic music setting
         if(SE)
         {
-            //Initialize sound here
-            //
+            let classicMusic = Bundle.main.path(forResource:"classic_music(2)", ofType: "mp3")
+            do{
+                classic_music = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: classicMusic!))
+            }
+            catch{
+                print(error)
+            }
         }
-        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.classic_music.setVolume(0, fadeDuration: 2)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)
+        {
+            if(self.classic_music?.isPlaying == true)
+            {
+                self.classic_music.stop()
+                self.classic_music.currentTime = 0
+            }
+        }
     }
     
     //The button has two functionalities
@@ -247,6 +280,12 @@ class MetronomeGame: UIViewController {
                 self.difficulityLabel.alpha = 0
                 self.message.alpha = 0
             } )
+            if(SE)
+            {
+                DispatchQueue.main.async {
+                    self.classic_music.play()
+                }
+            }
             moveRight()
         }
         //Navigating to the menu, if the game is finished
