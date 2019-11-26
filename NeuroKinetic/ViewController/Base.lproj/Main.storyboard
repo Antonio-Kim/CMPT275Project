@@ -816,7 +816,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="331" translatesAutoresizingMaskIntoConstraints="NO" id="8QW-CJ-eba">
                                         <rect key="frame" x="0.0" y="150" width="1081.5" height="54"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6m-Pn-Br9">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classical Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6m-Pn-Br9">
                                                 <rect key="frame" x="0.0" y="0.0" width="701.5" height="54"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
                                                 <nil key="textColor"/>
@@ -824,6 +824,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P99-9T-Zkq">
                                                 <rect key="frame" x="1032.5" y="0.0" width="51" height="54"/>
+                                                <connections>
+                                                    <action selector="setSoundEffect:" destination="R3y-i4-ueE" eventType="valueChanged" id="dfE-SD-nOA"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                         <constraints>
@@ -844,6 +847,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K92-LF-K5m">
                                                 <rect key="frame" x="1032.5" y="0.0" width="51" height="54"/>
+                                                <connections>
+                                                    <action selector="setAuditoryAssistance:" destination="R3y-i4-ueE" eventType="valueChanged" id="Ype-RB-l8g"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>

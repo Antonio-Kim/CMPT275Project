@@ -39,7 +39,12 @@ class HandwritingPractice: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        audioAssistance()
+        let SE = UserDefaults.standard.bool(forKey: "handwritingSE")
+        print(SE)
+        if(SE)
+        {
+            audioAssistance()
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -44,25 +44,62 @@ class Setting: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        volume = UserDefaults.standard.float(forKey: "masterVolume")
+        
+        //stepper initialization
         volumeStepper.maximumValue = 10
         volumeStepper.minimumValue = 0
-        volumeStepper.value = 5
+        volumeStepper.value = Double(volume*10)
         
-        volume = 0.5
+       
+        
+        let metronomeSE = UserDefaults.standard.bool(forKey: "metronomeSE")
+        let handwritingSE = UserDefaults.standard.bool(forKey: "handwritingSE")
+        
+        soundEffectSwitch.setOn (metronomeSE, animated: false)
+        auditoryAssistanceSwitch.setOn (handwritingSE, animated: false)
+        
         
         MPVolumeView.setVolume(volume)
         volumeValue.text = Int(volume*10).description
     }
     
-    
+    //stepper volume function
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        //Set volume
         volume = Float(Int(sender.value))*0.1
         MPVolumeView.setVolume(volume)
         volumeValue.text = Int(volume*10).description
         
+        //Save volume
+        UserDefaults.standard.set(volume, forKey: "masterVolume")
         print(volume)
     }
     
-    
-    
+    //sound effect function
+    @IBAction func setSoundEffect(_ sender: Any) {
+        if soundEffectSwitch.isOn
+        {
+            UserDefaults.standard.set(true, forKey: "metronomeSE")
+            print("Metronome SE: On")
+        }
+        else
+        {
+            UserDefaults.standard.set(false, forKey: "metronomeSE")
+            print("Metronome SE: Off")
+        }
+    }
+    //auditory assistance
+    @IBAction func setAuditoryAssistance(_ sender: Any) {
+        if auditoryAssistanceSwitch.isOn
+        {
+            UserDefaults.standard.set(true, forKey: "handwritingSE")
+            print("Handwriting SE: On")
+        }
+        else
+        {
+            UserDefaults.standard.set(false, forKey: "handwritingSE")
+            print("Handwriting SE: Off")
+        }
+    }
 }

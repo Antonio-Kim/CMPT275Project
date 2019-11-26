@@ -16,6 +16,7 @@ import MediaPlayer
 
 //This UIViewController class is for metronome game
 class MetronomeGame: UIViewController {
+    
    
     //MP3 Initialization for metronome sound
     var audioPlayer: AVAudioPlayer!
@@ -193,6 +194,9 @@ class MetronomeGame: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Read user setting
+        let SE = UserDefaults.standard.bool(forKey: "metronomeSE")
+        
         //Bringing image to the front
         view.addSubview(soundNote)
         
@@ -213,6 +217,13 @@ class MetronomeGame: UIViewController {
         catch{
             print(error)
         }
+        
+        if(SE)
+        {
+            //Initialize sound here
+            //
+        }
+        
     }
     
     //The button has two functionalities
