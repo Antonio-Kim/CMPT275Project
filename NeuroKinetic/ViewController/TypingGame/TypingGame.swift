@@ -265,7 +265,7 @@ class TypingGame: UIViewController {
             
             let string = NSMutableAttributedString(string: paragraphDisplay)
             
-            string.setColorForText(String(tempSubstring), with: UIColor.green)
+            string.setColorForText(String(tempSubstring), with: UIColor(red: 0/255, green: 183/255, blue: 39/255, alpha: 1.0) /* #00b727 */)
             
             string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement-1].count+1)), with: UIColor.lightGray)
             
