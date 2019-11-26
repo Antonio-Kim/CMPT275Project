@@ -24,10 +24,10 @@ class AfterSignVC: UIViewController {
         else{
             gamesPlayed = preferences.integer(forKey: currentLevelKey)
         }
-        let label = UILabel(frame: CGRect(x: 250, y: 100, width: 850, height: 50))
+        let label = UILabel(frame: CGRect(x: 250, y: 100, width: 950, height: 50))
         label.center.x = self.view.center.x
         label.textAlignment = .center
-        label.font = UIFont(name:"Arial", size: 40.0)
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 40.0)
         //label.font = UIFont.preferredFont(forTextStyle: .footnote)
         label.text = "Please enter your signature in the field below"
         self.view.addSubview(label)
