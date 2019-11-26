@@ -64,11 +64,9 @@ class TypingGame: UIViewController {
     //Int
     var wordElement: Int = 0
     var paragraphPrintCount: Int = 0
-    var correctWordsNum = 0
-    var wrongWordsNum = 0
+    var correctWordsNum: Int = 0
     var wpm: Int = 0
-    
-    //var lastParagraphPrintCount: Int = 0
+    var accuracy: Int = 0
     
     //Strings
     var paragraphDisplay: String = ""
@@ -77,6 +75,7 @@ class TypingGame: UIViewController {
     
     //Bool
     var wordCorrect: Bool = false
+    var firstTimeCorrectWord: Bool = true
     var completeParagraph: Bool = false
     
     //Time measurement
@@ -136,17 +135,27 @@ class TypingGame: UIViewController {
                 if typedWord == paragraphList.paragraph.wordArr[wordElement] {  //typed word comparing with the corresponding paragraph word
                     paragraphPrintCount += typedWord.count + 1
                     
+                    //increments correct words if the user types the correct word in the first try
+                    if firstTimeCorrectWord {
+                        correctWordsNum += 1
+                    }
+                    
                     typedWord = ""
                     wordElement += 1
+                    firstTimeCorrectWord = true
                     typingTextField.text = ""
                     paragraphState = ParagraphState.correctWord
-                    
+                    wordCorrect = true
                     updateParagraph()   //Updates the paragraphView
                 }else {
-                    //paragraphState = ParagraphState.wrongWord
-                    
-                    //updateParagraph()   //Updates the paragraphView
+                    paragraphState = ParagraphState.wrongWord
+                    firstTimeCorrectWord = false
+                    wordCorrect = false
+                    updateParagraph()   //Updates the paragraphView
                 }
+            }else if wordCorrect {
+                paragraphState = ParagraphState.normal  //for version 3
+                updateParagraph()
             }
         }
         checkComplete()
@@ -155,7 +164,7 @@ class TypingGame: UIViewController {
     //Pick paragraph from list
     func chooseParagraph() {
         let tempNum: Int = Int.random(in:0...15);
-        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
+        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: 9)
     }
     
     //Check if the paragraph is complete
@@ -164,13 +173,13 @@ class TypingGame: UIViewController {
             let ref = Database.database().reference()
             completeParagraph = true;
             wordElement = 0
+            
             finishTime = Date()
-            print("Complete Paragraph")
             totalTime = finishTime.timeIntervalSince(startTime)
             wpm = Int(Double(paragraphList.paragraph.wordArr.count) / (totalTime/60))
-            print("Number of words: " + "\(paragraphList.paragraph.wordArr.count)")
-            print("TotalTime is " + "\(totalTime)")
-            print("Words per minute: " + "\(wpm)")
+            
+            accuracy = (correctWordsNum*100/paragraphList.paragraph.wordArr.count) //accuracy in percent
+            
             //let date:Date = Date()
             let gameFinishTime :Date = Date()
             let calendar = Calendar.current
@@ -212,7 +221,7 @@ class TypingGame: UIViewController {
                         animations:{self.paragraphView.alpha = 0},
                         completion:{
                             _ in
-                            self.paragraphView.text = "WPM: " + "\(self.wpm)"
+                            self.paragraphView.text = "WPM: " + "\(self.wpm)" + ", Accuracy: " + "\(self.accuracy)" + "%"
                             self.paragraphView.textColor = UIColor.white
                             self.paragraphView.font = self.paragraphView.font.withSize(30)
         })
@@ -263,24 +272,16 @@ class TypingGame: UIViewController {
             paragraphView.attributedText = string
             
         case .wrongWord:
-            let tempSubstring = paragraphDisplay.prefix(paragraphPrintCount)    //Grabs the typed part to set color
+            let tempSubstring = paragraphDisplay.prefix(paragraphPrintCount+paragraphList.paragraph.wordArr[wordElement].count)    //Grabs the typed part to set color
             
             let string = NSMutableAttributedString(string: paragraphDisplay)
             
             string.setColorForText(String(tempSubstring), with: UIColor.red)
             
-            //string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement-1].count+1)), with: UIColor.white)
+            string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement].count)), with: UIColor.white)
             
             paragraphView.attributedText = string
             
         }
     }
 }
-
-
-
-
-
-
-
-
