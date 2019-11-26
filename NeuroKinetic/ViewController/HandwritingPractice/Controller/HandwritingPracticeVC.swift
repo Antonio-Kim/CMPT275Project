@@ -35,7 +35,13 @@ class HandwritingPractice: UIViewController {
             print ("Unexpected Error")
         }
         generateSentence()
-        
+        let instruction = UILabel(frame: CGRect(x: 250, y: 100, width: 950, height: 50))
+        instruction.center.x = self.view.center.x
+        instruction.textAlignment = .center
+        instruction.font = UIFont(name:"HelveticaNeue-Bold", size: 45.0)
+        //label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        instruction.text = "Write the following sentence below:"
+        self.view.addSubview(instruction)
     }
     
     override func viewDidAppear(_ animated: Bool) {

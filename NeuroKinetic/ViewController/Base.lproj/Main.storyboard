@@ -85,17 +85,17 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Gx5-tT-QZu">
-                                <rect key="frame" x="250" y="124" width="694.5" height="113"/>
+                                <rect key="frame" x="295" y="124" width="604" height="113"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Eah-09-SOo">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="113.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="113" id="EwY-wK-Q4r"/>
                                             <constraint firstAttribute="width" constant="113" id="HNd-fD-qJy"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NeuroKinetic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBQ-4E-ggX">
-                                        <rect key="frame" x="143" y="0.0" width="551.5" height="113"/>
+                                        <rect key="frame" x="143" y="0.0" width="461" height="113"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="80"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -191,17 +191,10 @@
                                     <action selector="ClearButton:" destination="zRe-Jb-N92" eventType="touchUpInside" id="lOD-76-LAH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write the following sentence below:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByX-BL-J7F">
-                                <rect key="frame" x="141" y="143" width="950" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYv-RD-Gwp">
-                                <rect key="frame" x="567" y="716" width="72" height="49"/>
+                                <rect key="frame" x="564" y="717" width="85" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
                                 <state key="normal" title="Undo">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -284,17 +277,10 @@
                                     <segue destination="lDo-HC-Lf8" kind="presentation" modalPresentationStyle="fullScreen" id="5wv-Gz-ltI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter your signature in the field below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC9-TT-hyr">
-                                <rect key="frame" x="220" y="155" width="860" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MB3-TY-hXu">
                                 <rect key="frame" x="763" y="601" width="116" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -645,13 +631,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP START TO START THE GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg1-ix-3OM">
-                                <rect key="frame" x="327.5" y="301.5" width="539.5" height="39.5"/>
+                                <rect key="frame" x="351.5" y="303.5" width="491" height="37.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movingMusicCircle" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-X4-Xjt">
-                                <rect key="frame" x="257" y="554" width="100" height="100.00000000000023"/>
+                                <rect key="frame" x="257" y="554" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="A1d-I8-9pz"/>
                                     <constraint firstAttribute="width" constant="100" id="I9e-ZL-vtj"/>
@@ -1051,15 +1037,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0wX-nw-k2Q" customClass="AfterSignView" customModule="NeuroKinetic" customModuleProvider="target">
-                                <rect key="frame" x="293" y="303" width="609" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1g9-lc-tkR">
-                                <rect key="frame" x="293" y="574" width="69" height="48"/>
+                                <rect key="frame" x="287" y="577" width="87" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
                                 <state key="normal" title="Clear">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -1068,9 +1049,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOe-qg-L73">
-                                <rect key="frame" x="833" y="574" width="69" height="83"/>
+                                <rect key="frame" x="808" y="574" width="94" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -1082,7 +1063,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afV-fX-PxT">
                                 <rect key="frame" x="20" y="20" width="141" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
                                 <state key="normal" title="&lt; Back">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -1090,6 +1071,11 @@
                                     <segue destination="lDo-HC-Lf8" kind="presentation" modalPresentationStyle="fullScreen" id="mkn-q5-ihL"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0wX-nw-k2Q" customClass="AfterSignView" customModule="NeuroKinetic" customModuleProvider="target">
+                                <rect key="frame" x="293" y="303" width="609" height="229"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xyU-qs-uVd"/>
@@ -1117,7 +1103,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="hDn-2a-nQ5"/>
         <segue reference="AHe-k0-2YC"/>
-        <segue reference="dO9-fc-EPq"/>
+        <segue reference="E4p-1s-mr5"/>
         <segue reference="MlM-9w-c64"/>
         <segue reference="Wfs-HK-JXq"/>
     </inferredMetricsTieBreakers>
