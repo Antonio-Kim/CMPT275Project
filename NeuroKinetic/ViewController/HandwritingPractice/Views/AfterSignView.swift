@@ -30,7 +30,7 @@ class AfterSignView: UIView {
     override func layoutSubviews() {
         self.clipsToBounds = true
         self.isMultipleTouchEnabled = false
-        self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "signatureline.jpg"))
+        self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "signatureline.png"))
         lineColor = UIColor.black
         lineWidth = 5
     }

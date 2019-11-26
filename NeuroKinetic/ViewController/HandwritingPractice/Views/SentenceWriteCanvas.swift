@@ -26,7 +26,7 @@ class SentenceWriteCanvas: UIView {
     override func layoutSubviews() {
         self.clipsToBounds = true
         self.isMultipleTouchEnabled = false
-        self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "lines.jpg"))
+        self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "lines.png"))
         lineColor = UIColor.black
         lineWidth = 5
     }

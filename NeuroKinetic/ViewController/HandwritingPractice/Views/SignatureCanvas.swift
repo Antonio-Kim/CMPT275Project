@@ -29,7 +29,7 @@ class SignatureCanvas: UIView {
     override func layoutSubviews() {
         self.clipsToBounds = true
         self.isMultipleTouchEnabled = false
-           self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "signatureline.jpg"))
+        self.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "signatureline.png"))
         lineColor = UIColor.black
         lineWidth = 5
     }
@@ -98,7 +98,7 @@ class SignatureCanvas: UIView {
             return 0.0
         }
         let ampl1: CGFloat = CGFloat(yCoordinates.min()!.distance(to: yCoordinates.max()!))
-        print("Print diff: " + "\(ampl1)")
+        //print("Print diff: " + "\(ampl1)")
         return ampl1
     }
     

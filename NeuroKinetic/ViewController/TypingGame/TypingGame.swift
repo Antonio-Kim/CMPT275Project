@@ -164,7 +164,7 @@ class TypingGame: UIViewController {
     //Pick paragraph from list
     func chooseParagraph() {
         let tempNum: Int = Int.random(in:0...15);
-        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: 9)
+        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
     }
     
     //Check if the paragraph is complete
@@ -222,7 +222,7 @@ class TypingGame: UIViewController {
                         completion:{
                             _ in
                             self.paragraphView.text = "WPM: " + "\(self.wpm)" + ", Accuracy: " + "\(self.accuracy)" + "%"
-                            self.paragraphView.textColor = UIColor.white
+                            self.paragraphView.textColor = UIColor.darkGray
                             self.paragraphView.font = self.paragraphView.font.withSize(30)
         })
         
@@ -256,7 +256,7 @@ class TypingGame: UIViewController {
             
             let string = NSMutableAttributedString(string: paragraphDisplay)
             
-            string.setColorForText(String(tempSubstring), with: UIColor.white)
+            string.setColorForText(String(tempSubstring), with: UIColor.lightGray)
             
             paragraphView.attributedText = string
             
@@ -267,7 +267,7 @@ class TypingGame: UIViewController {
             
             string.setColorForText(String(tempSubstring), with: UIColor.green)
             
-            string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement-1].count+1)), with: UIColor.white)
+            string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement-1].count+1)), with: UIColor.lightGray)
             
             paragraphView.attributedText = string
             
@@ -278,7 +278,7 @@ class TypingGame: UIViewController {
             
             string.setColorForText(String(tempSubstring), with: UIColor.red)
             
-            string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement].count)), with: UIColor.white)
+            string.setColorForText(String(tempSubstring.dropLast(paragraphList.paragraph.wordArr[wordElement].count)), with: UIColor.lightGray)
             
             paragraphView.attributedText = string
             
