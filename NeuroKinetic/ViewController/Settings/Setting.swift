@@ -51,7 +51,11 @@ class Setting: UIViewController {
         volumeStepper.minimumValue = 0
         volumeStepper.value = Double(volume*10)
         
-       
+        soundEffectSwitch.onTintColor = .black
+        soundEffectSwitch.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
+        
+        auditoryAssistanceSwitch.onTintColor = .black
+        auditoryAssistanceSwitch.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
         
         let metronomeSE = UserDefaults.standard.bool(forKey: "metronomeSE")
         let handwritingSE = UserDefaults.standard.bool(forKey: "handwritingSE")
