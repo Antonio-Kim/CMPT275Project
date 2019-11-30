@@ -13,7 +13,10 @@ class HandwritingPractice: UIViewController {
     var assistance_1,assistance_2,assistance_3:  AVAudioPlayer!
     var assistance_num:Int = -1
     var isFinish:Bool = false
-
+    var sentenceNum:Int = 1
+    let number = Int.random(in: 1 ..< 6)
+    
+    @IBOutlet weak var nextOrDone: UIButton!
     //Function call to clear all written lines on the canvas
     @IBAction func ClearButton(_ sender: Any) {
         SentenceWrite.clear()
@@ -34,6 +37,7 @@ class HandwritingPractice: UIViewController {
         catch{
             print ("Unexpected Error")
         }
+        nextOrDone.setTitle("Next", for: .normal)
         generateSentence()
         let instruction = UILabel(frame: CGRect(x: 250, y: 100, width: 950, height: 50))
         instruction.center.x = self.view.center.x
@@ -74,26 +78,87 @@ class HandwritingPractice: UIViewController {
         SentenceWrite.undo()
     }
 
+    @IBAction func NextSentence(_ sender: Any) {
+        sentenceNum += 1
+        SentenceWrite.clear()
+        generateSentence()
+        if (sentenceNum > 3){
+            performSegue(withIdentifier: "HandwritingToAfterSign", sender: nil)
+        }
+    }
     
     @IBOutlet weak var SentenceBank: UILabel!
     
-    //Referenced from: https://www.englishtrackers.com/english-blog/famous-literary-quotes/
+    //Referenced from: https://www.brainyquote.com/topics/inspirational-quotes
     //Bank of quotes used for handwriting practice on the canvas
     fileprivate func generateSentence(){
-        let number = Int.random(in: 0 ..< 5)
         switch number {
         case 1:
-            SentenceBank.text = "All we have to decide is what to do with the time that is given to us"
+            if (sentenceNum == 1){
+                SentenceBank.text = "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work."
+            }
+            else if(sentenceNum == 2){
+                SentenceBank.text = " And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle."
+            }
+            else{
+                SentenceBank.text = "As with all matters of the heart, you'll know when you find it."
+                nextOrDone.setTitle("Done", for: .normal)
+            }
         case 2:
-            SentenceBank.text = "It matters not what someone is born, but what they grow to be"
+            if (sentenceNum == 1){
+                SentenceBank.text = "Everyone has inside of him a piece of good news."
+            }
+            else if(sentenceNum == 2){
+                SentenceBank.text = "The good news is that you don't know how great you can be!"
+            }
+            else{
+                SentenceBank.text = "How much you can love! What you can accomplish! And what your potential is!"
+                nextOrDone.setTitle("Done", for: .normal)
+            }
         case 3:
-            SentenceBank.text = "Whatever our souls are made of, his and mine are the same"
+            if (sentenceNum == 1){
+                SentenceBank.text = "Everything you want is out there waiting for you to ask."
+            }
+            else if(sentenceNum == 2){
+                SentenceBank.text = "Everything you want also wants you."
+            }
+            else{
+                SentenceBank.text = "But you have to take action to get it."
+                nextOrDone.setTitle("Done", for: .normal)
+            }
         case 4:
-            SentenceBank.text = "Not all those who wander are lost"
+            if (sentenceNum == 1){
+                SentenceBank.text = "And above all things, never think that you're not good enough yourself."
+            }
+            else if(sentenceNum == 2){
+                SentenceBank.text = "A man should never think that."
+            }
+            else{
+                SentenceBank.text = "My belief is that in life people will take you at your own reckoning."
+                nextOrDone.setTitle("Done", for: .normal)
+            }
         case 5:
-            SentenceBank.text = "Real courage is when you know you’re licked before you begin, but you begin anyway and see it through no matter what"
+            if (sentenceNum == 1){
+                SentenceBank.text = "A man has to learn that he cannot command things, but that he can command himself;"
+            }
+            else if(sentenceNum == 2){
+                SentenceBank.text = "that he cannot coerce the wills of others, but that he can mold and master his own will: and things serve him who serves Truth;"
+            }
+            else{
+                SentenceBank.text = "people seek guidance of him who is master of himself."
+                nextOrDone.setTitle("Done", for: .normal)
+            }
         default:
-            SentenceBank.text = "We are such stuff as dreams are made on, and our little life is rounded with a sleep"
+            if (sentenceNum == 1){
+                SentenceBank.text = "If a work of art is rich and vital and complete, those who have artistic instincts will see its beauty,"
+            }
+            else if(sentenceNum == 2){
+                SentenceBank.text = "and those to whom ethics appeal more strongly than aesthetics will see its moral lesson."
+            }
+            else{
+                SentenceBank.text = "It will fill the cowardly with terror, and the unclean will see in it their own shame."
+                nextOrDone.setTitle("Done", for: .normal)
+            }
         }
     }
     

@@ -28,6 +28,7 @@ class AfterSignVC: UIViewController {
         }
         let instruction = UILabel(frame: CGRect(x: 250, y: 100, width: 1000, height: 50))
         instruction.center.x = self.view.center.x
+        instruction.center.y = (self.view.center.y)/2
         instruction.textAlignment = .center
         instruction.font = UIFont(name:"Montserrat-Bold", size: 40.0)
         //label.font = UIFont.preferredFont(forTextStyle: .footnote)
