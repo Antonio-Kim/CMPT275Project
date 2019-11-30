@@ -43,6 +43,7 @@ class HandwritingPractice: UIViewController {
         instruction.center.x = self.view.center.x
         instruction.textAlignment = .center
         instruction.font = UIFont(name:"Montserrat-Bold", size: 45.0)
+        instruction.textColor = UIColor(red: 59/255, green: 59/255, blue: 59/255, alpha: 1.0) /* #3b3b3b */
         //label.font = UIFont.preferredFont(forTextStyle: .footnote)
         instruction.text = "Write the following sentence below:"
         self.view.addSubview(instruction)

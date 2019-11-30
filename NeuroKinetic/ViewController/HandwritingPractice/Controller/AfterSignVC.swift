@@ -31,6 +31,7 @@ class AfterSignVC: UIViewController {
         instruction.center.y = (self.view.center.y)/2
         instruction.textAlignment = .center
         instruction.font = UIFont(name:"Montserrat-Bold", size: 40.0)
+        instruction.textColor = UIColor(red: 59/255, green: 59/255, blue: 59/255, alpha: 1.0) /* #3b3b3b */
         //label.font = UIFont.preferredFont(forTextStyle: .footnote)
         instruction.text = "Please enter your signature in the field below"
         self.view.addSubview(instruction)
