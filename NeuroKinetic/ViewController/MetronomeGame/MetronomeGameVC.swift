@@ -39,7 +39,7 @@ class MetronomeGame: UIViewController {
     
     
     //Score Variables
-    var score = Array(repeating: -1, count: 40)
+    var score = Array(repeating: -1, count: 20)
     var totalScore: Int = 0
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -64,7 +64,7 @@ class MetronomeGame: UIViewController {
 //    @IBOutlet weak var left: UIButton!
     
     //Music Note Image
-    let soundNote = UIImageView(frame: CGRect(x:545.5, y:554, width:100, height:100))
+    let soundNote = UIImageView(frame: CGRect(x:257, y:554, width:100, height:100))
     
     struct metronome_statistics {
         static var average_metronome_score: [Int] = []
@@ -135,7 +135,7 @@ class MetronomeGame: UIViewController {
                 _ in
                 self.tapCount += 1
                 //If tap count is less than or equal to 19, continue the game
-                if(!(self.tapCount>=34))
+                if(!(self.tapCount>=19))
                 {
                     ////Chain animation. Start moving to the right.
                     DispatchQueue.main.async {

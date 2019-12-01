@@ -618,16 +618,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcz-KG-jFA">
-                                <rect key="frame" x="20" y="20" width="140" height="72"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
-                                <state key="normal" title="&lt; Back">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="lDo-HC-Lf8" kind="presentation" modalPresentationStyle="fullScreen" id="yzq-G9-nTb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odz-5O-Qhe">
                                 <rect key="frame" x="430.5" y="350" width="333" height="134"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="100"/>
@@ -687,20 +677,32 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:  0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bba-WC-zVm">
-                                <rect key="frame" x="1024" y="26" width="150" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:  0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bba-WC-zVm">
+                                <rect key="frame" x="1016.5" y="50" width="133.5" height="37"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcz-KG-jFA">
+                                <rect key="frame" x="44" y="50" width="106" height="49"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lDo-HC-Lf8" kind="presentation" modalPresentationStyle="fullScreen" id="yzq-G9-nTb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9726070761680603" green="0.96903175115585327" blue="0.948039710521698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mcz-KG-jFA" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="50" id="5OH-11-FO9"/>
+                            <constraint firstItem="AO5-ui-PWJ" firstAttribute="trailing" secondItem="Bba-WC-zVm" secondAttribute="trailing" constant="44" id="DcO-eD-zIE"/>
                             <constraint firstItem="Lg1-ix-3OM" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="IqS-mf-b9f"/>
-                            <constraint firstItem="mcz-KG-jFA" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="40" id="JAe-hS-zqy"/>
                             <constraint firstItem="Yx5-6x-dcq" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="140" id="OgJ-SF-Rdv"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="Xm6-j4-gni"/>
+                            <constraint firstItem="Bba-WC-zVm" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="50" id="jMw-i7-YqI"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="centerY" secondItem="Aed-E0-NbH" secondAttribute="centerY" id="ntV-h4-TCd"/>
+                            <constraint firstItem="mcz-KG-jFA" firstAttribute="leading" secondItem="AO5-ui-PWJ" secondAttribute="leading" constant="44" id="tXm-iC-g16"/>
                             <constraint firstItem="Yx5-6x-dcq" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="unk-dV-aLY"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="top" secondItem="Lg1-ix-3OM" secondAttribute="bottom" constant="10" id="wMC-f3-xkm"/>
                         </constraints>
