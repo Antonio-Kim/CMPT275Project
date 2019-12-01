@@ -39,7 +39,7 @@ class MetronomeGame: UIViewController {
     
     
     //Score Variables
-    var score = Array(repeating: -1, count: 20)
+    var score = Array(repeating: -1, count: 40)
     var totalScore: Int = 0
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -58,11 +58,18 @@ class MetronomeGame: UIViewController {
     @IBOutlet weak var message: UILabel!
     
     //TAP right and left button
-    @IBOutlet weak var right: UIButton!
-    @IBOutlet weak var left: UIButton!
+    let right = UIButton(frame: CGRect(x:837, y:554, width:100, height:100))
+    let left = UIButton(frame: CGRect(x:257, y:554, width:100, height:100))
+//    @IBOutlet weak var right: UIButton!
+//    @IBOutlet weak var left: UIButton!
     
     //Music Note Image
-    @IBOutlet weak var soundNote: UIImageView!
+    let soundNote = UIImageView(frame: CGRect(x:545.5, y:554, width:100, height:100))
+    
+    struct metronome_statistics {
+        static var average_metronome_score: [Int] = []
+    }
+    //@IBOutlet weak var soundNote: UIImageView!
     
     //Returns the index to store the score in the array
     func scoreIndex(isLeft: Bool) ->Int
@@ -128,12 +135,11 @@ class MetronomeGame: UIViewController {
                 _ in
                 self.tapCount += 1
                 //If tap count is less than or equal to 19, continue the game
-                if(!(self.tapCount>=19))
+                if(!(self.tapCount>=34))
                 {
                     ////Chain animation. Start moving to the right.
                     DispatchQueue.main.async {
                         self.metroSE.play()
-                        
                     }
                     self.moveRight()
                     print(self.score)
@@ -183,17 +189,72 @@ class MetronomeGame: UIViewController {
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/Score").setValue(totalScore)
         
-        //Fade out classic music
-        classic_music.setVolume(0, fadeDuration: 2)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)
+        if(gamesPlayed >= 7)
         {
-            if(self.classic_music?.isPlaying == true)
-            {
-                self.classic_music.stop()
-                self.classic_music.currentTime = 0
+            metronome_statistics.average_metronome_score.removeAll()
+            for n in (gamesPlayed-6)...gamesPlayed {
+            ref.child("Metronome/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
+                if(snapshot.exists())
+                {
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    let key = snap.key
+                    let value = snap.value
+                    if(key == "Score")
+                    {
+                        var score = (value as? Int)!
+                        metronome_statistics.average_metronome_score.append(score)
+                    }
+                    print("key =\(key) value = \(value!)")
+                }
+            }
+                else
+                {
+                    metronome_statistics.average_metronome_score.append(0)
+                }
+            })
+            }
+        }
+        else
+        {
+            metronome_statistics.average_metronome_score.removeAll()
+            for n in 1...7{
+            ref.child("Metronome/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
+                if(snapshot.exists())
+                {
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    let key = snap.key
+                    let value = snap.value
+                    if(key == "Score")
+                    {
+                        var score = (value as? Int)!
+                        metronome_statistics.average_metronome_score.append(score)
+                    }
+                    print("key =\(key) value = \(value!)")
+                }
+            }
+                else
+                {
+                    metronome_statistics.average_metronome_score.append(0)
+                }
+            })
             }
         }
         
+        //Fade out classic music
+        if(SE)
+        {
+            classic_music.setVolume(0, fadeDuration: 2)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)
+            {
+                if(self.classic_music?.isPlaying == true)
+                {
+                    self.classic_music.stop()
+                    self.classic_music.currentTime = 0
+                }
+            }
+        }
         //Display "DONE". Fade out all the other buttons and labels.
         UIView.animate(withDuration: 3,
                        animations:{
@@ -209,10 +270,22 @@ class MetronomeGame: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Initializing sound note image
+        soundNote.image = UIImage(named: "movingMusicCircle")
+        self.view.addSubview(soundNote)
+        
+        //Initializing right/left buttons
+        let buttonImage = UIImage(named: "tapButton")
+        right.setImage(buttonImage, for: .normal)
+        left.setImage(buttonImage, for: .normal)
+        right.addTarget(self, action:#selector(self.tapRight(_:)),for: .touchUpInside)
+        left.addTarget(self, action:#selector(self.tapLeft(_:)),for: .touchUpInside)
+        self.view.addSubview(right)
+        self.view.addSubview(left)
         
         
         //Bringing image to the front
-        view.addSubview(soundNote)
+        //view.addSubview(soundNote)
         
         //Grabs the gamesPlayed from the stored preference
         if preferences.object(forKey: currentLevelKey) == nil {
@@ -248,6 +321,7 @@ class MetronomeGame: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        if(SE){
         self.classic_music.setVolume(0, fadeDuration: 2)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)
         {
@@ -256,6 +330,7 @@ class MetronomeGame: UIViewController {
                 self.classic_music.stop()
                 self.classic_music.currentTime = 0
             }
+        }
         }
     }
     
@@ -384,7 +459,7 @@ class MetronomeGame: UIViewController {
     @IBAction func setEasyInterval(_ sender: UIButton) {
         interval = 2.0
         tolerance = 0.3
-        easy.setTitleColor(UIColor.blue, for: UIControl.State.normal)
+        easy.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
         normal.setTitleColor(UIColor.black, for: UIControl.State.normal)
         hard.setTitleColor(UIColor.black, for: UIControl.State.normal)
     }
@@ -394,7 +469,7 @@ class MetronomeGame: UIViewController {
         interval = 1.5
         tolerance = 0.3
         easy.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        normal.setTitleColor(UIColor.blue, for: UIControl.State.normal)
+        normal.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
         hard.setTitleColor(UIColor.black, for: UIControl.State.normal)
     }
     //hard button tapped. set difficulity to hard.
@@ -403,7 +478,7 @@ class MetronomeGame: UIViewController {
         tolerance = 0.3
         easy.setTitleColor(UIColor.black, for: UIControl.State.normal)
         normal.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        hard.setTitleColor(UIColor.blue, for: UIControl.State.normal)
+        hard.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
     }
 }
 

@@ -618,10 +618,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcz-KG-jFA">
-                                <rect key="frame" x="1116" y="40" width="58" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Back">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcz-KG-jFA">
+                                <rect key="frame" x="20" y="20" width="140" height="72"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                <state key="normal" title="&lt; Back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -629,7 +629,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odz-5O-Qhe">
-                                <rect key="frame" x="446" y="352.5" width="302" height="129"/>
+                                <rect key="frame" x="430.5" y="350" width="333" height="134"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="100"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -639,52 +639,23 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP START TO START THE GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg1-ix-3OM">
-                                <rect key="frame" x="351.5" y="305" width="491" height="37.5"/>
+                                <rect key="frame" x="327.5" y="300.5" width="539.5" height="39.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="32"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movingMusicCircle" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-X4-Xjt">
-                                <rect key="frame" x="257" y="554" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="A1d-I8-9pz"/>
-                                    <constraint firstAttribute="width" constant="100" id="I9e-ZL-vtj"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouv-aR-iF7" userLabel="left">
-                                <rect key="frame" x="257" y="554" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="gQN-4i-t2W"/>
-                                    <constraint firstAttribute="height" constant="100" id="qoT-JT-SQl"/>
-                                </constraints>
-                                <state key="normal" image="tapButton"/>
-                                <connections>
-                                    <action selector="tapLeft:" destination="uiR-MZ-HIV" eventType="touchUpInside" id="QOD-2N-aTV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkf-8G-ifi" userLabel="right">
-                                <rect key="frame" x="837" y="554" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="9VU-sx-8vL"/>
-                                    <constraint firstAttribute="width" constant="100" id="YBV-ia-yEE"/>
-                                </constraints>
-                                <state key="normal" image="tapButton"/>
-                                <connections>
-                                    <action selector="tapRight:" destination="uiR-MZ-HIV" eventType="touchUpInside" id="pAD-DQ-LnE"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yx5-6x-dcq">
-                                <rect key="frame" x="451.5" y="140" width="291" height="91.5"/>
+                                <rect key="frame" x="436" y="140" width="322" height="93.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Difficulity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYW-Z1-y6q">
-                                        <rect key="frame" x="48" y="0.0" width="195.5" height="29.5"/>
+                                        <rect key="frame" x="44" y="0.0" width="234.5" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hh1-wW-esu">
-                                        <rect key="frame" x="0.0" y="49.5" width="291" height="42"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="322" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygi-82-xfB">
-                                                <rect key="frame" x="0.0" y="0.0" width="54" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="61" height="43"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
                                                 <state key="normal" title="Easy">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -695,7 +666,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uag-Ga-USv">
-                                                <rect key="frame" x="104" y="0.0" width="82" height="42"/>
+                                                <rect key="frame" x="111" y="0.0" width="97" height="43"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
                                                 <state key="normal" title="Normal"/>
                                                 <connections>
@@ -703,7 +674,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXQ-8W-t1T">
-                                                <rect key="frame" x="236" y="0.0" width="55" height="42"/>
+                                                <rect key="frame" x="258" y="0.0" width="64" height="43"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="25"/>
                                                 <state key="normal" title="Hard">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -717,28 +688,21 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:  0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bba-WC-zVm">
-                                <rect key="frame" x="20" y="64" width="140" height="38.5"/>
+                                <rect key="frame" x="1024" y="26" width="150" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.9726070761680603" green="0.96903175115585327" blue="0.948039710521698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AO5-ui-PWJ" firstAttribute="bottom" secondItem="ouv-aR-iF7" secondAttribute="bottom" constant="160" id="2vW-ZI-Yos"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Gkf-8G-ifi" secondAttribute="trailing" constant="237" id="I4w-z4-5ru"/>
                             <constraint firstItem="Lg1-ix-3OM" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="IqS-mf-b9f"/>
                             <constraint firstItem="mcz-KG-jFA" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="40" id="JAe-hS-zqy"/>
-                            <constraint firstItem="AO5-ui-PWJ" firstAttribute="trailing" secondItem="mcz-KG-jFA" secondAttribute="trailing" constant="20" id="KAj-sP-gun"/>
                             <constraint firstItem="Yx5-6x-dcq" firstAttribute="top" secondItem="AO5-ui-PWJ" secondAttribute="top" constant="140" id="OgJ-SF-Rdv"/>
-                            <constraint firstItem="AO5-ui-PWJ" firstAttribute="bottom" secondItem="Gkf-8G-ifi" secondAttribute="bottom" constant="160" id="SYo-K2-6wW"/>
-                            <constraint firstItem="ouv-aR-iF7" firstAttribute="leading" secondItem="Aed-E0-NbH" secondAttribute="leadingMargin" constant="237" id="Vtj-lo-4CJ"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="Xm6-j4-gni"/>
-                            <constraint firstItem="AO5-ui-PWJ" firstAttribute="bottom" secondItem="eLe-X4-Xjt" secondAttribute="bottom" constant="160" id="gd0-1x-UGk"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="centerY" secondItem="Aed-E0-NbH" secondAttribute="centerY" id="ntV-h4-TCd"/>
                             <constraint firstItem="Yx5-6x-dcq" firstAttribute="centerX" secondItem="Aed-E0-NbH" secondAttribute="centerX" id="unk-dV-aLY"/>
                             <constraint firstItem="odz-5O-Qhe" firstAttribute="top" secondItem="Lg1-ix-3OM" secondAttribute="bottom" constant="10" id="wMC-f3-xkm"/>
-                            <constraint firstItem="eLe-X4-Xjt" firstAttribute="leading" secondItem="Aed-E0-NbH" secondAttribute="leadingMargin" constant="237" id="wvL-Sg-IaS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AO5-ui-PWJ"/>
                     </view>
@@ -746,12 +710,9 @@
                         <outlet property="difficulityLabel" destination="vYW-Z1-y6q" id="1ls-Dn-NaF"/>
                         <outlet property="easy" destination="ygi-82-xfB" id="8xV-nq-IZw"/>
                         <outlet property="hard" destination="yXQ-8W-t1T" id="P5j-iS-eOq"/>
-                        <outlet property="left" destination="ouv-aR-iF7" id="4gU-3G-S5v"/>
                         <outlet property="message" destination="Lg1-ix-3OM" id="3if-cT-vkV"/>
                         <outlet property="normal" destination="Uag-Ga-USv" id="3l4-Rv-mse"/>
-                        <outlet property="right" destination="Gkf-8G-ifi" id="x81-Ej-Q2x"/>
                         <outlet property="scoreLabel" destination="Bba-WC-zVm" id="Uib-Au-L5I"/>
-                        <outlet property="soundNote" destination="eLe-X4-Xjt" id="XVa-Ak-KD3"/>
                         <outlet property="tap" destination="odz-5O-Qhe" id="A2i-od-0OK"/>
                     </connections>
                 </viewController>
@@ -1120,14 +1081,12 @@
         <image name="MainMenu_Settings" width="1080" height="1080"/>
         <image name="MainMenu_StartButton" width="1080" height="1080"/>
         <image name="MainMenu_Stats" width="1080" height="1080"/>
-        <image name="movingMusicCircle" width="980" height="982"/>
-        <image name="tapButton" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jug-ho-IZ7"/>
         <segue reference="AHe-k0-2YC"/>
-        <segue reference="5wv-Gz-ltI"/>
+        <segue reference="yzq-G9-nTb"/>
         <segue reference="FzK-bU-J74"/>
-        <segue reference="Wfs-HK-JXq"/>
+        <segue reference="vnR-XQ-OKg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,11 @@ class AfterSignVC: UIViewController {
     var gamesPlayed:Int = 0
     var amplitude1 = SignViewControl.ampl1.amplitude1
     var amplitude2: CGFloat!
+    
+    struct handwriting_statistics{
+         static var handwriting_amplitude_array: [Float] = []
+     }
+
 
     @IBOutlet weak var SignatureCanvasAfter: AfterSignView!
     override func viewDidLoad() {
@@ -31,7 +36,6 @@ class AfterSignVC: UIViewController {
         instruction.center.y = (self.view.center.y)/2
         instruction.textAlignment = .center
         instruction.font = UIFont(name:"Montserrat-Bold", size: 40.0)
-        instruction.textColor = UIColor(red: 59/255, green: 59/255, blue: 59/255, alpha: 1.0) /* #3b3b3b */
         //label.font = UIFont.preferredFont(forTextStyle: .footnote)
         instruction.text = "Please enter your signature in the field below"
         self.view.addSubview(instruction)
@@ -57,15 +61,61 @@ class AfterSignVC: UIViewController {
         preferences.set(gamesPlayed, forKey: currentLevelKey)
         ref.child("Handwriting/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
         ref.child("Handwriting/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/AmplitudeDifference").setValue(difference)
+        
+        if(gamesPlayed >= 7)
+        {
+            handwriting_statistics.handwriting_amplitude_array.removeAll()
+            for n in (gamesPlayed-6)...gamesPlayed {
+            ref.child("Handwriting/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
+                if(snapshot.exists())
+                {
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    let key = snap.key
+                    let value = snap.value
+                    if(key == "AmplitudeDifference")
+                    {
+                        var ampl = (value as? Float)!
+                        handwriting_statistics.handwriting_amplitude_array.append(ampl)
+                    }
+                    print("key =\(key) value = \(value!)")
+                }
+            }
+                else
+                {
+                    handwriting_statistics.handwriting_amplitude_array.append(0)
+                }
+            })
+            }
+        }
+        else
+        {
+            handwriting_statistics.handwriting_amplitude_array.removeAll()
+            for n in 1...7 {
+            ref.child("Handwriting/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
+                if(snapshot.exists())
+                {
+                for child in snapshot.children
+                {
+                    let snap = child as! DataSnapshot
+                    let key = snap.key
+                    let value = snap.value
+                    if(key == "AmplitudeDifference")
+                    {
+                        var ampl = (value as? Float)!
+                        handwriting_statistics.handwriting_amplitude_array.append(ampl)
+                    }
+                    print("key =\(key) value = \(value!)")
+                }
+            }
+                else
+                {
+                    handwriting_statistics.handwriting_amplitude_array.append(0)
+                }
+            })
+            }
+        }
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

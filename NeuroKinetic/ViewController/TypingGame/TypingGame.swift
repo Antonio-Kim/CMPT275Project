@@ -84,6 +84,13 @@ class TypingGame: UIViewController {
     var totalTime: Double = 0
     var didStart: Bool = false
     
+  // var typing_array: [Int] = []
+    
+    struct typing_statistics{
+        static var typing_wpm_array: [Int] = []
+        static var typing_accuracy_array: [Int] = []
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -164,7 +171,7 @@ class TypingGame: UIViewController {
     //Pick paragraph from list
     func chooseParagraph() {
         let tempNum: Int = Int.random(in:0...15);
-        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
+        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: 15)
     }
     
     //Check if the paragraph is complete
@@ -206,7 +213,73 @@ class TypingGame: UIViewController {
             //Writing into Firebase Realtime Database
             ref.child("TypingGame/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
             ref.child("TypingGame/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/WPM").setValue(wpm)
+            ref.child("TypingGame/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/Accuracy").setValue(accuracy)
             
+            if(gamesPlayed >= 7)
+            {
+                typing_statistics.typing_accuracy_array.removeAll()
+                typing_statistics.typing_wpm_array.removeAll()
+                for n in (gamesPlayed-6)...gamesPlayed {
+                ref.child("TypingGame/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
+                    if(snapshot.exists())
+                    {
+                    for child in snapshot.children {
+                        let snap = child as! DataSnapshot
+                        let key = snap.key
+                        let value = snap.value
+                        if(key == "WPM")
+                        {
+                            var score = (value as? Int)!
+                            typing_statistics.typing_wpm_array.append(score)
+                        }
+                        if(key == "Accuracy")
+                        {
+                            var temp = (value as? Int)!
+                            typing_statistics.typing_accuracy_array.append(temp)
+                        }
+                        print("key =\(key) value = \(value!)")
+                    }
+                }
+                    else
+                    {
+                        typing_statistics.typing_wpm_array.append(0)
+                    }
+                })
+                }
+            }
+            else
+            {
+                typing_statistics.typing_accuracy_array.removeAll()
+                typing_statistics.typing_wpm_array.removeAll()
+                for n in 1...7 {
+                ref.child("TypingGame/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
+                    if(snapshot.exists())
+                    {
+                    for child in snapshot.children {
+                        let snap = child as! DataSnapshot
+                        let key = snap.key
+                        let value = snap.value
+                        if(key == "WPM")
+                        {
+                            var score = (value as? Int)!
+                            typing_statistics.typing_wpm_array.append(score)
+                        }
+                        if(key == "Accuracy")
+                        {
+                            var temp = (value as? Int)!
+                            typing_statistics.typing_accuracy_array.append(temp)
+                        }
+                        print("key =\(key) value = \(value!)")
+                    }
+                }
+                    else
+                    {
+                        typing_statistics.typing_wpm_array.append(0)
+                    }
+                })
+                }
+            }
+
         }
     }
     
