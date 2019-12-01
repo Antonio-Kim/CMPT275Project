@@ -26,6 +26,10 @@ class HandwritingPractice: UIViewController {
     // load audio files for auditory assistance
     override func viewDidLoad() {
         super.viewDidLoad()
+//        guard Bundle.main.url(forResource: "Write_bigger1", withExtension: "mp3") != nil else { return }
+//        guard Bundle.main.url(forResource: "use_lines", withExtension: "mp3") != nil else { return }
+//        guard Bundle.main.url(forResource: "legible", withExtension: "mp3") != nil else { return }
+        
         let path1 = Bundle.main.path(forResource: "Write_bigger1.mp3", ofType: nil)!
         let path2 = Bundle.main.path(forResource: "use_lines.mp3", ofType: nil)!
         let path3 = Bundle.main.path(forResource: "legible.mp3", ofType: nil)!

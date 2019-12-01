@@ -45,6 +45,7 @@ class TypingGame: UIViewController {
     @IBOutlet weak var paragraphView: UILabel!
     
     //UI Text field
+    
     @IBOutlet weak var typingTextField: UITextField!
     
     //UI Button

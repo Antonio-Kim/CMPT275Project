@@ -392,7 +392,7 @@ class MetronomeGame: UIViewController {
             //Display "Miss" or "Good Tap" depending on user's timing and expected time difference
             if(tapTime>tolerance)
             {
-                if(score[i] == -1)
+                if(i != 20 && score[i] == -1)
                 {
                     score[i] = 0
                     message.text = "Miss"

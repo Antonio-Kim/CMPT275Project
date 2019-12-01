@@ -377,7 +377,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97260707619999998" green="0.96903175119999996" blue="0.94803971050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DlM-hp-iPG" firstAttribute="trailing" secondItem="ben-S6-4FT" secondAttribute="trailing" constant="50" id="KuQ-4i-UgY"/>
                             <constraint firstItem="klu-DX-nb3" firstAttribute="top" secondItem="DlM-hp-iPG" secondAttribute="top" constant="50" id="OYI-jo-u61"/>
                             <constraint firstItem="DlM-hp-iPG" firstAttribute="bottom" secondItem="ben-S6-4FT" secondAttribute="bottom" constant="70" id="PlS-Qf-GNM"/>
                             <constraint firstItem="DlM-hp-iPG" firstAttribute="trailing" secondItem="ben-S6-4FT" secondAttribute="trailing" constant="100" id="fNO-Y0-LSA"/>
@@ -389,7 +388,7 @@
                         <outlet property="doneButton" destination="ben-S6-4FT" id="wmu-DH-WJq"/>
                         <outlet property="instructionsLabel" destination="DE7-Ki-M3x" id="noF-2d-mqJ"/>
                         <outlet property="paragraphView" destination="k5H-8X-t7I" id="VfH-6P-mcr"/>
-                        <outlet property="typingTextField" destination="DUx-Ei-PSn" id="a6q-qn-66o"/>
+                        <outlet property="typingTextField" destination="DUx-Ei-PSn" id="vJJ-DO-RS6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DzK-qs-TZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,30 +403,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhd-5c-HG0">
-                                <rect key="frame" x="20" y="394.5" width="100" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Previous">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhd-5c-HG0">
+                                <rect key="frame" x="20" y="395" width="213" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="&lt; Previous">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="Z2U-WD-Kfm" kind="presentation" modalPresentationStyle="fullScreen" id="ERi-x1-JKb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAy-8f-gJv">
-                                <rect key="frame" x="1119" y="394.5" width="55" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAy-8f-gJv">
+                                <rect key="frame" x="1040" y="387" width="134" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Next &gt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="bs3-ZP-Zne" kind="presentation" modalPresentationStyle="fullScreen" id="Ykt-Qn-wAt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handwriting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uan-W3-kDm">
-                                <rect key="frame" x="468" y="30" width="258" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <rect key="frame" x="431.5" y="30" width="331" height="61"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -442,6 +441,18 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="pxk-dU-q0o"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N3e-bv-kto" customClass="HandwritingChartView" customModule="NeuroKinetic" customModuleProvider="target">
+                                <rect key="frame" x="299" y="164" width="597" height="397"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9726070761680603" green="0.96903175115585327" blue="0.948039710521698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amplitude: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y67-j1-o0K">
+                                <rect key="frame" x="432" y="609" width="331" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97260707619999998" green="0.96903175119999996" blue="0.94803971050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -454,10 +465,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="prs-pJ-Owx"/>
                     </view>
+                    <connections>
+                        <outlet property="amplitudeLabel" destination="y67-j1-o0K" id="X0N-jT-taV"/>
+                        <outlet property="handwritingChartView" destination="N3e-bv-kto" id="a7F-n7-aIK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jch-AH-9jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="-1052"/>
+            <point key="canvasLocation" x="742.713567839196" y="-1052.5179856115108"/>
         </scene>
         <!--Game Menu-->
         <scene sceneID="w9Q-tg-3Y6">
@@ -568,8 +583,8 @@
                                 <color key="textColor" red="0.2313431799" green="0.23138946290000001" blue="0.2313401997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the training you would to do:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SQ-Ci-bp9">
-                                <rect key="frame" x="368.5" y="189" width="457" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select the training you would like to do:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SQ-Ci-bp9">
+                                <rect key="frame" x="369" y="189" width="507" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="0.2313431799" green="0.23138946290000001" blue="0.2313401997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -807,14 +822,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="oFl-xi-NNW" firstAttribute="leading" secondItem="jTN-dA-vfp" secondAttribute="leading" constant="50" id="8kC-RD-DIn"/>
-                                    <constraint firstAttribute="trailing" secondItem="8QW-CJ-eba" secondAttribute="trailing" constant="50" id="ChS-r2-FTp"/>
-                                    <constraint firstAttribute="trailing" secondItem="oFl-xi-NNW" secondAttribute="trailing" constant="50" id="RSu-wS-lkx"/>
-                                    <constraint firstAttribute="trailing" secondItem="uaU-DC-QF9" secondAttribute="trailing" constant="50" id="dAZ-aV-JvR"/>
-                                    <constraint firstItem="8QW-CJ-eba" firstAttribute="leading" secondItem="jTN-dA-vfp" secondAttribute="leading" constant="50" id="fTL-TL-3Uj"/>
-                                    <constraint firstItem="uaU-DC-QF9" firstAttribute="leading" secondItem="jTN-dA-vfp" secondAttribute="leading" constant="50" id="i70-oh-h32"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.97260707619999998" green="0.96903175119999996" blue="0.94803971050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -846,29 +853,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXz-Jg-cgI">
-                                <rect key="frame" x="20" y="394.5" width="100" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Previous">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="K5p-G4-dym" kind="presentation" modalPresentationStyle="fullScreen" id="S4m-u9-MOO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfo-pJ-Fqo">
-                                <rect key="frame" x="1119" y="394.5" width="55" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfo-pJ-Fqo">
+                                <rect key="frame" x="993" y="395" width="181" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="Next &gt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="imK-4k-K42" kind="presentation" modalPresentationStyle="fullScreen" id="MlM-9w-c64"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metronome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH3-KG-a4d">
-                                <rect key="frame" x="474.5" y="30" width="245" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <rect key="frame" x="443.5" y="30" width="307" height="61"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -886,22 +883,28 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hbm-FU-5Eb" customClass="MetronomeChartView" customModule="NeuroKinetic" customModuleProvider="target">
                                 <rect key="frame" x="299" y="164" width="597" height="397"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.9726070761680603" green="0.96903175115585327" blue="0.948039710521698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFp-OB-Hru">
+                                <rect key="frame" x="443" y="610" width="308" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97260707619999998" green="0.96903175119999996" blue="0.94803971050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xfo-pJ-Fqo" firstAttribute="centerY" secondItem="Hnt-uK-nSW" secondAttribute="centerY" id="ChU-JV-skT"/>
-                            <constraint firstItem="DXz-Jg-cgI" firstAttribute="centerY" secondItem="Hnt-uK-nSW" secondAttribute="centerY" id="MJx-Ih-JlO"/>
                             <constraint firstItem="IBL-JL-jlW" firstAttribute="trailing" secondItem="xfo-pJ-Fqo" secondAttribute="trailing" constant="20" id="Wm5-r2-C6a"/>
                             <constraint firstItem="JH3-KG-a4d" firstAttribute="centerX" secondItem="Hnt-uK-nSW" secondAttribute="centerX" id="hbc-Vo-N3o"/>
-                            <constraint firstItem="DXz-Jg-cgI" firstAttribute="leading" secondItem="IBL-JL-jlW" secondAttribute="leading" constant="20" id="tQ9-gv-nOm"/>
                             <constraint firstItem="JH3-KG-a4d" firstAttribute="top" secondItem="IBL-JL-jlW" secondAttribute="top" constant="30" id="wSj-Ye-yGJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IBL-JL-jlW"/>
                     </view>
                     <connections>
                         <outlet property="metronomeChartView" destination="Hbm-FU-5Eb" id="kp5-Jo-aBX"/>
+                        <outlet property="scoreLabel" destination="sFp-OB-Hru" id="EiR-8Y-FPb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfy-KH-hMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -917,28 +920,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzw-63-MGr">
-                                <rect key="frame" x="20" y="394.5" width="100" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Previous">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="387" width="196" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="&lt; Previous">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="imK-4k-K42" kind="presentation" modalPresentationStyle="fullScreen" id="FzK-bU-J74"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-4C-5Ue">
-                                <rect key="frame" x="1119" y="394.5" width="55" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="iNj-2p-92K"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Typing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vs-bd-5ip">
-                                <rect key="frame" x="526" y="30" width="142" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <rect key="frame" x="507.5" y="30" width="179" height="61"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -953,11 +946,28 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Qxv-wZ-7YN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WPM: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN3-Zz-r3p">
+                                <rect key="frame" x="299" y="633" width="183" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KsS-Hg-LI2" customClass="TypingChartView" customModule="NeuroKinetic" customModuleProvider="target">
+                                <rect key="frame" x="299" y="164" width="597" height="397"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9726070761680603" green="0.96903175115585327" blue="0.948039710521698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Accuracy: 0 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdJ-8j-zsT">
+                                <rect key="frame" x="664" y="633" width="232" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97260707619999998" green="0.96903175119999996" blue="0.94803971050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dHn-4C-5Ue" firstAttribute="centerY" secondItem="WdQ-zf-0Gl" secondAttribute="centerY" id="07Y-ax-0u5"/>
-                            <constraint firstItem="MTf-lB-ODC" firstAttribute="trailing" secondItem="dHn-4C-5Ue" secondAttribute="trailing" constant="20" id="6UD-rI-bHg"/>
                             <constraint firstItem="7Vs-bd-5ip" firstAttribute="centerX" secondItem="WdQ-zf-0Gl" secondAttribute="centerX" id="CI0-uN-f57"/>
                             <constraint firstItem="dzw-63-MGr" firstAttribute="centerY" secondItem="WdQ-zf-0Gl" secondAttribute="centerY" id="N3b-s2-0Vq"/>
                             <constraint firstItem="7Vs-bd-5ip" firstAttribute="top" secondItem="MTf-lB-ODC" secondAttribute="top" constant="30" id="TFM-1g-YjZ"/>
@@ -965,54 +975,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MTf-lB-ODC"/>
                     </view>
+                    <connections>
+                        <outlet property="WPMLabel" destination="HN3-Zz-r3p" id="R5B-46-y48"/>
+                        <outlet property="accuracyLabel" destination="zdJ-8j-zsT" id="17b-gh-KPh"/>
+                        <outlet property="typingChartView" destination="KsS-Hg-LI2" id="h8i-H2-rKg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceB-Ix-D5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458.7115666178622" y="-1052.34375"/>
-        </scene>
-        <!--General Stats-->
-        <scene sceneID="LD8-nD-1NM">
-            <objects>
-                <viewController storyboardIdentifier="GeneralStatistics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K5p-G4-dym" customClass="GeneralStats" customModule="NeuroKinetic" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="s0C-mD-AL7">
-                        <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3F4-58-LaJ">
-                                <rect key="frame" x="20" y="394.5" width="100" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Previous"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKW-vM-heR">
-                                <rect key="frame" x="1119" y="394.5" width="55" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <segue destination="Z2U-WD-Kfm" kind="presentation" modalPresentationStyle="fullScreen" id="SDk-7G-pyF"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm2-Do-nsX">
-                                <rect key="frame" x="514" y="30" width="166" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="3F4-58-LaJ" firstAttribute="centerY" secondItem="s0C-mD-AL7" secondAttribute="centerY" id="KJ4-Dk-mYl"/>
-                            <constraint firstItem="cKW-vM-heR" firstAttribute="centerY" secondItem="s0C-mD-AL7" secondAttribute="centerY" id="X05-z4-S0Q"/>
-                            <constraint firstItem="BWo-80-mvy" firstAttribute="trailing" secondItem="cKW-vM-heR" secondAttribute="trailing" constant="20" id="Z1z-hB-CLh"/>
-                            <constraint firstItem="3F4-58-LaJ" firstAttribute="leading" secondItem="BWo-80-mvy" secondAttribute="leading" constant="20" id="enr-6r-JWb"/>
-                            <constraint firstItem="bm2-Do-nsX" firstAttribute="centerX" secondItem="s0C-mD-AL7" secondAttribute="centerX" id="nra-x1-zS3"/>
-                            <constraint firstItem="bm2-Do-nsX" firstAttribute="top" secondItem="BWo-80-mvy" secondAttribute="top" constant="30" id="q6r-Ju-b0J"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="BWo-80-mvy"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Nm-E5-AL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-640" y="-1052"/>
+            <point key="canvasLocation" x="1458.2914572864322" y="-1052.5179856115108"/>
         </scene>
         <!--After SignVC-->
         <scene sceneID="u6c-5b-9HB">
@@ -1096,7 +1067,7 @@
         <segue reference="ERi-x1-JKb"/>
         <segue reference="AHe-k0-2YC"/>
         <segue reference="dO9-fc-EPq"/>
-        <segue reference="MlM-9w-c64"/>
-        <segue reference="70m-jm-M5T"/>
+        <segue reference="FzK-bU-J74"/>
+        <segue reference="Qxv-wZ-7YN"/>
     </inferredMetricsTieBreakers>
 </document>

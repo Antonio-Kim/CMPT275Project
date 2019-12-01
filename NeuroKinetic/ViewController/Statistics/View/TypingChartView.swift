@@ -1,16 +1,15 @@
 //
-//  HandwritingChartView.swift
+//  TypingChartView.swift
 //  NeuroKinetic
 //
-//  Created by Rico Chao on 2019-11-30.
+//  Created by Rico Chao on 2019-12-01.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
-
 
 import Foundation
 import Macaw
 
-open class HandwritingChartView: MacawView {
+open class TypingChartView: MacawView {
 
     open var completionCallback: (() -> ()) = { }
 
@@ -19,15 +18,15 @@ open class HandwritingChartView: MacawView {
     private var lastPlayedGroup = Group()
 
     private var barAnimations = [Animation]()
-    private var barsValues: [Float] = [0, 0, 0, 0, 0, 0, 0]   //Amplitude
+    private var barsValues: [Int] = [0, 0, 0, 0, 0, 0, 0]   //Scores multiply by 5
     private let barsCaptions = ["1", "2", "3", "4", "5", "6", "7"]
     private let barsCount = 7
     private let barsSpacing = 40
     private let barWidth = 40
-    private let barHeight = 200
+    private let barHeight = 240
 
     private let emptyBarColor = Color.rgba(r: 138, g: 147, b: 219, a: 0.5)
-    private let gradientColor = LinearGradient(degree: 90, from: Color(val: 0xeea849), to: Color(val: 0xf46b45))
+    private let gradientColor = LinearGradient(degree: 90, from: Color(val: 0xfc00ff), to: Color(val: 0x00dbde))
 
     private func createScene() {
         let viewCenterX = Double(self.frame.width / 2)
@@ -36,7 +35,7 @@ open class HandwritingChartView: MacawView {
         let barsCenterX = viewCenterX - barsWidth / 2
 
         let title = Text(
-            text: "Amplitude Improvement",
+            text: "WPM vs Last 7 Games",
             font: Font(name: "Serif", size: 25),
             fill: Color(val: 0x000000)
         )
@@ -44,13 +43,13 @@ open class HandwritingChartView: MacawView {
         title.place = .move(dx: viewCenterX, dy: 30)
         
         let scoreMax = Text(
-            text: "100",
+            text: "120",
             font: Font(name: "Serif", size: 20),
             fill: Color(val: 0x000000)
         )
         
-        scoreMax.place = .move(dx: 5, dy: 90)
-        
+        scoreMax.place = .move(dx: 10, dy: 90)
+
         backgroundGroup = Group()
         for barIndex in 0...barsCount - 1 {
             let barShape = Shape(
@@ -117,12 +116,9 @@ open class HandwritingChartView: MacawView {
         barAnimations.removeAll()
         for (index, node) in mainGroup.contents.enumerated() {
             if let group = node as? Group {
-                if barsValues[index] < 0 {
-                    barsValues[index] = 0
-                }
-                let heightValue = self.barHeight / 200 * Int(barsValues[index]) //Change to 200 since amplitude contains a higher range, converted to Int too from float
+                let heightValue = self.barHeight / 120 * (barsValues[index])
                 let animation = group.contentsVar.animation({ t in
-                    let value = Double(heightValue) / 200 * (t * 100) //Change to 200 since amplitude contains a higher range
+                    let value = Double(heightValue) / 120 * (t * 100)
                     let barShape = Shape(
                         form: RoundRect(
                             rect: Rect(
@@ -149,20 +145,18 @@ open class HandwritingChartView: MacawView {
         barAnimations.combine().play()
     }
     
-    public func setBarsValues(handwritingArr: [Float]) {
+    open func setBarsValues(typingArr: [Int]) {
         
-        if(handwritingArr.count != 0) {
+        if(typingArr.count != 0) {
             barsValues.removeAll()
-
+            
             for i in 0...6 {
-                print(handwritingArr[i])
+                print(typingArr[i])
             }
 
-            barsValues = handwritingArr
-
+            barsValues = typingArr
         }
     }
 
 }
-
 

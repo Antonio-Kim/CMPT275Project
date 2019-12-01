@@ -18,10 +18,10 @@ open class MetronomeChartView: MacawView {
     private var lastPlayedGroup = Group()
 
     private var barAnimations = [Animation]()
-    private var barsValues: [Int] = [2, 4, 6, 8, 10, 12, 14]   //Scores multiply by 5
+    private var barsValues: [Int] = [0, 0, 0, 0, 0, 0, 0]   //Scores multiply by 5
     private let barsCaptions = ["1", "2", "3", "4", "5", "6", "7"]
     private let barsCount = 7
-    private let barsSpacing = 50
+    private let barsSpacing = 40
     private let barWidth = 40
     private let barHeight = 200
 
@@ -35,8 +35,8 @@ open class MetronomeChartView: MacawView {
         let barsCenterX = viewCenterX - barsWidth / 2
 
         let title = Text(
-            text: "Metronome Chart for last 7 games",
-            font: Font(name: "Serif", size: 24),
+            text: "Score vs Last 7 Games",
+            font: Font(name: "Serif", size: 25),
             fill: Color(val: 0x000000)
         )
         title.align = .mid
@@ -48,7 +48,7 @@ open class MetronomeChartView: MacawView {
             fill: Color(val: 0x000000)
         )
         
-        scoreMax.place = .move(dx: 60, dy: 90)
+        scoreMax.place = .move(dx: 10, dy: 90)
 
         backgroundGroup = Group()
         for barIndex in 0...barsCount - 1 {
@@ -97,7 +97,7 @@ open class MetronomeChartView: MacawView {
         for barIndex in 0...barsCount - 1 {
             let text = Text(
                 text: barsCaptions[barIndex],
-                font: Font(name: "Serif", size: 14),
+                font: Font(name: "Serif", size: 20),
                 fill: Color(val: 0x000000)
             )
             text.align = .mid
@@ -142,14 +142,10 @@ open class MetronomeChartView: MacawView {
     open func play() {
         createScene()
         createAnimations()
-//        barAnimations.sequence().onComplete {
-//            self.completionCallback()
-//        }.play()
         barAnimations.combine().play()
-
     }
     
-    public func setBarsValues(metronomeArr: [Int]) {
+    open func setBarsValues(metronomeArr: [Int]) {
         
         if(metronomeArr.count != 0) {
             barsValues.removeAll()

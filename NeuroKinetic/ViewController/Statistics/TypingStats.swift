@@ -10,12 +10,24 @@ import UIKit
 
 class TypingStats: UIViewController {
     
-    @IBOutlet weak var WPM: UILabel!
-    @IBOutlet weak var Database: UILabel!
+    
+    @IBOutlet weak var typingChartView: TypingChartView!
+    
+    @IBOutlet weak var WPMLabel: UILabel!
+    @IBOutlet weak var accuracyLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        typingChartView.setBarsValues(typingArr: TypingGame.typing_statistics.typing_wpm_array)
+        
         calculate_average_wpm()
         calculate_average_accuracy()
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        typingChartView.play()
     }
     
     func calculate_average_wpm() {
@@ -38,6 +50,9 @@ class TypingStats: UIViewController {
         {
             average_wpm = sum / non_zero_vals
         }
+        
+        WPMLabel.text = "WPM: " + "\(average_wpm)"
+        
         print("Average WPM")
         print(average_wpm)
     }
@@ -62,6 +77,9 @@ class TypingStats: UIViewController {
         {
             average_accuracy = sum / non_zero_vals
         }
+        
+        accuracyLabel.text = "Accuracy: " + "\(average_accuracy)" + " %"
+        
         print("Typing Accuracy")
         print(average_accuracy)
     }

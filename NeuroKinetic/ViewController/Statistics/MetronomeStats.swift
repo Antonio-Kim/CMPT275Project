@@ -13,6 +13,8 @@ class MetronomeStats: UIViewController {
     
     @IBOutlet weak var metronomeChartView: MetronomeChartView!
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +50,9 @@ class MetronomeStats: UIViewController {
             average_score = sum / non_zero_vals
 
         }
+        
+        scoreLabel.text = "Score: " + "\(average_score)"
+        
         print("Metronome Score Avg:")
         print(average_score)
     }
