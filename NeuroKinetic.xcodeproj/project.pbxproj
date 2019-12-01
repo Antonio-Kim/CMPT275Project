@@ -11,6 +11,9 @@
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
 		41E81C732366F605003313B8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C722366F605003313B8 /* Setting.swift */; };
 		7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C332F236E291800BAFC5A /* Main.storyboard */; };
+		835BEAC723935D4400324F6D /* use_lines.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 835BEAC423935D4300324F6D /* use_lines.mp3 */; };
+		835BEAC823935D4400324F6D /* Write_bigger1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 835BEAC523935D4300324F6D /* Write_bigger1.mp3 */; };
+		835BEAC923935D4400324F6D /* legible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 835BEAC623935D4400324F6D /* legible.mp3 */; };
 		83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */; };
 		83A313C32368F98E00BC251A /* SignatureCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313C22368F98E00BC251A /* SignatureCanvas.swift */; };
 		83B00101236D1F31001488AA /* SignViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00100236D1F31001488AA /* SignViewControl.swift */; };
@@ -25,9 +28,6 @@
 		BE1B1A6F235BF97200E6ED19 /* NeuroKineticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B1A6E235BF97200E6ED19 /* NeuroKineticTests.swift */; };
 		BE351714235D375B00C13527 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351713235D375B00C13527 /* StartViewController.swift */; };
 		BE351718235D4C4E00C13527 /* MetronomeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE351717235D4C4E00C13527 /* MetronomeStats.swift */; };
-		BE7318F3238256CE00A99007 /* bigger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE7318F2238256CE00A99007 /* bigger.mp3 */; };
-		BE7318F5238256DC00A99007 /* always_remember.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE7318F4238256DC00A99007 /* always_remember.mp3 */; };
-		BE7318F7238256E700A99007 /* WritingBigger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE7318F6238256E700A99007 /* WritingBigger.mp3 */; };
 		BE7C72512360FA06005EBFF5 /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C72502360FA06005EBFF5 /* GameMenu.swift */; };
 		BE7C725323610C5E005EBFF5 /* MetronomeGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */; };
 		BE973FC9238DB95E0074A459 /* classic_music(2).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BE973FC7238DB95D0074A459 /* classic_music(2).mp3 */; };
@@ -79,6 +79,9 @@
 		41E81C722366F605003313B8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		585D6E969998D5545EC0D873 /* Pods_NeuroKinetic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeuroKinetic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7C3330236E291800BAFC5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		835BEAC423935D4300324F6D /* use_lines.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = use_lines.mp3; path = ../../../../../Downloads/use_lines.mp3; sourceTree = "<group>"; };
+		835BEAC523935D4300324F6D /* Write_bigger1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Write_bigger1.mp3; path = ../../../../../Downloads/Write_bigger1.mp3; sourceTree = "<group>"; };
+		835BEAC623935D4400324F6D /* legible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = legible.mp3; path = ../../../../../Downloads/legible.mp3; sourceTree = "<group>"; };
 		83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceWriteCanvas.swift; sourceTree = "<group>"; };
 		83A313C22368F98E00BC251A /* SignatureCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureCanvas.swift; sourceTree = "<group>"; };
 		83B00100236D1F31001488AA /* SignViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewControl.swift; sourceTree = "<group>"; };
@@ -99,9 +102,6 @@
 		BE28D2ED86C58704B4BAC896 /* Pods-NeuroKineticTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuroKineticTests.debug.xcconfig"; path = "Target Support Files/Pods-NeuroKineticTests/Pods-NeuroKineticTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE351713235D375B00C13527 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		BE351717235D4C4E00C13527 /* MetronomeStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeStats.swift; sourceTree = "<group>"; };
-		BE7318F2238256CE00A99007 /* bigger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bigger.mp3; path = Assets.xcassets/bigger.dataset/bigger.mp3; sourceTree = "<group>"; };
-		BE7318F4238256DC00A99007 /* always_remember.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = always_remember.mp3; path = Assets.xcassets/always_remember.dataset/always_remember.mp3; sourceTree = "<group>"; };
-		BE7318F6238256E700A99007 /* WritingBigger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = WritingBigger.mp3; path = Assets.xcassets/WritingBigger.dataset/WritingBigger.mp3; sourceTree = "<group>"; };
 		BE7C72502360FA06005EBFF5 /* GameMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
 		BE7C725223610C5E005EBFF5 /* MetronomeGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeGameVC.swift; sourceTree = "<group>"; };
 		BE973FC7238DB95D0074A459 /* classic_music(2).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "classic_music(2).mp3"; sourceTree = "<group>"; };
@@ -175,9 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				BE1B1A60235BF97200E6ED19 /* Assets.xcassets */,
-				BE7318F4238256DC00A99007 /* always_remember.mp3 */,
-				BE7318F6238256E700A99007 /* WritingBigger.mp3 */,
-				BE7318F2238256CE00A99007 /* bigger.mp3 */,
+				835BEAC623935D4400324F6D /* legible.mp3 */,
+				835BEAC423935D4300324F6D /* use_lines.mp3 */,
+				835BEAC523935D4300324F6D /* Write_bigger1.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -487,19 +487,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE973FCA238DB95E0074A459 /* classic_music(1).mp3 in Resources */,
-				BE7318F5238256DC00A99007 /* always_remember.mp3 in Resources */,
 				F98BCBD7236FEEEF00E56FCE /* Logo.png in Resources */,
 				F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */,
-				BE7318F7238256E700A99007 /* WritingBigger.mp3 in Resources */,
+				835BEAC723935D4400324F6D /* use_lines.mp3 in Resources */,
 				7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */,
 				F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
 				BE973FC9238DB95E0074A459 /* classic_music(2).mp3 in Resources */,
 				F9B7AA7D236F3851000B3BF1 /* metronomeSound(2).mp3 in Resources */,
 				F9B7AA7C236F3851000B3BF1 /* metronomeSound(1).mp3 in Resources */,
+				835BEAC823935D4400324F6D /* Write_bigger1.mp3 in Resources */,
+				835BEAC923935D4400324F6D /* legible.mp3 in Resources */,
 				F98AA726237DE6610044978F /* GoogleService-Info.plist in Resources */,
 				F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */,
-				BE7318F3238256CE00A99007 /* bigger.mp3 in Resources */,
 				F9B7AA7E236F3851000B3BF1 /* metronomeSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

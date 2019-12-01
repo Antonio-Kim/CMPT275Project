@@ -26,9 +26,9 @@ class HandwritingPractice: UIViewController {
     // load audio files for auditory assistance
     override func viewDidLoad() {
         super.viewDidLoad()
-        let path1 = Bundle.main.path(forResource: "always_remember.mp3", ofType: nil)!
-        let path2 = Bundle.main.path(forResource: "WritingBigger.mp3", ofType: nil)!
-        let path3 = Bundle.main.path(forResource: "bigger.mp3", ofType: nil)!
+        let path1 = Bundle.main.path(forResource: "Write_bigger1.mp3", ofType: nil)!
+        let path2 = Bundle.main.path(forResource: "use_lines.mp3", ofType: nil)!
+        let path3 = Bundle.main.path(forResource: "legible.mp3", ofType: nil)!
         do{
             self.assistance_1 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path1))
             self.assistance_2 = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path2))
@@ -166,7 +166,7 @@ class HandwritingPractice: UIViewController {
     //play the audio assistance in a loop
     @objc func audioAssistance() {
         if (!isFinish){
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 8)
             {
                 self.audioAssistance()
             }
