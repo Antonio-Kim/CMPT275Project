@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3DC9D65337DC563AED85C652 /* Pods_NeuroKineticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229706FCFCC6F77F83549A89 /* Pods_NeuroKineticTests.framework */; };
-		418EE7CD2393AD2E00309BD4 /* Write_bigger1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 418EE7CA2393AD2E00309BD4 /* Write_bigger1.mp3 */; };
-		418EE7CE2393AD2E00309BD4 /* use_lines.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 418EE7CB2393AD2E00309BD4 /* use_lines.mp3 */; };
-		418EE7CF2393AD2E00309BD4 /* legible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 418EE7CC2393AD2E00309BD4 /* legible.mp3 */; };
 		418EE7D12393B80C00309BD4 /* TypingChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EE7D02393B80C00309BD4 /* TypingChartView.swift */; };
 		419328ED23936831003AB7DF /* MetronomeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419328EC23936831003AB7DF /* MetronomeChartView.swift */; };
 		419328EF2393684E003AB7DF /* HandwritingChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419328EE2393684E003AB7DF /* HandwritingChartView.swift */; };
@@ -44,6 +41,9 @@
 		F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */; };
 		F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */; };
 		F92F3C6F236F011900DC8A8D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */; };
+		F935D0AE239477A50008B801 /* legible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F935D0AB239477A50008B801 /* legible.mp3 */; };
+		F935D0AF239477A50008B801 /* use_lines.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F935D0AC239477A50008B801 /* use_lines.mp3 */; };
+		F935D0B0239477A50008B801 /* Write_bigger1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F935D0AD239477A50008B801 /* Write_bigger1.mp3 */; };
 		F98AA726237DE6610044978F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F98AA725237DE6610044978F /* GoogleService-Info.plist */; };
 		F98BCBD5236FE94300E56FCE /* NeuroKineticIntegrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BCBD4236FE94300E56FCE /* NeuroKineticIntegrationTest.swift */; };
 		F98BCBD7236FEEEF00E56FCE /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F98BCBD6236FEEEF00E56FCE /* Logo.png */; };
@@ -77,9 +77,6 @@
 		115A1F6587CB51F22D5D8413 /* Pods-NeuroKinetic-NeuroKineticUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuroKinetic-NeuroKineticUITests.release.xcconfig"; path = "Target Support Files/Pods-NeuroKinetic-NeuroKineticUITests/Pods-NeuroKinetic-NeuroKineticUITests.release.xcconfig"; sourceTree = "<group>"; };
 		229706FCFCC6F77F83549A89 /* Pods_NeuroKineticTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeuroKineticTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397D3F7F1EA06025310138B4 /* Pods-NeuroKineticTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuroKineticTests.release.xcconfig"; path = "Target Support Files/Pods-NeuroKineticTests/Pods-NeuroKineticTests.release.xcconfig"; sourceTree = "<group>"; };
-		418EE7CA2393AD2E00309BD4 /* Write_bigger1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Write_bigger1.mp3; path = "../../../../../Downloads/drive-download-20191201T080850Z-001/Write_bigger1.mp3"; sourceTree = "<group>"; };
-		418EE7CB2393AD2E00309BD4 /* use_lines.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = use_lines.mp3; path = "../../../../../Downloads/drive-download-20191201T080850Z-001/use_lines.mp3"; sourceTree = "<group>"; };
-		418EE7CC2393AD2E00309BD4 /* legible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = legible.mp3; path = "../../../../../Downloads/drive-download-20191201T080850Z-001/legible.mp3"; sourceTree = "<group>"; };
 		418EE7D02393B80C00309BD4 /* TypingChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingChartView.swift; sourceTree = "<group>"; };
 		419328EC23936831003AB7DF /* MetronomeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeChartView.swift; sourceTree = "<group>"; };
 		419328EE2393684E003AB7DF /* HandwritingChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingChartView.swift; sourceTree = "<group>"; };
@@ -121,6 +118,9 @@
 		F92F3C69236F006900DC8A8D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "fonts/Montserrat-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
 		F92F3C6A236F006900DC8A8D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "fonts/Montserrat-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		F92F3C6B236F006900DC8A8D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "fonts/Montserrat-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
+		F935D0AB239477A50008B801 /* legible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = legible.mp3; sourceTree = "<group>"; };
+		F935D0AC239477A50008B801 /* use_lines.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = use_lines.mp3; sourceTree = "<group>"; };
+		F935D0AD239477A50008B801 /* Write_bigger1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Write_bigger1.mp3; sourceTree = "<group>"; };
 		F98AA725237DE6610044978F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F98BCBD4236FE94300E56FCE /* NeuroKineticIntegrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuroKineticIntegrationTest.swift; sourceTree = "<group>"; };
 		F98BCBD6236FEEEF00E56FCE /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = img/Logo.png; sourceTree = SOURCE_ROOT; };
@@ -228,9 +228,9 @@
 		41E81C6A2366F3D9003313B8 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				418EE7CC2393AD2E00309BD4 /* legible.mp3 */,
-				418EE7CB2393AD2E00309BD4 /* use_lines.mp3 */,
-				418EE7CA2393AD2E00309BD4 /* Write_bigger1.mp3 */,
+				F935D0AB239477A50008B801 /* legible.mp3 */,
+				F935D0AC239477A50008B801 /* use_lines.mp3 */,
+				F935D0AD239477A50008B801 /* Write_bigger1.mp3 */,
 				BE973FC8238DB95E0074A459 /* classic_music(1).mp3 */,
 				BE973FC7238DB95D0074A459 /* classic_music(2).mp3 */,
 				F9B7AA7B236F3851000B3BF1 /* metronomeSound.mp3 */,
@@ -504,15 +504,15 @@
 				F98BCBD7236FEEEF00E56FCE /* Logo.png in Resources */,
 				F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */,
 				7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */,
-				418EE7CE2393AD2E00309BD4 /* use_lines.mp3 in Resources */,
+				F935D0AF239477A50008B801 /* use_lines.mp3 in Resources */,
+				F935D0AE239477A50008B801 /* legible.mp3 in Resources */,
 				F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
+				F935D0B0239477A50008B801 /* Write_bigger1.mp3 in Resources */,
 				BE973FC9238DB95E0074A459 /* classic_music(2).mp3 in Resources */,
 				F9B7AA7D236F3851000B3BF1 /* metronomeSound(2).mp3 in Resources */,
 				F9B7AA7C236F3851000B3BF1 /* metronomeSound(1).mp3 in Resources */,
 				F98AA726237DE6610044978F /* GoogleService-Info.plist in Resources */,
-				418EE7CF2393AD2E00309BD4 /* legible.mp3 in Resources */,
-				418EE7CD2393AD2E00309BD4 /* Write_bigger1.mp3 in Resources */,
 				F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */,
 				F9B7AA7E236F3851000B3BF1 /* metronomeSound.mp3 in Resources */,
 			);
