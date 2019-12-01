@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3DC9D65337DC563AED85C652 /* Pods_NeuroKineticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229706FCFCC6F77F83549A89 /* Pods_NeuroKineticTests.framework */; };
+		419328ED23936831003AB7DF /* MetronomeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419328EC23936831003AB7DF /* MetronomeChartView.swift */; };
+		419328EF2393684E003AB7DF /* HandwritingChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419328EE2393684E003AB7DF /* HandwritingChartView.swift */; };
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
 		41E81C732366F605003313B8 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C722366F605003313B8 /* Setting.swift */; };
 		7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7C332F236E291800BAFC5A /* Main.storyboard */; };
-		835BEAC723935D4400324F6D /* use_lines.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 835BEAC423935D4300324F6D /* use_lines.mp3 */; };
-		835BEAC823935D4400324F6D /* Write_bigger1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 835BEAC523935D4300324F6D /* Write_bigger1.mp3 */; };
-		835BEAC923935D4400324F6D /* legible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 835BEAC623935D4400324F6D /* legible.mp3 */; };
 		83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */; };
 		83A313C32368F98E00BC251A /* SignatureCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A313C22368F98E00BC251A /* SignatureCanvas.swift */; };
 		83B00101236D1F31001488AA /* SignViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B00100236D1F31001488AA /* SignViewControl.swift */; };
@@ -75,13 +74,15 @@
 		115A1F6587CB51F22D5D8413 /* Pods-NeuroKinetic-NeuroKineticUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuroKinetic-NeuroKineticUITests.release.xcconfig"; path = "Target Support Files/Pods-NeuroKinetic-NeuroKineticUITests/Pods-NeuroKinetic-NeuroKineticUITests.release.xcconfig"; sourceTree = "<group>"; };
 		229706FCFCC6F77F83549A89 /* Pods_NeuroKineticTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeuroKineticTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397D3F7F1EA06025310138B4 /* Pods-NeuroKineticTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuroKineticTests.release.xcconfig"; path = "Target Support Files/Pods-NeuroKineticTests/Pods-NeuroKineticTests.release.xcconfig"; sourceTree = "<group>"; };
+		419328E923936766003AB7DF /* Write_bigger1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Write_bigger1.mp3; sourceTree = "<group>"; };
+		419328EA23936767003AB7DF /* use_lines.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = use_lines.mp3; sourceTree = "<group>"; };
+		419328EB23936767003AB7DF /* legible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = legible.mp3; sourceTree = "<group>"; };
+		419328EC23936831003AB7DF /* MetronomeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeChartView.swift; sourceTree = "<group>"; };
+		419328EE2393684E003AB7DF /* HandwritingChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingChartView.swift; sourceTree = "<group>"; };
 		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		41E81C722366F605003313B8 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		585D6E969998D5545EC0D873 /* Pods_NeuroKinetic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeuroKinetic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7C3330236E291800BAFC5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		835BEAC423935D4300324F6D /* use_lines.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = use_lines.mp3; path = ../../../../../Downloads/use_lines.mp3; sourceTree = "<group>"; };
-		835BEAC523935D4300324F6D /* Write_bigger1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Write_bigger1.mp3; path = ../../../../../Downloads/Write_bigger1.mp3; sourceTree = "<group>"; };
-		835BEAC623935D4400324F6D /* legible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = legible.mp3; path = ../../../../../Downloads/legible.mp3; sourceTree = "<group>"; };
 		83A313BE2368F54100BC251A /* SentenceWriteCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceWriteCanvas.swift; sourceTree = "<group>"; };
 		83A313C22368F98E00BC251A /* SignatureCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureCanvas.swift; sourceTree = "<group>"; };
 		83B00100236D1F31001488AA /* SignViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewControl.swift; sourceTree = "<group>"; };
@@ -171,13 +172,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		419328E8239363C3003AB7DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				419328EC23936831003AB7DF /* MetronomeChartView.swift */,
+				419328EE2393684E003AB7DF /* HandwritingChartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		41E81C662366F3B5003313B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				BE1B1A60235BF97200E6ED19 /* Assets.xcassets */,
-				835BEAC623935D4400324F6D /* legible.mp3 */,
-				835BEAC423935D4300324F6D /* use_lines.mp3 */,
-				835BEAC523935D4300324F6D /* Write_bigger1.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -225,6 +232,9 @@
 				BE1B1A62235BF97200E6ED19 /* LaunchScreen.storyboard */,
 				BE1B1A65235BF97200E6ED19 /* Info.plist */,
 				F98BCBD6236FEEEF00E56FCE /* Logo.png */,
+				419328EB23936767003AB7DF /* legible.mp3 */,
+				419328EA23936767003AB7DF /* use_lines.mp3 */,
+				419328E923936766003AB7DF /* Write_bigger1.mp3 */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -232,6 +242,7 @@
 		41E81C6B2366F430003313B8 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				419328E8239363C3003AB7DF /* View */,
 				BE351717235D4C4E00C13527 /* MetronomeStats.swift */,
 				BEF428002367D13F00D9F021 /* TypingStats.swift */,
 				BEF428022367D14F00D9F021 /* GeneralStats.swift */,
@@ -489,15 +500,12 @@
 				BE973FCA238DB95E0074A459 /* classic_music(1).mp3 in Resources */,
 				F98BCBD7236FEEEF00E56FCE /* Logo.png in Resources */,
 				F92F3C6C236F006900DC8A8D /* Montserrat-SemiBold.ttf in Resources */,
-				835BEAC723935D4400324F6D /* use_lines.mp3 in Resources */,
 				7B7C3331236E291900BAFC5A /* Main.storyboard in Resources */,
 				F92F3C6E236F006900DC8A8D /* Montserrat-ExtraBold.ttf in Resources */,
 				BE1B1A61235BF97200E6ED19 /* Assets.xcassets in Resources */,
 				BE973FC9238DB95E0074A459 /* classic_music(2).mp3 in Resources */,
 				F9B7AA7D236F3851000B3BF1 /* metronomeSound(2).mp3 in Resources */,
 				F9B7AA7C236F3851000B3BF1 /* metronomeSound(1).mp3 in Resources */,
-				835BEAC823935D4400324F6D /* Write_bigger1.mp3 in Resources */,
-				835BEAC923935D4400324F6D /* legible.mp3 in Resources */,
 				F98AA726237DE6610044978F /* GoogleService-Info.plist in Resources */,
 				F92F3C6D236F006900DC8A8D /* Montserrat-Bold.ttf in Resources */,
 				F9B7AA7E236F3851000B3BF1 /* metronomeSound.mp3 in Resources */,
@@ -635,6 +643,8 @@
 				F9DF28C62388C42E00791048 /* AfterSignView.swift in Sources */,
 				83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */,
 				83B00107236D2587001488AA /* Word.swift in Sources */,
+				419328EF2393684E003AB7DF /* HandwritingChartView.swift in Sources */,
+				419328ED23936831003AB7DF /* MetronomeChartView.swift in Sources */,
 				BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */,
 				BEF428032367D14F00D9F021 /* GeneralStats.swift in Sources */,
 				83F22F062362280500AA0D94 /* HandwritingPracticeVC.swift in Sources */,

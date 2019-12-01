@@ -10,10 +10,23 @@ import UIKit
 
 class MetronomeStats: UIViewController {
 
+    
+    @IBOutlet weak var metronomeChartView: MetronomeChartView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        metronomeChartView.setBarsValues(metronomeArr: MetronomeGame.metronome_statistics.average_metronome_score)
+        
         calculate_average_score()
     }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        metronomeChartView.play()
+    }
+    
     func calculate_average_score() {
         var sum: Int = 0
         var average_score: Int = 0

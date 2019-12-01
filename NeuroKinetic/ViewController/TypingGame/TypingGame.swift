@@ -171,7 +171,7 @@ class TypingGame: UIViewController {
     //Pick paragraph from list
     func chooseParagraph() {
         let tempNum: Int = Int.random(in:0...15);
-        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: 15)
+        paragraphDisplay = paragraphList.generateParagraph(paragraphNumber: tempNum)
     }
     
     //Check if the paragraph is complete
@@ -261,12 +261,12 @@ class TypingGame: UIViewController {
                         let value = snap.value
                         if(key == "WPM")
                         {
-                            var score = (value as? Int)!
+                            let score = (value as? Int)!
                             typing_statistics.typing_wpm_array.append(score)
                         }
                         if(key == "Accuracy")
                         {
-                            var temp = (value as? Int)!
+                            let temp = (value as? Int)!
                             typing_statistics.typing_accuracy_array.append(temp)
                         }
                         print("key =\(key) value = \(value!)")

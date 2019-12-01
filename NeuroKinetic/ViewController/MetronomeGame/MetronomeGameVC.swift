@@ -196,18 +196,18 @@ class MetronomeGame: UIViewController {
             ref.child("Metronome/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
                 if(snapshot.exists())
                 {
-                for child in snapshot.children {
-                    let snap = child as! DataSnapshot
-                    let key = snap.key
-                    let value = snap.value
-                    if(key == "Score")
-                    {
-                        var score = (value as? Int)!
-                        metronome_statistics.average_metronome_score.append(score)
+                    for child in snapshot.children {
+                        let snap = child as! DataSnapshot
+                        let key = snap.key
+                        let value = snap.value
+                        if(key == "Score")
+                        {
+                            var score = (value as? Int)!
+                            metronome_statistics.average_metronome_score.append(score)
+                        }
+                        print("key =\(key) value = \(value!)")
                     }
-                    print("key =\(key) value = \(value!)")
                 }
-            }
                 else
                 {
                     metronome_statistics.average_metronome_score.append(0)

@@ -8,6 +8,7 @@ target 'NeuroKinetic' do
   pod 'Firebase/Core', '~> 5.20.1'
   pod 'Firebase/Messaging', '~> 5.20.1'
   pod 'Firebase/Database'
+  pod 'Macaw'
   
   target 'NeuroKineticTests' do
     inherit! :search_paths

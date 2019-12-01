@@ -65,17 +65,21 @@ PODS:
   - GoogleUtilities/UserDefaults (5.8.0):
     - GoogleUtilities/Logger
   - leveldb-library (1.22)
+  - Macaw (0.9.5):
+    - SWXMLHash
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - Protobuf (3.10.0)
+  - SWXMLHash (5.0.1)
 
 DEPENDENCIES:
   - Firebase/Core (~> 5.20.1)
   - Firebase/Database
   - Firebase/Messaging (~> 5.20.1)
+  - Macaw
 
 SPEC REPOS:
   trunk:
@@ -90,8 +94,10 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - leveldb-library
+    - Macaw
     - nanopb
     - Protobuf
+    - SWXMLHash
 
 SPEC CHECKSUMS:
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
@@ -105,9 +111,11 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
   GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  Macaw: 10bf9e327cb75f24e3225d5229a80ed544df85f0
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
+  SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: b01ac8667f9be92e22b12023c816d7f0963c851d
+PODFILE CHECKSUM: 3c91bca31a01f08d737718a7ba6042f8542a3a0a
 
 COCOAPODS: 1.8.4
