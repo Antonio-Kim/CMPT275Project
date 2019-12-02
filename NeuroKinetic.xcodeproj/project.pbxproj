@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3DC9D65337DC563AED85C652 /* Pods_NeuroKineticTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229706FCFCC6F77F83549A89 /* Pods_NeuroKineticTests.framework */; };
 		418EE7D12393B80C00309BD4 /* TypingChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EE7D02393B80C00309BD4 /* TypingChartView.swift */; };
+		418EE7D32395B02400309BD4 /* GeneralStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418EE7D22395B02400309BD4 /* GeneralStats.swift */; };
 		419328ED23936831003AB7DF /* MetronomeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419328EC23936831003AB7DF /* MetronomeChartView.swift */; };
 		419328EF2393684E003AB7DF /* HandwritingChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419328EE2393684E003AB7DF /* HandwritingChartView.swift */; };
 		41E81C712366F58C003313B8 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E81C702366F58C003313B8 /* Paragraph.swift */; };
@@ -78,6 +79,7 @@
 		229706FCFCC6F77F83549A89 /* Pods_NeuroKineticTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeuroKineticTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397D3F7F1EA06025310138B4 /* Pods-NeuroKineticTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuroKineticTests.release.xcconfig"; path = "Target Support Files/Pods-NeuroKineticTests/Pods-NeuroKineticTests.release.xcconfig"; sourceTree = "<group>"; };
 		418EE7D02393B80C00309BD4 /* TypingChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingChartView.swift; sourceTree = "<group>"; };
+		418EE7D22395B02400309BD4 /* GeneralStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStats.swift; sourceTree = "<group>"; };
 		419328EC23936831003AB7DF /* MetronomeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeChartView.swift; sourceTree = "<group>"; };
 		419328EE2393684E003AB7DF /* HandwritingChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingChartView.swift; sourceTree = "<group>"; };
 		41E81C702366F58C003313B8 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				BE351717235D4C4E00C13527 /* MetronomeStats.swift */,
 				BEF428002367D13F00D9F021 /* TypingStats.swift */,
 				BEF428042367D15D00D9F021 /* HandwritingStats.swift */,
+				418EE7D22395B02400309BD4 /* GeneralStats.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				F9DF28C62388C42E00791048 /* AfterSignView.swift in Sources */,
 				83A313BF2368F54100BC251A /* SentenceWriteCanvas.swift in Sources */,
 				83B00107236D2587001488AA /* Word.swift in Sources */,
+				418EE7D32395B02400309BD4 /* GeneralStats.swift in Sources */,
 				419328EF2393684E003AB7DF /* HandwritingChartView.swift in Sources */,
 				419328ED23936831003AB7DF /* MetronomeChartView.swift in Sources */,
 				BEF428052367D15D00D9F021 /* HandwritingStats.swift in Sources */,
