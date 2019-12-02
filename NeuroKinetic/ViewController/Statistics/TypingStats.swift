@@ -150,7 +150,7 @@ class TypingStats: UIViewController {
             average_wpm = sum / non_zero_vals
         }
         
-        WPMLabel.text = "WPM: " + "\(average_wpm)"
+        WPMLabel.text = "Average WPM: " + "\(average_wpm)"
     }
     
     func calculate_average_accuracy()  {
@@ -174,7 +174,7 @@ class TypingStats: UIViewController {
             average_accuracy = sum / non_zero_vals
         }
         
-        accuracyLabel.text = "Accuracy: " + "\(average_accuracy)" + " %"
+        accuracyLabel.text = "Average Accuracy: " + "\(average_accuracy)" + " %"
     }
     
 }

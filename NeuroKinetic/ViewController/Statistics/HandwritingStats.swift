@@ -131,7 +131,7 @@ class HandwritingStats: UIViewController {
 
         }
         
-        amplitudeLabel.text = "Amplitude: " + String(format: "%.2f", average_amplitude)
+        amplitudeLabel.text = "Average Amplitude: " + String(format: "%.2f", average_amplitude)
         
     }
 }

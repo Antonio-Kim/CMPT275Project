@@ -64,7 +64,7 @@ class MetronomeStats: UIViewController {
         {
             average_score = sum / non_zero_vals
         }
-        scoreLabel.text = "Score: " + "\(average_score)"
+        scoreLabel.text = "Average Score: " + "\(average_score)"
     }
     
     func database_read() {

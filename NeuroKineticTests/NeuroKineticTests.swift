@@ -2,11 +2,12 @@
 //  NeuroKineticTests.swift
 //  NeuroKineticTests
 //
-//  Created by nmaeda on 10/19/19.
+//  Created by Antonio Kim on 10/19/19.
 //  Copyright © 2019 teamRANDY. All rights reserved.
 //
 
 import XCTest
+
 @testable import NeuroKinetic
 
 class NeuroKineticTests: XCTestCase {
@@ -24,11 +25,31 @@ class NeuroKineticTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    
+    func testPerformanceTypingGame() {
+        let typing = TypingGame()
         self.measure {
-            // Put the code you want to measure the time of here.
+            for _ in 1..<10{
+                typing.chooseParagraph()
+            }
+        }
+    }
+    
+    func testPerformanceWritingGame(){
+        let writing = HandwritingPractice()
+        self.measure{
+            for _ in 1..<10{
+                writing.audioAssistance()
+            }
+        }
+    }
+    
+    func testPerformanceMetronomeGame(){
+        let metronome = MetronomeGame()
+        self.measure{
+            metronome.viewDidLoad()
         }
     }
 
 }
+
