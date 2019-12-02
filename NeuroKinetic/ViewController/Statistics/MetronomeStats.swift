@@ -10,12 +10,14 @@ import UIKit
 import FirebaseDatabase
 
 class MetronomeStats: UIViewController {
+    
+    //Variable declarations
     var ref = Database.database().reference()
     var gamesPlayed: Int = 0
     let preferences = UserDefaults.standard
     
     struct metronome_statistics {
-        static var average_metronome_score: [Int] = []
+        static var average_metronome_score: [Int] = []  //Array for the metronome scores
     }
     
     @IBOutlet weak var metronomeChartView: MetronomeChartView!
@@ -27,7 +29,8 @@ class MetronomeStats: UIViewController {
         
         metronomeChartView.createSceneForStats()
         database_read()
-
+        
+        //Specifying a delay for the bar graph values
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.calculate_average_score()
             self.metronomeChartView.setBarsValues(metronomeArr: metronome_statistics.average_metronome_score)
@@ -44,6 +47,7 @@ class MetronomeStats: UIViewController {
         }
     }
     
+    //This function will calculate the average score and store it in scoreLabel to display to the user
     func calculate_average_score() {
         var sum: Int = 0
         var average_score: Int = 0
@@ -64,11 +68,14 @@ class MetronomeStats: UIViewController {
         {
             average_score = sum / non_zero_vals
         }
-        scoreLabel.text = "Average Score: " + "\(average_score)"
+        scoreLabel.text = "Average Score: " + "\(average_score)"    //Storing the average score in the label
     }
     
+    //This function will read from the database and store values in an array
+    //for the last seven games played
     func database_read() {
         
+        //Date variable declarations
         let gameFinishTime :Date = Date()
         let calendar = Calendar.current
         let year:Int = calendar.component(.year, from:gameFinishTime)
@@ -78,12 +85,13 @@ class MetronomeStats: UIViewController {
         if preferences.object(forKey: "TotalMetronomeGamesPlayed") == nil {
             //  Doesn't exist
         } else {
-            gamesPlayed = preferences.integer(forKey: "TotalMetronomeGamesPlayed")
+            gamesPlayed = preferences.integer(forKey: "TotalMetronomeGamesPlayed")  //Retrieving the current gamesPlayed value
         }
         
         if(gamesPlayed >= 7)
         {
             metronome_statistics.average_metronome_score.removeAll()
+            //Looping through and reading from the database
             for n in ((gamesPlayed)-6)...gamesPlayed {
             ref.child("Metronome/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
                 if(snapshot.exists())
@@ -92,16 +100,17 @@ class MetronomeStats: UIViewController {
                         let snap = child as! DataSnapshot
                         let key = snap.key
                         let value = snap.value
+                        //Checking if the key in the database corresponds to the score
                         if(key == "Score")
                         {
                             var score = (value as? Int)!
-                            metronome_statistics.average_metronome_score.append(score)
+                            metronome_statistics.average_metronome_score.append(score)  //Storing the score value
                         }
                     }
                 }
                 else
                 {
-                    metronome_statistics.average_metronome_score.append(0)
+                    metronome_statistics.average_metronome_score.append(0)  //Will add a zero if no entry was found
                 }
             })
             }
@@ -109,6 +118,7 @@ class MetronomeStats: UIViewController {
         else
         {
             metronome_statistics.average_metronome_score.removeAll()
+            //Looping through and reading from the database
             for n in 1...7{
             ref.child("Metronome/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
                 if(snapshot.exists())
@@ -117,16 +127,17 @@ class MetronomeStats: UIViewController {
                     let snap = child as! DataSnapshot
                     let key = snap.key
                     let value = snap.value
+                    //Checking if the key in the database corresponds to the score
                     if(key == "Score")
                     {
                         var score = (value as? Int)!
-                        metronome_statistics.average_metronome_score.append(score)
+                        metronome_statistics.average_metronome_score.append(score)  //Storing the score value
                     }
                 }
             }
                 else
                 {
-                    metronome_statistics.average_metronome_score.append(0)
+                    metronome_statistics.average_metronome_score.append(0)  //Will add a zero if no entry was found
                 }
             })
             }

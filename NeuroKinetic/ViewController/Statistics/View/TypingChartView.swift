@@ -13,12 +13,12 @@ open class TypingChartView: MacawView {
 
     open var completionCallback: (() -> ()) = { }
 
-    private var backgroundGroup = Group()
-    private var mainGroup = Group()
-    private var lastPlayedGroup = Group()
+    private var backgroundGroup = Group()   //Group for the background graphs
+    private var mainGroup = Group()//Main Layout for the graph
+    private var lastPlayedGroup = Group()   //Group for the graph with value
 
     private var barAnimations = [Animation]()
-    private var barsValues: [Int] = [0, 0, 0, 0, 0, 0, 0]   //Scores multiply by 5
+    private var barsValues: [Int] = [0, 0, 0, 0, 0, 0, 0]   //Default score if database data is not grabbed
     private let barsCaptions = ["1", "2", "3", "4", "5", "6", "7"]
     private let barsCount = 7
     private let barsSpacing = 40
@@ -28,6 +28,7 @@ open class TypingChartView: MacawView {
     private let emptyBarColor = Color.rgba(r: 138, g: 147, b: 219, a: 0.5)
     private let gradientColor = LinearGradient(degree: 90, from: Color(val: 0xfc00ff), to: Color(val: 0x00dbde))
 
+    //Creates the scene for graph
     private func createScene() {
         let viewCenterX = Double(self.frame.width / 2)
 
@@ -112,6 +113,7 @@ open class TypingChartView: MacawView {
         self.backgroundColor = UIColor(cgColor: Color(val: 0xfefdf6).toCG())
     }
 
+    //Create animation for graph
     private func createAnimations() {
         barAnimations.removeAll()
         for (index, node) in mainGroup.contents.enumerated() {
@@ -139,27 +141,22 @@ open class TypingChartView: MacawView {
         }
     }
 
+    //Plays the graph animation
     open func play() {
         createAnimations()
         barAnimations.combine().play()
     }
     
+    //Creates the scene in the stats screen
     open func createSceneForStats() {
         createScene()
     }
     
+    //Sets the values for the graph with the database values
     open func setBarsValues(typingArr: [Int]) {
-        
-        print("here")
         
         if(typingArr.count != 0) {
             barsValues.removeAll()
-            
-            print("here2")
-            
-//            for i in 0...6 {
-//                print(typingArr[i])
-//            }
 
             barsValues = typingArr
         }

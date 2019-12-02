@@ -9,12 +9,14 @@
 import UIKit
 import FirebaseDatabase
 class HandwritingStats: UIViewController {
+    
+    //Variable declarations
     var ref = Database.database().reference()
     let preferences = UserDefaults.standard
     var gamesPlayed: Int = 0
     
     struct handwriting_statistics{
-         static var handwriting_amplitude_array: [Float] = []
+         static var handwriting_amplitude_array: [Float] = []   //Array for handwriting amplitude values
      }
     
     @IBOutlet weak var handwritingChartView: HandwritingChartView!
@@ -26,7 +28,8 @@ class HandwritingStats: UIViewController {
         
         handwritingChartView.createSceneForStats()
         database_read()
-
+        
+        //Specifying a delay for the bar graph values
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.calculate_average_amplitude()
             self.handwritingChartView.setBarsValues(handwritingArr: handwriting_statistics.handwriting_amplitude_array)
@@ -45,6 +48,7 @@ class HandwritingStats: UIViewController {
     
     func database_read() {
            
+            //Date variable declarations
            let gameFinishTime :Date = Date()
            let calendar = Calendar.current
            let year:Int = calendar.component(.year, from:gameFinishTime)
@@ -61,6 +65,7 @@ class HandwritingStats: UIViewController {
            if(gamesPlayed >= 7)
            {
             handwriting_statistics.handwriting_amplitude_array.removeAll()
+                //Looping through and reading from the database
                for n in ((gamesPlayed)-6)...gamesPlayed {
                ref.child("Handwriting/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
                    if(snapshot.exists())
@@ -69,16 +74,17 @@ class HandwritingStats: UIViewController {
                        let snap = child as! DataSnapshot
                        let key = snap.key
                        let value = snap.value
+                    //Checking if the key in the database corresponds to the AmplitudeDifference
                        if(key == "AmplitudeDifference")
                        {
                            var score = (value as? Float)!
-                            handwriting_statistics.handwriting_amplitude_array.append(score)
+                            handwriting_statistics.handwriting_amplitude_array.append(score)    //Storing the amplitude value
                        }
                    }
                }
                    else
                    {
-                    handwriting_statistics.handwriting_amplitude_array.append(0)
+                    handwriting_statistics.handwriting_amplitude_array.append(0)    //Will add a zero if no entry was found
                    }
                })
                }
@@ -86,6 +92,7 @@ class HandwritingStats: UIViewController {
            else
            {
                handwriting_statistics.handwriting_amplitude_array.removeAll()
+            //Looping through and reading from the database
                for n in 1...7 {
                ref.child("Handwriting/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
                    if(snapshot.exists())
@@ -94,21 +101,24 @@ class HandwritingStats: UIViewController {
                        let snap = child as! DataSnapshot
                        let key = snap.key
                        let value = snap.value
+                    //Checking if the key in the database corresponds to the AmplitudeDifference
                        if(key == "AmplitudeDifference")
                        {
                            let score = (value as? Float)!
-                        handwriting_statistics.handwriting_amplitude_array.append(score)
+                        handwriting_statistics.handwriting_amplitude_array.append(score)    //Storing the amplitude value
                        }
                    }
                }
                    else
                    {
-                    handwriting_statistics.handwriting_amplitude_array.append(0)
+                    handwriting_statistics.handwriting_amplitude_array.append(0)    //Will add a zero if no entry was found
                    }
                })
                }
            }
        }
+    
+    //This function will calculate the average amplitude difference and store it in amplitudeLabel to display to the user
     func calculate_average_amplitude() {
         var sum: Float = 0
         var average_amplitude: Float = 0
@@ -130,8 +140,7 @@ class HandwritingStats: UIViewController {
             average_amplitude = sum / non_zero_vals
 
         }
-        
-        amplitudeLabel.text = "Average Amplitude: " + String(format: "%.2f", average_amplitude)
+        amplitudeLabel.text = "Average Amplitude: " + String(format: "%.2f", average_amplitude) //Storing the average amplitude in the label
         
     }
 }

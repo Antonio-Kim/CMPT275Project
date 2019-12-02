@@ -45,7 +45,6 @@ class TypingGame: UIViewController {
     @IBOutlet weak var paragraphView: UILabel!
     
     //UI Text field
-    
     @IBOutlet weak var typingTextField: UITextField!
     
     //UI Button
@@ -85,9 +84,6 @@ class TypingGame: UIViewController {
     var didStart: Bool = false
     
     var gamesPlayed: Int = 0
-    
-  // var typing_array: [Int] = []
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

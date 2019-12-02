@@ -19,8 +19,8 @@ class TypingStats: UIViewController {
     var gamesPlayed: Int = 0
     
     struct typing_statistics{
-        static var typing_wpm_array: [Int] = []
-        static var typing_accuracy_array: [Int] = []
+        static var typing_wpm_array: [Int] = [] //Array for the wpm values
+        static var typing_accuracy_array: [Int] = []    //Array for the accuracy values
     }
     
     
@@ -33,7 +33,8 @@ class TypingStats: UIViewController {
         
         typingChartView.createSceneForStats()
         database_read()
-
+        
+        //Specifying a delay for the bar graph values
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.calculate_average_wpm()
             self.calculate_average_accuracy()
@@ -53,6 +54,7 @@ class TypingStats: UIViewController {
     
     func database_read() {
         
+        //Date variable declarations
         let gameFinishTime :Date = Date()
         let calendar = Calendar.current
         let year:Int = calendar.component(.year, from:gameFinishTime)
@@ -70,6 +72,7 @@ class TypingStats: UIViewController {
         {
             typing_statistics.typing_accuracy_array.removeAll()
             typing_statistics.typing_wpm_array.removeAll()
+            //Looping through and reading from the database
             for n in ((gamesPlayed)-6)...gamesPlayed {
             ref.child("TypingGame/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
                 if(snapshot.exists())
@@ -78,21 +81,23 @@ class TypingStats: UIViewController {
                     let snap = child as! DataSnapshot
                     let key = snap.key
                     let value = snap.value
+                    //Checking if the key in the database corresponds to the WPM
                     if(key == "WPM")
                     {
                         var score = (value as? Int)!
-                       typing_statistics.typing_wpm_array.append(score)
+                       typing_statistics.typing_wpm_array.append(score) //Storing the WPM value
                     }
+                    //Checking if the key in the database corresponds to the Accuracy
                     if(key == "Accuracy")
                     {
                         var temp = (value as? Int)!
-                        typing_statistics.typing_accuracy_array.append(temp)
+                        typing_statistics.typing_accuracy_array.append(temp)    //Storing the accuracy value
                     }
                 }
             }
                 else
                 {
-                    typing_statistics.typing_wpm_array.append(0)
+                    typing_statistics.typing_wpm_array.append(0)    //Will add a zero if no entry was found
                 }
             })
             }
@@ -101,6 +106,7 @@ class TypingStats: UIViewController {
         {
             typing_statistics.typing_accuracy_array.removeAll()
             typing_statistics.typing_wpm_array.removeAll()
+            //Looping through and reading from the database
             for n in 1...7 {
             ref.child("TypingGame/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
                 if(snapshot.exists())
@@ -109,26 +115,30 @@ class TypingStats: UIViewController {
                     let snap = child as! DataSnapshot
                     let key = snap.key
                     let value = snap.value
+                    //Checking if the key in the database corresponds to the WPM
                     if(key == "WPM")
                     {
                         let score = (value as? Int)!
-                        typing_statistics.typing_wpm_array.append(score)
+                        typing_statistics.typing_wpm_array.append(score)    //Storing the WPM value
                     }
+                    //Checking if the key in the database corresponds to the Accuracy
                     if(key == "Accuracy")
                     {
                         let temp = (value as? Int)!
-                        typing_statistics.typing_accuracy_array.append(temp)
+                        typing_statistics.typing_accuracy_array.append(temp)    //Storing the accuracy value
                     }
                 }
             }
                 else
                 {
-                    typing_statistics.typing_wpm_array.append(0)
+                    typing_statistics.typing_wpm_array.append(0)    //Will add a zero if no entry was found
                 }
             })
             }
         }
     }
+    
+    //This function will calculate the average wpm and store it in WPMLabel to display to the user
     func calculate_average_wpm() {
         var sum: Int = 0
         var average_wpm: Int = 0
@@ -150,9 +160,10 @@ class TypingStats: UIViewController {
             average_wpm = sum / non_zero_vals
         }
         
-        WPMLabel.text = "Average WPM: " + "\(average_wpm)"
+        WPMLabel.text = "Average WPM: " + "\(average_wpm)" //Storing the average wpm in the label
     }
     
+    //This function will calculate the average accuracy and store it in accuracyLabel to display to the user
     func calculate_average_accuracy()  {
         var sum: Int = 0
         var average_accuracy: Int = 0
@@ -174,7 +185,7 @@ class TypingStats: UIViewController {
             average_accuracy = sum / non_zero_vals
         }
         
-        accuracyLabel.text = "Average Accuracy: " + "\(average_accuracy)" + " %"
+        accuracyLabel.text = "Average Accuracy: " + "\(average_accuracy)" + " %" //Storing the average accuracy in the label
     }
     
 }

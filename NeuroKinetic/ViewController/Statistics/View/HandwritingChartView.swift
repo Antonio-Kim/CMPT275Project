@@ -14,12 +14,12 @@ open class HandwritingChartView: MacawView {
 
     open var completionCallback: (() -> ()) = { }
 
-    private var backgroundGroup = Group()
-    private var mainGroup = Group()
-    private var lastPlayedGroup = Group()
+    private var backgroundGroup = Group()   //Group for the background graphs
+    private var mainGroup = Group()//Main Layout for the graph
+    private var lastPlayedGroup = Group()   //Group for the graph with value
 
     private var barAnimations = [Animation]()
-    private var barsValues: [Float] = [0, 0, 0, 0, 0, 0, 0]   //Amplitude
+    private var barsValues: [Float] = [0, 0, 0, 0, 0, 0, 0]   //Default score if database data is not grabbed
     private let barsCaptions = ["1", "2", "3", "4", "5", "6", "7"]
     private let barsCount = 7
     private let barsSpacing = 40
@@ -29,6 +29,7 @@ open class HandwritingChartView: MacawView {
     private let emptyBarColor = Color.rgba(r: 138, g: 147, b: 219, a: 0.5)
     private let gradientColor = LinearGradient(degree: 90, from: Color(val: 0xeea849), to: Color(val: 0xf46b45))
 
+    //Creates the scene for graph
     private func createScene() {
         let viewCenterX = Double(self.frame.width / 2)
 
@@ -113,6 +114,7 @@ open class HandwritingChartView: MacawView {
         self.backgroundColor = UIColor(cgColor: Color(val: 0xfefdf6).toCG())
     }
 
+    //Create animation for graph
     private func createAnimations() {
         barAnimations.removeAll()
         for (index, node) in mainGroup.contents.enumerated() {
@@ -143,15 +145,18 @@ open class HandwritingChartView: MacawView {
         }
     }
 
+    //Plays the graph animation
     open func play() {
         createAnimations()
         barAnimations.combine().play()
     }
     
+    //Creates the scene in the stats screen
     open func createSceneForStats() {
         createScene()
     }
     
+    //Sets the values for the graph with the database values
     public func setBarsValues(handwritingArr: [Float]) {
         
         if(handwritingArr.count != 0) {
