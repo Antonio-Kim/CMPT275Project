@@ -37,7 +37,7 @@ open class HandwritingChartView: MacawView {
 
         let title = Text(
             text: "Amplitude Improvement",
-            font: Font(name: "Serif", size: 25),
+            font: Font(name: "Helvetica", size: 25),
             fill: Color(val: 0x000000)
         )
         title.align = .mid
@@ -45,11 +45,11 @@ open class HandwritingChartView: MacawView {
         
         let scoreMax = Text(
             text: "100",
-            font: Font(name: "Serif", size: 20),
+            font: Font(name: "Helvetica", size: 20),
             fill: Color(val: 0x000000)
         )
         
-        scoreMax.place = .move(dx: 5, dy: 90)
+        scoreMax.place = .move(dx: 3, dy: 90)
         
         backgroundGroup = Group()
         for barIndex in 0...barsCount - 1 {
@@ -98,7 +98,7 @@ open class HandwritingChartView: MacawView {
         for barIndex in 0...barsCount - 1 {
             let text = Text(
                 text: barsCaptions[barIndex],
-                font: Font(name: "Serif", size: 20),
+                font: Font(name: "Helvetica", size: 20),
                 fill: Color(val: 0x000000)
             )
             text.align = .mid
@@ -144,19 +144,18 @@ open class HandwritingChartView: MacawView {
     }
 
     open func play() {
-        createScene()
         createAnimations()
         barAnimations.combine().play()
+    }
+    
+    open func createSceneForStats() {
+        createScene()
     }
     
     public func setBarsValues(handwritingArr: [Float]) {
         
         if(handwritingArr.count != 0) {
             barsValues.removeAll()
-
-            for i in 0...6 {
-                print(handwritingArr[i])
-            }
 
             barsValues = handwritingArr
 

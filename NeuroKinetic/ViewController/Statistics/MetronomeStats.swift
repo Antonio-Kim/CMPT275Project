@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class MetronomeStats: UIViewController {
-
+    var ref = Database.database().reference()
+    var gamesPlayed: Int = 0
+    let preferences = UserDefaults.standard
+    
+    struct metronome_statistics {
+        static var average_metronome_score: [Int] = []
+    }
     
     @IBOutlet weak var metronomeChartView: MetronomeChartView!
     
@@ -18,22 +25,30 @@ class MetronomeStats: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        metronomeChartView.setBarsValues(metronomeArr: MetronomeGame.metronome_statistics.average_metronome_score)
+        metronomeChartView.createSceneForStats()
+        database_read()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.calculate_average_score()
+            self.metronomeChartView.setBarsValues(metronomeArr: metronome_statistics.average_metronome_score)
+        }
         
-        calculate_average_score()
+        
     }
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        metronomeChartView.play()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            self.metronomeChartView.play()
+        }
     }
     
     func calculate_average_score() {
         var sum: Int = 0
         var average_score: Int = 0
         var non_zero_vals: Int = 0
-        for(element) in (MetronomeGame.metronome_statistics.average_metronome_score)
+        for(element) in (metronome_statistics.average_metronome_score)
         {
             if(element != 0)
             {
@@ -48,13 +63,74 @@ class MetronomeStats: UIViewController {
         else
         {
             average_score = sum / non_zero_vals
-
+        }
+        scoreLabel.text = "Score: " + "\(average_score)"
+    }
+    
+    func database_read() {
+        
+        let gameFinishTime :Date = Date()
+        let calendar = Calendar.current
+        let year:Int = calendar.component(.year, from:gameFinishTime)
+        let month:Int = calendar.component(.month, from:gameFinishTime)
+        let day:Int = calendar.component(.day, from:gameFinishTime)
+        
+        if preferences.object(forKey: "TotalMetronomeGamesPlayed") == nil {
+            //  Doesn't exist
+        } else {
+            gamesPlayed = preferences.integer(forKey: "TotalMetronomeGamesPlayed")
         }
         
-        scoreLabel.text = "Score: " + "\(average_score)"
-        
-        print("Metronome Score Avg:")
-        print(average_score)
+        if(gamesPlayed >= 7)
+        {
+            metronome_statistics.average_metronome_score.removeAll()
+            for n in ((gamesPlayed)-6)...gamesPlayed {
+            ref.child("Metronome/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
+                if(snapshot.exists())
+                {
+                    for child in snapshot.children {
+                        let snap = child as! DataSnapshot
+                        let key = snap.key
+                        let value = snap.value
+                        if(key == "Score")
+                        {
+                            var score = (value as? Int)!
+                            metronome_statistics.average_metronome_score.append(score)
+                        }
+                    }
+                }
+                else
+                {
+                    metronome_statistics.average_metronome_score.append(0)
+                }
+            })
+            }
+        }
+        else
+        {
+            metronome_statistics.average_metronome_score.removeAll()
+            for n in 1...7{
+            ref.child("Metronome/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
+                if(snapshot.exists())
+                {
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    let key = snap.key
+                    let value = snap.value
+                    if(key == "Score")
+                    {
+                        var score = (value as? Int)!
+                        metronome_statistics.average_metronome_score.append(score)
+                    }
+                }
+            }
+                else
+                {
+                    metronome_statistics.average_metronome_score.append(0)
+                }
+            })
+            }
+        }
     }
 
 }

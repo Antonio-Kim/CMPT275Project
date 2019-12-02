@@ -35,8 +35,8 @@ open class TypingChartView: MacawView {
         let barsCenterX = viewCenterX - barsWidth / 2
 
         let title = Text(
-            text: "WPM vs Last 7 Games",
-            font: Font(name: "Serif", size: 25),
+            text: "WPM for Last 7 Games",
+            font: Font(name: "Helvetica", size: 25),
             fill: Color(val: 0x000000)
         )
         title.align = .mid
@@ -44,11 +44,11 @@ open class TypingChartView: MacawView {
         
         let scoreMax = Text(
             text: "120",
-            font: Font(name: "Serif", size: 20),
+            font: Font(name: "Helvetica", size: 20),
             fill: Color(val: 0x000000)
         )
         
-        scoreMax.place = .move(dx: 10, dy: 90)
+        scoreMax.place = .move(dx: 3, dy: 90)
 
         backgroundGroup = Group()
         for barIndex in 0...barsCount - 1 {
@@ -97,7 +97,7 @@ open class TypingChartView: MacawView {
         for barIndex in 0...barsCount - 1 {
             let text = Text(
                 text: barsCaptions[barIndex],
-                font: Font(name: "Serif", size: 20),
+                font: Font(name: "Helvetica", size: 20),
                 fill: Color(val: 0x000000)
             )
             text.align = .mid
@@ -140,19 +140,26 @@ open class TypingChartView: MacawView {
     }
 
     open func play() {
-        createScene()
         createAnimations()
         barAnimations.combine().play()
     }
     
+    open func createSceneForStats() {
+        createScene()
+    }
+    
     open func setBarsValues(typingArr: [Int]) {
+        
+        print("here")
         
         if(typingArr.count != 0) {
             barsValues.removeAll()
             
-            for i in 0...6 {
-                print(typingArr[i])
-            }
+            print("here2")
+            
+//            for i in 0...6 {
+//                print(typingArr[i])
+//            }
 
             barsValues = typingArr
         }

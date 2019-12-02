@@ -35,8 +35,8 @@ open class MetronomeChartView: MacawView {
         let barsCenterX = viewCenterX - barsWidth / 2
 
         let title = Text(
-            text: "Score vs Last 7 Games",
-            font: Font(name: "Serif", size: 25),
+            text: "Score for Last 7 Games",
+            font: Font(name: "Helvetica", size: 25),
             fill: Color(val: 0x000000)
         )
         title.align = .mid
@@ -44,7 +44,7 @@ open class MetronomeChartView: MacawView {
         
         let scoreMax = Text(
             text: "20",
-            font: Font(name: "Serif", size: 20),
+            font: Font(name: "Helvetica", size: 20),
             fill: Color(val: 0x000000)
         )
         
@@ -97,7 +97,7 @@ open class MetronomeChartView: MacawView {
         for barIndex in 0...barsCount - 1 {
             let text = Text(
                 text: barsCaptions[barIndex],
-                font: Font(name: "Serif", size: 20),
+                font: Font(name: "Helvetica", size: 20),
                 fill: Color(val: 0x000000)
             )
             text.align = .mid
@@ -140,19 +140,18 @@ open class MetronomeChartView: MacawView {
     }
 
     open func play() {
-        createScene()
         createAnimations()
         barAnimations.combine().play()
+    }
+    
+    open func createSceneForStats() {
+        createScene()
     }
     
     open func setBarsValues(metronomeArr: [Int]) {
         
         if(metronomeArr.count != 0) {
             barsValues.removeAll()
-            
-            for i in 0...6 {
-                print(metronomeArr[i])
-            }
 
             barsValues = metronomeArr
             

@@ -7,7 +7,6 @@
 //
 
 import XCTest
-
 @testable import NeuroKinetic
 
 class NeuroKineticTests: XCTestCase {
@@ -25,30 +24,11 @@ class NeuroKineticTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testPerformanceTypingGame() {
-        let typing = TypingGame()
+    func testPerformanceExample() {
+        // This is an example of a performance test case.
         self.measure {
-            for _ in 1..<10{
-                typing.chooseParagraph()
-            }
-        }
-    }
-    
-    func testPerformanceWritingGame(){
-        let writing = HandwritingPractice()
-        self.measure{
-            for _ in 1..<10{
-                writing.audioAssistance()
-            }
-        }
-    }
-    
-    func testPerformanceMetronomeGame(){
-        let metronome = MetronomeGame()
-        self.measure{
-            metronome.viewDidLoad()
+            // Put the code you want to measure the time of here.
         }
     }
 
 }
-

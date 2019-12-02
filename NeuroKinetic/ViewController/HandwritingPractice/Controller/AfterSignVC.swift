@@ -16,10 +16,6 @@ class AfterSignVC: UIViewController {
     var gamesPlayed:Int = 0
     var amplitude1 = SignViewControl.ampl1.amplitude1
     var amplitude2: CGFloat!
-    
-    struct handwriting_statistics{
-         static var handwriting_amplitude_array: [Float] = []
-     }
 
 
     @IBOutlet weak var SignatureCanvasAfter: AfterSignView!
@@ -62,60 +58,7 @@ class AfterSignVC: UIViewController {
         ref.child("Handwriting/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
         ref.child("Handwriting/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/AmplitudeDifference").setValue(difference)
         
-        if(gamesPlayed >= 7)
-        {
-            handwriting_statistics.handwriting_amplitude_array.removeAll()
-            for n in (gamesPlayed-6)...gamesPlayed {
-            ref.child("Handwriting/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
-                if(snapshot.exists())
-                {
-                for child in snapshot.children {
-                    let snap = child as! DataSnapshot
-                    let key = snap.key
-                    let value = snap.value
-                    if(key == "AmplitudeDifference")
-                    {
-                        var ampl = (value as? Float)!
-                        handwriting_statistics.handwriting_amplitude_array.append(ampl)
-                    }
-                    print("key =\(key) value = \(value!)")
-                }
-            }
-                else
-                {
-                    handwriting_statistics.handwriting_amplitude_array.append(0)
-                }
-            })
-            }
-        }
-        else
-        {
-            handwriting_statistics.handwriting_amplitude_array.removeAll()
-            for n in 1...7 {
-            ref.child("Handwriting/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
-                if(snapshot.exists())
-                {
-                for child in snapshot.children
-                {
-                    let snap = child as! DataSnapshot
-                    let key = snap.key
-                    let value = snap.value
-                    if(key == "AmplitudeDifference")
-                    {
-                        var ampl = (value as? Float)!
-                        handwriting_statistics.handwriting_amplitude_array.append(ampl)
-                    }
-                    print("key =\(key) value = \(value!)")
-                }
-            }
-                else
-                {
-                    handwriting_statistics.handwriting_amplitude_array.append(0)
-                }
-            })
-            }
-        }
-        
     }
+ 
 
 }

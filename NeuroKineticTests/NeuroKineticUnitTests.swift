@@ -17,8 +17,7 @@ class NeuroKineticUnitTests: XCTestCase {
     override func tearDown() {
     }
 
-    /** Metronome Unit Test
-     This test cases completes Unit test on Metronome game. The resutl of the test will depend on the
+    /** This test cases completes Unit test on Metronome game. The resutl of the test will depend on the
      user's current tap count and whether the tap was completed on the left or the right button. This test will go
      from tap count one to twenty, with each count accounting for left and right. Eact test will have a number,
      followed by underscore, then a binary number. The first number indicates the tap count which ranges

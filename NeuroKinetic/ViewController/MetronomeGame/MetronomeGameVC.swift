@@ -30,6 +30,7 @@ class MetronomeGame: UIViewController {
     var isGameOver: Bool = false
     var interval:Double = 1.5
     var tolerance:Double = 0.3
+    var gamesPlayed: Int = 0
 
     //Difficulity buttons and message label
     @IBOutlet var easy: UIButton!
@@ -51,7 +52,6 @@ class MetronomeGame: UIViewController {
     //UserDefault preference storing
     let preferences = UserDefaults.standard
     let currentLevelKey = "TotalMetronomeGamesPlayed"
-    var gamesPlayed: Int = 0
     
     //Start button and Message label
     @IBOutlet weak var tap: UIButton!
@@ -66,9 +66,6 @@ class MetronomeGame: UIViewController {
     //Music Note Image
     let soundNote = UIImageView(frame: CGRect(x:257, y:554, width:100, height:100))
     
-    struct metronome_statistics {
-        static var average_metronome_score: [Int] = []
-    }
     //@IBOutlet weak var soundNote: UIImageView!
     
     //Returns the index to store the score in the array
@@ -166,15 +163,16 @@ class MetronomeGame: UIViewController {
     //Animation to be executed when the game is finished
     func animateFinish()
     {
-        //Database update
-        self.tap.setTitle("DONE", for: .normal)
-        self.message.text = "Score :" + String(self.totalScore)
-        let ref = Database.database().reference()
         let gameFinishTime :Date = Date()
         let calendar = Calendar.current
         let year:Int = calendar.component(.year, from:gameFinishTime)
         let month:Int = calendar.component(.month, from:gameFinishTime)
         let day:Int = calendar.component(.day, from:gameFinishTime)
+        
+        //Database update
+        self.tap.setTitle("DONE", for: .normal)
+        self.message.text = "Score :" + String(self.totalScore)
+        let ref = Database.database().reference()
         gamesPlayed += 1
         
         //Setting gamesPlayed into the perferences
@@ -188,59 +186,6 @@ class MetronomeGame: UIViewController {
         }
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/Score").setValue(totalScore)
-        
-        if(gamesPlayed >= 7)
-        {
-            metronome_statistics.average_metronome_score.removeAll()
-            for n in (gamesPlayed-6)...gamesPlayed {
-            ref.child("Metronome/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
-                if(snapshot.exists())
-                {
-                    for child in snapshot.children {
-                        let snap = child as! DataSnapshot
-                        let key = snap.key
-                        let value = snap.value
-                        if(key == "Score")
-                        {
-                            var score = (value as? Int)!
-                            metronome_statistics.average_metronome_score.append(score)
-                        }
-                        print("key =\(key) value = \(value!)")
-                    }
-                }
-                else
-                {
-                    metronome_statistics.average_metronome_score.append(0)
-                }
-            })
-            }
-        }
-        else
-        {
-            metronome_statistics.average_metronome_score.removeAll()
-            for n in 1...7{
-            ref.child("Metronome/\(year)-\(month)-\(day)").child("Game: \(n)").observeSingleEvent(of: .value, with: { (snapshot) in
-                if(snapshot.exists())
-                {
-                for child in snapshot.children {
-                    let snap = child as! DataSnapshot
-                    let key = snap.key
-                    let value = snap.value
-                    if(key == "Score")
-                    {
-                        var score = (value as? Int)!
-                        metronome_statistics.average_metronome_score.append(score)
-                    }
-                    print("key =\(key) value = \(value!)")
-                }
-            }
-                else
-                {
-                    metronome_statistics.average_metronome_score.append(0)
-                }
-            })
-            }
-        }
         
         //Fade out classic music
         if(SE)
@@ -263,6 +208,7 @@ class MetronomeGame: UIViewController {
                         self.left.alpha = 0
                         self.soundNote.alpha = 0
                         self.message.alpha = 1
+                        self.scoreLabel.alpha = 0
         } )
     }
     
@@ -292,7 +238,6 @@ class MetronomeGame: UIViewController {
             //  Doesn't exist
         } else {
             gamesPlayed = preferences.integer(forKey: currentLevelKey)
-            print(gamesPlayed)
         }
         
         //Initializing sound file
