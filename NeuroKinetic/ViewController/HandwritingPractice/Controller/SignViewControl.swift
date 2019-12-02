@@ -14,7 +14,7 @@ class SignViewControl: UIViewController {
     
     @IBOutlet weak var signCanvas: SignatureCanvas!
     
-    
+    //Making UI programmatically
     @IBOutlet weak var clear: UIButton!
     @IBOutlet weak var done: UIButton!
     @IBOutlet weak var Label: UILabel!
@@ -31,7 +31,7 @@ class SignViewControl: UIViewController {
         self.view.addSubview(instruction)
         //Label.text = "Please enter your signature in the field below"
     }
-    
+    //calculate amplitude of signature when completed
     @IBAction func Done(_ sender: UIButton) {
         ampl1.amplitude1 = signCanvas.calculateAmplitude()
     }

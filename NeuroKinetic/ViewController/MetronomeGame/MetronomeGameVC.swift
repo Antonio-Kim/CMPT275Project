@@ -13,7 +13,6 @@ import FirebaseDatabase
 import MediaPlayer
 
 
-
 //This UIViewController class is for metronome game
 class MetronomeGame: UIViewController {
     
@@ -60,39 +59,28 @@ class MetronomeGame: UIViewController {
     //TAP right and left button
     let right = UIButton(frame: CGRect(x:837, y:554, width:100, height:100))
     let left = UIButton(frame: CGRect(x:257, y:554, width:100, height:100))
-//    @IBOutlet weak var right: UIButton!
-//    @IBOutlet weak var left: UIButton!
     
     //Music Note Image
     let soundNote = UIImageView(frame: CGRect(x:257, y:554, width:100, height:100))
     
-    //@IBOutlet weak var soundNote: UIImageView!
-    
     //Returns the index to store the score in the array
-    func scoreIndex(isLeft: Bool) ->Int
-    {
+    func scoreIndex(isLeft: Bool) ->Int{
         let isOdd = tapCount%2
         //If left button is tapped
-        if(isLeft)
-        {
-            if(isOdd==0)
-            {
+        if(isLeft){
+            if(isOdd==0){
                 return tapCount - 1
             }
-            else
-            {
+            else{
                 return tapCount
             }
         }
         //If right button is tapped
-        else
-        {
-            if(isOdd==1)
-            {
+        else{
+            if(isOdd==1){
                 return tapCount - 1
             }
-            else
-            {
+            else{
                 return tapCount
             }
         }
@@ -102,22 +90,20 @@ class MetronomeGame: UIViewController {
     func moveRight()
     {
         UIView.animate(withDuration: self.interval,
-                       delay: 0.0,
-                       options: .curveLinear,
-                       animations: {self.soundNote.frame.origin.x = self.right.frame.origin.x } ,
-                       completion:{
-                        _ in
-                        self.tapCount += 1
-                        DispatchQueue.main.async {
-                            self.metroSE.play()
-                        }
-                        self.moveLeft()
-                        self.rightTime = Date()
-                        self.leftTime = Date(timeIntervalSinceNow: self.interval)
-                        
-                        
-                        
-                        
+            delay: 0.0,
+            options: .curveLinear,
+            animations: {self.soundNote.frame.origin.x = self.right.frame.origin.x } ,
+            completion:{
+                _ in
+                self.tapCount += 1
+                //metronome sound
+                DispatchQueue.main.async {
+                    self.metroSE.play()
+                }
+            self.moveLeft()
+            //set expected time
+            self.rightTime = Date()
+            self.leftTime = Date(timeIntervalSinceNow: self.interval)
         })
     }
     
@@ -134,12 +120,11 @@ class MetronomeGame: UIViewController {
                 //If tap count is less than or equal to 19, continue the game
                 if(!(self.tapCount>=19))
                 {
-                    ////Chain animation. Start moving to the right.
+                    //metronome sound
                     DispatchQueue.main.async {
                         self.metroSE.play()
                     }
                     self.moveRight()
-                    print(self.score)
                     self.leftTime = Date()
                     self.rightTime = Date(timeIntervalSinceNow: self.interval)
                 }
@@ -148,19 +133,17 @@ class MetronomeGame: UIViewController {
                 else
                 {
                     self.metroSE.play()
-                    //self.message.text = "GAME OVER"
                     DispatchQueue.main.asyncAfter(deadline: .now() + self.tolerance)
                     {
                         self.isGameOver = true
                         self.animateFinish()
                     }
-                    
                 }
                 
         })
     }
     
-    //Animation to be executed when the game is finished
+    //Animation to be executed when the game is finished and store data in firebase
     func animateFinish()
     {
         let gameFinishTime :Date = Date()
@@ -178,12 +161,9 @@ class MetronomeGame: UIViewController {
         //Setting gamesPlayed into the perferences
         preferences.set(gamesPlayed, forKey: currentLevelKey)
         
-        //  Save to disk
+        //Save to disk
         let didSave = preferences.synchronize()
         
-        if !didSave {
-            
-        }
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/TotalGamesPlayed").setValue(gamesPlayed)
         ref.child("Metronome/\(year)-\(month)-\(day)/Game: \(gamesPlayed)/Score").setValue(totalScore)
         
@@ -202,16 +182,15 @@ class MetronomeGame: UIViewController {
         }
         //Display "DONE". Fade out all the other buttons and labels.
         UIView.animate(withDuration: 3,
-                       animations:{
-                        self.tap.alpha = 1
-                        self.right.alpha = 0
-                        self.left.alpha = 0
-                        self.soundNote.alpha = 0
-                        self.message.alpha = 1
-                        self.scoreLabel.alpha = 0
-        } )
+            animations:{
+                self.tap.alpha = 1
+                self.right.alpha = 0
+                self.left.alpha = 0
+                self.soundNote.alpha = 0
+                self.message.alpha = 1
+                self.scoreLabel.alpha = 0
+            } )
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -229,10 +208,6 @@ class MetronomeGame: UIViewController {
         self.view.addSubview(right)
         self.view.addSubview(left)
         
-        
-        //Bringing image to the front
-        //view.addSubview(soundNote)
-        
         //Grabs the gamesPlayed from the stored preference
         if preferences.object(forKey: currentLevelKey) == nil {
             //  Doesn't exist
@@ -244,7 +219,6 @@ class MetronomeGame: UIViewController {
         let metroSound = Bundle.main.path(forResource:"metronomeSound(2)", ofType: "mp3")
         
         do{
-            
             metroSE = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: metroSound!))
         }
         //If it fails to load, returns, error
@@ -252,7 +226,7 @@ class MetronomeGame: UIViewController {
             print(error)
         }
         
-        //If classic music setting
+        //If classic music setting on, load the mp3 file
         if(SE)
         {
             let classicMusic = Bundle.main.path(forResource:"classic_music(2)", ofType: "mp3")
@@ -265,6 +239,7 @@ class MetronomeGame: UIViewController {
         }
     }
     
+    //Called
     override func viewDidDisappear(_ animated: Bool) {
         if(SE){
         self.classic_music.setVolume(0, fadeDuration: 2)
@@ -286,12 +261,12 @@ class MetronomeGame: UIViewController {
         //Starting game if the game hasn't started yet
         if(!didStart)
         {
-            //Take Start time
-            
+            //Set expected tap time
             rightTime = Date(timeIntervalSinceNow:2)
             leftTime = Date(timeIntervalSinceNow:4)
-            //Fade out start button
+            
             didStart = true
+            //fading out all buttons except for sound note and tap buttons
             UIView.animate(withDuration: 1, animations:{
                 self.tap.alpha = 0
                 self.easy.alpha = 0
@@ -362,33 +337,28 @@ class MetronomeGame: UIViewController {
     
     @IBAction func tapLeft(_ sender: UIButton) {
         //The button functions if and only if the game has started and hasn't finished yet
-        if(didStart && !isGameOver)
-        {
+        if(didStart && !isGameOver){
             //Take a difference between user tap time and expected timing
             let tempTime: Date = Date()
             tapTime = tempTime.timeIntervalSince(leftTime)
-
             //If the difference is negative, convert it to positive
-            if(tapTime<0)
-            {
+            if(tapTime<0){
                 tapTime *= (-1)
             }
+            
             let i = scoreIndex(isLeft:true)
+            
             //Display "Miss" or "Good Tap" depending on user's timing and expected time difference
-            if(tapTime>tolerance)
-            {
-                if(score[i] == -1)
-                {
+            if(tapTime>tolerance){
+                if(score[i] == -1){
                     score[i] = 0
                     message.text = "Miss"
                     message.alpha = 1
                     UIView.animate(withDuration: 0.8, animations: {self.message.alpha = 0}, completion: {finished in})
                 }
             }
-            else
-            {
-                if(score[i] == -1)
-                {
+            else{
+                if(score[i] == -1){
                     totalScore += 1
                     score[i] = 1
                     message.text = "Good Tap"
@@ -417,6 +387,7 @@ class MetronomeGame: UIViewController {
         normal.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
         hard.setTitleColor(UIColor.black, for: UIControl.State.normal)
     }
+    
     //hard button tapped. set difficulity to hard.
     @IBAction func setHardInterval(_ sender: Any) {
         interval = 1.0
@@ -426,5 +397,6 @@ class MetronomeGame: UIViewController {
         hard.setTitleColor(UIColor.systemBlue, for: UIControl.State.normal)
     }
 }
+
 
 

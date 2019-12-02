@@ -26,9 +26,6 @@ class HandwritingPractice: UIViewController {
     // load audio files for auditory assistance
     override func viewDidLoad() {
         super.viewDidLoad()
-//        guard Bundle.main.url(forResource: "Write_bigger1", withExtension: "mp3") != nil else { return }
-//        guard Bundle.main.url(forResource: "use_lines", withExtension: "mp3") != nil else { return }
-//        guard Bundle.main.url(forResource: "legible", withExtension: "mp3") != nil else { return }
         
         let path1 = Bundle.main.path(forResource: "Write_bigger1.mp3", ofType: nil)!
         let path2 = Bundle.main.path(forResource: "use_lines.mp3", ofType: nil)!
@@ -53,6 +50,7 @@ class HandwritingPractice: UIViewController {
         self.view.addSubview(instruction)
     }
     
+    //call audioAssistance() function and check for settings
     override func viewDidAppear(_ animated: Bool) {
         let SE = UserDefaults.standard.bool(forKey: "handwritingSE")
         print(SE)
@@ -62,6 +60,7 @@ class HandwritingPractice: UIViewController {
         }
     }
     
+    //stop assistance when closed
     override func viewDidDisappear(_ animated: Bool) {
         isFinish = true
         if (assistance_1?.isPlaying == true){
@@ -82,7 +81,8 @@ class HandwritingPractice: UIViewController {
     @IBAction func undo(_ sender: Any) {
         SentenceWrite.undo()
     }
-
+    
+    //show next sentence in paragraph
     @IBAction func NextSentence(_ sender: Any) {
         sentenceNum += 1
         SentenceWrite.clear()
@@ -91,7 +91,7 @@ class HandwritingPractice: UIViewController {
             performSegue(withIdentifier: "HandwritingToAfterSign", sender: nil)
         }
     }
-    
+    //bank for all sentences in paragraphs
     @IBOutlet weak var SentenceBank: UILabel!
     
     //Referenced from: https://www.brainyquote.com/topics/inspirational-quotes

@@ -27,6 +27,7 @@ class AfterSignVC: UIViewController {
         else{
             gamesPlayed = preferences.integer(forKey: currentLevelKey)
         }
+        //making UI Labels programmatically
         let instruction = UILabel(frame: CGRect(x: 250, y: 100, width: 1000, height: 50))
         instruction.center.x = self.view.center.x
         instruction.center.y = (self.view.center.y)/2
@@ -41,7 +42,8 @@ class AfterSignVC: UIViewController {
     @IBAction func clear(_ sender: Any) {
         SignatureCanvasAfter.clear()
     }
-    
+    //calculated amplitude difference and
+    //send data to firebase database
     @IBAction func Done(_ sender: Any) {
         let ref = Database.database().reference()
         let calendar = Calendar.current
